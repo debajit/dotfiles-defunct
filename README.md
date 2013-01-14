@@ -1,4 +1,4 @@
-resources
-=========
+configs
+=======
 
-Configuration files and other resources
+Commonly-used configuration files, for ready reference.
