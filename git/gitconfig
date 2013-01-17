@@ -9,6 +9,7 @@
 	dt = difftool
 	st = status
 	lg = log --graph --pretty=format:'%C(bold magenta)%h%Creset %C(bold yellow)%d%C(reset) %s %C(bold green)(%cr) %C(bold cyan)<%an>%Creset' --abbrev-commit
+	ll = log --name-status --abbrev-commit --graph
 	tip = show head --name-status --abbrev-commit --date=relative
 [color]
     ui = auto
