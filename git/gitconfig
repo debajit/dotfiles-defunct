@@ -5,6 +5,7 @@
 	b = branch
 	bm = branch --move
 	c = checkout
+	cb = checkout -b
 	ci = commit
 	cia = commit --amend
 	cif = commit -F
