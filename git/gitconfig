@@ -2,14 +2,23 @@
 	name = Debajit Adhikary
 	email = [ENTER EMAIL ADDRESS HERE]
 [alias]
-	br = branch
-	co = checkout
-	di = diff
+	b = branch
+	bm = branch --move
+	c = checkout
+	ci = commit
+	cia = commit --amend
+	cif = commit -F
+	ciaf = commit --amend -F
+	d = diff
+	dh = diff head
 	ds = diff --staged
 	dt = difftool
-	st = status
-	lg = log --graph --pretty=format:'%C(bold magenta)%h%Creset %C(bold yellow)%d%C(reset) %s %C(bold green)(%cr) %C(bold cyan)<%an>%Creset' --abbrev-commit
-	ll = log --name-status --abbrev-commit --graph
+	dth = difftool head
+	dts = difftool --staged
+	s = status
+	sn = status -uno
+	l = log --graph --pretty=format:'%C(bold magenta)%h%Creset %C(bold yellow)%d%C(reset) %s %C(bold green)(%cr) %C(bold cyan)<%an>%Creset' --abbrev-commit
+	ll = log --name-status --abbrev-commit
 	tip = show head --name-status --abbrev-commit --date=relative
 [color]
     ui = auto
