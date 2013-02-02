@@ -1,0 +1,8 @@
+task :default => [:updateconfig]
+
+desc "Updates .gitconfig in your home directory"
+task :updateconfig do
+  puts "Updating .gitconfig ..."
+  status = system("cp -f gitconfig ~/.gitconfig")
+  puts status ? "OK" : "FAILED"
+end
