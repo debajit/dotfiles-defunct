@@ -16,6 +16,8 @@
 	dt = difftool
 	dth = difftool head
 	dts = difftool --staged
+	in = log ..origin/master
+	out = log origin/master.. --name-status
 	s = status
 	sn = status -uno
 	l = log --graph --pretty=format:'%C(bold magenta)%h%Creset %C(bold yellow)%d%C(reset) %s %C(bold green)(%cr) %C(bold cyan)<%an>%Creset' --abbrev-commit
