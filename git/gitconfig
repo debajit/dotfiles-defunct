@@ -29,7 +29,7 @@
 	ll = log --name-status --abbrev-commit
 	tip = show head --name-status --abbrev-commit --date=relative
 [color]
-    ui = auto
+	ui = auto
 [color "branch"]
 	current = bold green
 [color "status"]
