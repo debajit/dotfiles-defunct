@@ -1,4 +1,4 @@
-configs
-=======
+My Git Configuration and Workflow
+=================================
 
-Commonly-used configuration files, for ready reference.
+My git configuration files, and my notes on workflows, for ready reference.
