@@ -16,6 +16,7 @@
 	dt = difftool
 	dth = difftool head
 	dts = difftool --staged
+	f = fetch
 	m = merge
 	mff = merge --ff-only
 	mt = mergetool
