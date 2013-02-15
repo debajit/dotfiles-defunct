@@ -16,6 +16,7 @@
 	dt = difftool
 	dth = difftool head
 	dtp = !sh -c 'git difftool "$1~1" "$1"' -
+	dtprev = !sh -c 'git difftool "$1~1" "$1"' -
 	dts = difftool --staged
 	f = fetch
 	m = merge
