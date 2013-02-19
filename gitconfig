@@ -25,7 +25,7 @@
 	findfile = ls-files
 	ff = ls-files
 	f = !sh -c 'git ff *$1*' -
-	g = grep --ignore-case
+	g = grep --ignore-case --line-number
 	gg = !sh -c 'git g $1 -- $2' -
 	m = merge
 	mff = merge --ff-only
