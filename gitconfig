@@ -23,8 +23,7 @@
 	dtp = !sh -c 'git difftool "$1~1" "$1"' -
 	dts = difftool --staged
 	findfile = ls-files
-	ff = ls-files
-	f = !sh -c 'git ff *$1*' -
+	f = ls-files
 	g = grep --ignore-case --line-number
 	gg = !sh -c 'git g $1 -- $2' -
 	m = merge
