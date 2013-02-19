@@ -25,7 +25,9 @@
 	findfile = ls-files
 	f = ls-files
 	g = grep --ignore-case --line-number
+	gw = grep --ignore-case --line-number --word-regexp
 	gg = !sh -c 'git g $1 -- $2' -
+	ggw = !sh -c 'git gw $1 -- $2' -
 	m = merge
 	mff = merge --ff-only
 	mt = mergetool
