@@ -11,12 +11,14 @@
 	cif = commit -F
 	ciaf = commit --amend -F
 	d = diff
+	dm = !sh -c 'git ls-files -m $1 | xargs git diff' -
 	dh = diff head
 	dh1 = diff head~1
 	dh2 = diff head~2
 	dp = !sh -c 'git diff "$1~1" "$1"' -
 	ds = diff --staged
 	dt = difftool
+	dtm = !sh -c 'git ls-files -m $1 | xargs git difftool' -
 	dth = difftool head
 	dth1 = difftool head~1
 	dth2 = difftool head~2
