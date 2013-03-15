@@ -27,9 +27,9 @@
 	findfile = ls-files
 	f = ls-files
 	g = grep --ignore-case --line-number
+	gf = !sh -c 'git g $1 -- $2' -
 	gw = grep --ignore-case --line-number --word-regexp
-	gg = !sh -c 'git g $1 -- $2' -
-	ggw = !sh -c 'git gw $1 -- $2' -
+	gwf = !sh -c 'git gw $1 -- $2' -
 	m = merge
 	mff = merge --ff-only
 	mt = mergetool
@@ -46,6 +46,8 @@
 	l = log --graph --pretty=format:'%C(bold magenta)%h%Creset %C(bold yellow)%d%C(reset) %s %C(bold green)(%cr) %C(bold cyan)<%an>%Creset' --abbrev-commit
 	ll = log --name-status --abbrev-commit --date=relative
 	tags = !sh -c 'git l | grep refs/tags | less'
+	ub = !sh -c 'git fetch origin && git b -f master origin/master && git r master'
+	u = !sh -c 'git fetch origin && git r origin/master'
 [color]
 	ui = auto
 [color "branch"]
