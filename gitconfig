@@ -45,7 +45,7 @@
 	sn = status -uno
 	l = log --graph --pretty=format:'%C(bold magenta)%h%Creset %C(bold yellow)%d%C(reset) %s %C(bold green)(%cr) %C(bold cyan)<%an>%Creset' --abbrev-commit
 	ll = log --name-status --abbrev-commit --date=relative
-	tags = !sh -c 'git l | grep refs/tags | less'
+	tags = !sh -c 'git l origin/master | grep refs/tags | less'
 	ub = !sh -c 'git fetch origin && git b -f master origin/master && git r master'
 	u = !sh -c 'git fetch origin && git r origin/master'
 [color]
