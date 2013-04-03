@@ -47,7 +47,7 @@
 	ll = log --name-status --abbrev-commit --date=relative
 	tags = !sh -c 'git l origin/master | grep refs/tags | less'
 	ub = !sh -c 'git fetch origin && git b -f master origin/master && git r master'
-	u = !sh -c 'git fetch origin && git r origin/master'
+	um = !sh -c 'git fetch origin && git r origin/master'
 [color]
 	ui = auto
 [color "branch"]
