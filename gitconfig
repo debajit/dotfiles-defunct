@@ -45,6 +45,8 @@
 	sn = status -uno
 	l = log --graph --pretty=format:'%C(bold magenta)%h%Creset %C(bold yellow)%d%C(reset) %s %C(bold green)(%cr) %C(bold cyan)<%an>%Creset' --abbrev-commit
 	ll = log --name-status --abbrev-commit --date=relative
+	la = !sh -c 'git ll -i --author=$1' -
+	lag = !sh -c 'git ll -i --author=$1 --grep=$2' -
 	tags = !sh -c 'git l origin/master | grep refs/tags | less'
 	ub = !sh -c 'git fetch origin && git b -f master origin/master && git r master'
 	um = !sh -c 'git fetch origin && git r origin/master'
