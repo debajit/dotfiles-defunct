@@ -38,6 +38,7 @@
 	mt = mergetool
 	r = rebase
 	rc = rebase --continue
+	ri = rebase -i
 	incoming = log ..origin/master --name-status --abbrev-commit --date=relative
 	in = log ..origin/master --name-status --abbrev-commit --date=relative
 	outgoing = log origin/master.. --name-status --abbrev-commit --date=relative
