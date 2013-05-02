@@ -11,6 +11,8 @@
 	cif = commit -F
 	ciaf = commit --amend -F
 	cian = commit --amend --no-edit
+	cp = cherry-pick
+	cv = cherry -v
 	d = diff
 	dm = !sh -c 'git ls-files -m $1 | xargs git diff' -
 	dh = diff head
