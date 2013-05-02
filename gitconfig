@@ -10,6 +10,7 @@
 	cia = commit --amend
 	cif = commit -F
 	ciaf = commit --amend -F
+	cian = commit --amend --no-edit
 	d = diff
 	dm = !sh -c 'git ls-files -m $1 | xargs git diff' -
 	dh = diff head
