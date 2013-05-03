@@ -30,6 +30,7 @@
 	findfile = ls-files
 	f = ls-files
 	g = grep --ignore-case --line-number
+	gs = grep --ignore-case --line-number -F
 	gf = !sh -c 'git g $1 -- $2' -
 	gw = grep --ignore-case --line-number --word-regexp
 	gwf = !sh -c 'git gw $1 -- $2' -
