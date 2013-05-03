@@ -30,6 +30,7 @@
 	findfile = ls-files
 	f = ls-files
 	g = grep --ignore-case --line-number
+	grep-code-string = grep --ignore-case --line-number -F
 	gs = grep --ignore-case --line-number -F
 	gf = !sh -c 'git g $1 -- $2' -
 	gw = grep --ignore-case --line-number --word-regexp
@@ -51,8 +52,11 @@
 	l = log --graph --pretty=format:'%C(bold magenta)%h%Creset %C(bold yellow)%d%C(reset) %s %C(bold green)(%cr) %C(bold cyan)<%an>%Creset' --abbrev-commit
 	ll = log --name-status --abbrev-commit --date=relative
 	l1 = log -1 --abbrev-commit --date=relative
+	grep-commit-string = !sh -c 'git ll -i -F --grep=\"$1\"' -
+	lgs = !sh -c 'git ll -i -F --grep=\"$1\"' -
 	la = !sh -c 'git ll -i --author=$1' -
 	lag = !sh -c 'git ll -i --author=$1 --grep=$2' -
+	lags = !sh -c 'git ll -i --author=$1 -F --grep=\"$2\"' -
 	tags = !sh -c 'git l origin/master | grep refs/tags | less'
 	ub = !sh -c 'git fetch origin && git b -f master origin/master && git r master'
 	ubt = !sh -c 'git fetch origin && git b -f master $1 && git r master' -
