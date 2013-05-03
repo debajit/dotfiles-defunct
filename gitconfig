@@ -29,6 +29,7 @@
 	dts = difftool --staged
 	findfile = ls-files
 	f = ls-files
+	grep-code-pattern = grep --ignore-case --line-number
 	g = grep --ignore-case --line-number
 	grep-code-string = grep --ignore-case --line-number -F
 	gs = grep --ignore-case --line-number -F
@@ -52,6 +53,8 @@
 	l = log --graph --pretty=format:'%C(bold magenta)%h%Creset %C(bold yellow)%d%C(reset) %s %C(bold green)(%cr) %C(bold cyan)<%an>%Creset' --abbrev-commit
 	ll = log --name-status --abbrev-commit --date=relative
 	l1 = log -1 --abbrev-commit --date=relative
+	grep-commit-pattern = !sh -c 'git ll -i --grep=$1' -
+	lg = !sh -c 'git ll -i --grep=$1' -
 	grep-commit-string = !sh -c 'git ll -i -F --grep=\"$1\"' -
 	lgs = !sh -c 'git ll -i -F --grep=\"$1\"' -
 	la = !sh -c 'git ll -i --author=$1' -
