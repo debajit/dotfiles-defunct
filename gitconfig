@@ -61,7 +61,6 @@
 	la = !sh -c 'git ll -i --author=$1' -
 	lag = !sh -c 'git ll -i --author=$1 --grep=$2' -
 	lags = !sh -c 'git ll -i --author=$1 -F --grep=\"$2\"' -
-	tags = !sh -c 'git l origin/master | grep refs/tags | less'
 	ub = !sh -c 'git fetch origin && git b -f master origin/master && git r master'
 	ubt = !sh -c 'git fetch origin && git b -f master $1 && git r master' -
 	um = !sh -c 'git fetch origin && git r origin/master'
