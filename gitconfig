@@ -49,7 +49,6 @@
 	outgoing = log origin/master.. --name-status --abbrev-commit --date=relative
 	out = log origin/master.. --name-status --abbrev-commit --date=relative
 	outp = log origin/master.. -p --abbrev-commit --date=relative
-	tip = show head --name-status --abbrev-commit --date=relative
 	s = status
 	sn = status -uno
 	l = log --graph --pretty=format:'%C(bold magenta)%h%Creset %C(bold yellow)%d%C(reset) %s %C(bold green)(%cr) %C(bold cyan)<%an>%Creset' --abbrev-commit
