@@ -2,6 +2,8 @@
 	name = Debajit Adhikary
 	email = [ENTER EMAIL ADDRESS HERE]
 [alias]
+	a = commit --amend --no-edit
+	af = commit --amend -F
 	b = branch
 	bm = branch --move
 	c = checkout
