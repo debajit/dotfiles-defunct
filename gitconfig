@@ -5,6 +5,8 @@
 	a = commit --amend --no-edit
 	af = commit --amend -F
 	b = branch
+	ba = branch -a
+	bd = branch -d
 	bm = branch --move
 	c = checkout
 	cb = checkout -b
