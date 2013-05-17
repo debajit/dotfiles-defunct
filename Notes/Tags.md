@@ -1,36 +1,45 @@
-h1. Tags
+Tags
+====
 
-**Create a tag**
-git tag <tag-name>
-git tag <tag-name> <commit-id == HEAD>
-git tag v1 5708b55
+### Create a tag
 
-
-**Delete a local tag**
-git tag -d <tag-name>
-git tag -d v1
+    git tag <tagName>
+    git tag <tagName> <commitId = HEAD>
+    git tag v1 5708b55
 
 
-**Delete a remote tag**
-git push <remote-name> --delete <tag-name>
+### Delete a local tag
+
+    git tag -d <tagName>
+    git tag -d v1
 
 
-**Rename a tag**
+### Delete a remote tag
+
+    git push <remoteName> --delete <tagName>
+
+
+### Rename a tag
+
 Delete the tag and recreate it
-git tag -d v1
-git tag v1 [commit-id == HEAD]
+    
+    git tag -d v1
+    git tag v1 [commitId = HEAD]
 
 
-**Checkout a tag**
-git b branchname tagname
-git c branchname
-git cb uifixes v600
+### Checkout a tag
+
+    git b <branchName> <tagName>
+    git c <branchName>
+    git cb uifixes v600
 
 
-**Push one tag to a remote**
-git push <remote-name> <tag-name>
-git push <remote-name> tag <tag-name>
+### Push one tag to a remote
+
+    git push <remoteName> <tagName>
+    git push <remoteName> tag <tagName>
 
 
-**Push all tags**
-git push --tags <remote-name>
+### Push all tags to a remote
+
+    git push --tags <remoteName>
