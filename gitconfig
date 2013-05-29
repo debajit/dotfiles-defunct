@@ -2,6 +2,8 @@
 	name = Debajit Adhikary
 	email = [ENTER EMAIL ADDRESS HERE]
 [alias]
+	s = status
+	su = status -u
 	a = commit --amend --no-edit
 	af = commit --amend -F
 	b = branch
@@ -49,8 +51,6 @@
 	out = log @{u}.. --name-status
 	outp = log @{u}.. -p
 	tip = log -1
-	s = status
-	sn = status -uno
 	l = log --graph --pretty=format:'%C(bold magenta)%h%Creset %C(bold yellow)%d%C(reset) %s %C(bold green)(%cr) %C(bold cyan)<%an>%Creset'
 	ll = log --name-status
 	la = !sh -c 'git ll -i --author=$1' -
@@ -89,6 +89,10 @@
 	abbrevCommit = true
 	date = relative
 	decorate = full
+[push]
+	default = simple
+[status]
+	showUntrackedFiles = no
 [difftool]
 	prompt = false
 [difftool "Kaleidoscope"]
@@ -102,5 +106,3 @@
 	prompt = false
 [merge]
 	tool = Kaleidoscope
-[push]
-	default = simple
