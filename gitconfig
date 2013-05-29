@@ -11,10 +11,7 @@
 	c = checkout
 	cb = checkout -b
 	ci = commit
-	cia = commit --amend
 	cif = commit -F
-	ciaf = commit --amend -F
-	cian = commit --amend --no-edit
 	cp = cherry-pick
 	cv = cherry -v
 	d = diff
@@ -33,37 +30,37 @@
 	dts = difftool --staged
 	findfile = ls-files
 	f = ls-files
-	grep-code-pattern = grep --ignore-case --line-number
-	g = grep --ignore-case --line-number
-	grep-code-string = grep --ignore-case --line-number -F
-	gs = grep --ignore-case --line-number -F
+	grep-code-pattern = grep --ignore-case
+	g = grep --ignore-case
 	gf = !sh -c 'git g $1 -- $2' -
-	gw = grep --ignore-case --line-number --word-regexp
+	gw = grep --ignore-case --word-regexp
 	gwf = !sh -c 'git gw $1 -- $2' -
+	grep-code-string = grep --ignore-case -F
+	gs = grep --ignore-case -F
 	m = merge
 	mff = merge --ff-only
 	mt = mergetool
 	r = rebase
 	rc = rebase --continue
 	ri = rebase -i
-	incoming = log ..@{u} --name-status --abbrev-commit --date=relative
-	in = log ..@{u} --name-status --abbrev-commit --date=relative
-	outgoing = log @{u}.. --name-status --abbrev-commit --date=relative
-	out = log @{u}.. --name-status --abbrev-commit --date=relative
-	outp = log @{u}.. -p --abbrev-commit --date=relative
+	incoming = log ..@{u} --name-status
+	in = log ..@{u} --name-status
+	outgoing = log @{u}.. --name-status
+	out = log @{u}.. --name-status
+	outp = log @{u}.. -p
+	tip = log -1
 	s = status
 	sn = status -uno
-	l = log --graph --pretty=format:'%C(bold magenta)%h%Creset %C(bold yellow)%d%C(reset) %s %C(bold green)(%cr) %C(bold cyan)<%an>%Creset' --abbrev-commit
-	ll = log --name-status --abbrev-commit --date=relative
-	l1 = log -1 --abbrev-commit --date=relative
+	l = log --graph --pretty=format:'%C(bold magenta)%h%Creset %C(bold yellow)%d%C(reset) %s %C(bold green)(%cr) %C(bold cyan)<%an>%Creset'
+	ll = log --name-status
+	la = !sh -c 'git ll -i --author=$1' -
 	grep-commit-pattern = !sh -c 'git ll -i --grep=$1' -
 	lg = !sh -c 'git ll -i --grep=$1' -
 	grep-commit-string = !sh -c 'git ll -i -F --grep=\"$1\"' -
 	lgs = !sh -c 'git ll -i -F --grep=\"$1\"' -
-	la = !sh -c 'git ll -i --author=$1' -
 	lag = !sh -c 'git ll -i --author=$1 --grep=$2' -
 	lags = !sh -c 'git ll -i --author=$1 -F --grep=\"$2\"' -
-	tip = log -1 --abbrev-commit --date=relative
+	t = tag
 	ub = !sh -c 'git fetch origin && git b -f master origin/master && git r master'
 	ubt = !sh -c 'git fetch origin && git b -f master $1 && git r master' -
 	um = !sh -c 'git fetch origin && git r origin/master'
@@ -86,7 +83,11 @@
 	changed = bold red
 	untracked = bold red
 	nobranch = bold red
+[grep]
+	lineNumber = true
 [log]
+	abbrevCommit = true
+	date = relative
 	decorate = full
 [difftool]
 	prompt = false
