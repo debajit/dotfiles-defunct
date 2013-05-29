@@ -46,11 +46,11 @@
 	r = rebase
 	rc = rebase --continue
 	ri = rebase -i
-	incoming = log ..origin/master --name-status --abbrev-commit --date=relative
-	in = log ..origin/master --name-status --abbrev-commit --date=relative
-	outgoing = log origin/master.. --name-status --abbrev-commit --date=relative
-	out = log origin/master.. --name-status --abbrev-commit --date=relative
-	outp = log origin/master.. -p --abbrev-commit --date=relative
+	incoming = log ..@{u} --name-status --abbrev-commit --date=relative
+	in = log ..@{u} --name-status --abbrev-commit --date=relative
+	outgoing = log @{u}.. --name-status --abbrev-commit --date=relative
+	out = log @{u}.. --name-status --abbrev-commit --date=relative
+	outp = log @{u}.. -p --abbrev-commit --date=relative
 	s = status
 	sn = status -uno
 	l = log --graph --pretty=format:'%C(bold magenta)%h%Creset %C(bold yellow)%d%C(reset) %s %C(bold green)(%cr) %C(bold cyan)<%an>%Creset' --abbrev-commit
