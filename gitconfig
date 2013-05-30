@@ -83,6 +83,10 @@
 	changed = bold red
 	untracked = bold red
 	nobranch = bold red
+[column]
+	branch = column
+	status = column
+	tag = column
 [grep]
 	lineNumber = true
 [log]
