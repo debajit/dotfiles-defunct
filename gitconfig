@@ -14,6 +14,7 @@
 	cb = checkout -b
 	ci = commit
 	cif = commit -F
+	cim = commit -m
 	cp = cherry-pick
 	cv = cherry -v
 	d = diff
@@ -45,6 +46,7 @@
 	r = rebase
 	rc = rebase --continue
 	ri = rebase -i
+	t = tag
 	incoming = log ..@{u} --name-status
 	in = log ..@{u} --name-status
 	outgoing = log @{u}.. --name-status
@@ -52,7 +54,9 @@
 	outp = log @{u}.. -p
 	tip = log -1
 	l = log --graph --pretty=format:'%C(bold magenta)%h%Creset %C(bold yellow)%d%C(reset) %s %C(bold green)(%cr) %C(bold cyan)<%an>%Creset'
+	ln = !sh -c 'git l -n $1' -
 	ll = log --name-status
+	lln = !sh -c 'git ll -n $1' -
 	la = !sh -c 'git ll -i --author=$1' -
 	grep-commit-pattern = !sh -c 'git ll -i --grep=$1' -
 	lg = !sh -c 'git ll -i --grep=$1' -
