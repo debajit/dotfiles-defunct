@@ -68,6 +68,8 @@
 	ubt = !sh -c 'git fetch origin && git b -f master $1 && git r master' -
 	um = !sh -c 'git fetch origin && git r origin/master'
 	umt = !sh -c 'git fetch origin && git r $1' -
+[core]
+	excludesfile = ~/.gitignore_global
 [color]
 	ui = auto
 [color "branch"]
