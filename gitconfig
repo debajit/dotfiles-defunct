@@ -3,7 +3,6 @@
 	email = [ENTER EMAIL ADDRESS HERE]
 [alias]
 	s = status
-	su = status -u
 	a = commit --amend --no-edit
 	af = commit --amend -F
 	alias = !sh -c 'git config "alias.$1"' -
@@ -102,8 +101,6 @@
 	decorate = full
 [push]
 	default = simple
-[status]
-	showUntrackedFiles = no
 [difftool]
 	prompt = false
 [difftool "Kaleidoscope"]
