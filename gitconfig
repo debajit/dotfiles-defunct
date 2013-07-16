@@ -6,6 +6,8 @@
 	su = status -u
 	a = commit --amend --no-edit
 	af = commit --amend -F
+	alias = !sh -c 'git config "alias.$1"' -
+	al = !sh -c 'git config "alias.$1"' -
 	b = branch
 	ba = branch -a
 	bd = branch -d
