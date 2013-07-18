@@ -99,6 +99,8 @@
 	abbrevCommit = true
 	date = relative
 	decorate = full
+[pager]
+	status = true
 [push]
 	default = simple
 [difftool]
