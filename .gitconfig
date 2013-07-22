@@ -1,24 +1,17 @@
 [user]
 	name = Debajit Adhikary
 	email = [ENTER EMAIL ADDRESS HERE]
+	
 [alias]
+
+	# Status
 	s = status
-	a = commit --amend --no-edit
-	af = commit --amend -F
+
+	# Find alias
 	alias = !sh -c 'git config "alias.$1"' -
 	al = !sh -c 'git config "alias.$1"' -
-	b = branch
-	ba = branch -a
-	bd = branch -d
-	bm = branch --move
-	bv = branch -vv
-	c = checkout
-	cb = checkout -b
-	ci = commit
-	cif = commit -F
-	cim = commit -m
-	cp = cherry-pick
-	cv = cherry -v
+	
+	# Diff
 	d = diff --color-words
 	dw = !sh -c 'git d -W'
 	ds = !sh -c 'git d --staged' -
@@ -34,8 +27,12 @@
 	dth2 = difftool head~2
 	dtp = !sh -c 'git difftool "$1~1" "$1"' -
 	dts = difftool --staged
+	
+	# Find file
 	findfile = ls-files
 	f = ls-files
+	
+	# Grep. TODO: Clean up
 	grep-code-pattern = grep --ignore-case
 	g = grep --ignore-case
 	gf = !sh -c 'git g $1 -- $2' -
@@ -43,18 +40,49 @@
 	gwf = !sh -c 'git gw $1 -- $2' -
 	grep-code-string = grep --ignore-case -F
 	gs = grep --ignore-case -F
+
+	# Branch
+	b = branch
+	ba = branch -a
+	bd = branch -d
+	bm = branch --move
+	bv = branch -vv
+	
+	# Checkout
+	c = checkout
+	cb = checkout -b
+	
+	# Commit
+	ci = commit
+	cif = commit -F
+	cim = commit -m
+	a = commit --amend --no-edit
+	af = commit --amend -F
+	
+	cp = cherry-pick
+	cv = cherry -v
+		
+	# Merge
 	m = merge
 	mff = merge --ff-only
 	mt = mergetool
+	
+	# Rebase
 	r = rebase
 	rc = rebase --continue
 	ri = rebase -i
+	
+	# Tagging
 	t = tag
+	
+	# Incoming / Outgoing (Compares with upstream)
 	incoming = log ..@{u} --name-status
 	in = log ..@{u} --name-status
 	outgoing = log @{u}.. --name-status
 	out = log @{u}.. --name-status
 	outp = log @{u}.. -p
+	
+	# Log	
 	tip = log -1
 	l = log --graph --pretty=format:'%C(bold magenta)%h%Creset %C(bold yellow)%d%C(reset) %s %C(bold green)(%cr) %C(bold cyan)<%an>%Creset'
 	ll = log --name-status
@@ -65,13 +93,15 @@
 	lgs = !sh -c 'git ll -i -F --grep=\"$1\"' -
 	lag = !sh -c 'git ll -i --author=$1 --grep=$2' -
 	lags = !sh -c 'git ll -i --author=$1 -F --grep=\"$2\"' -
-	t = tag
+
+	# Update branch aliases (project-specific)
 	ub = !sh -c 'git fetch origin && git b -f master origin/master && git r master'
 	ubt = !sh -c 'git fetch origin && git b -f master $1 && git r master' -
 	um = !sh -c 'git fetch origin && git r origin/master'
 	umt = !sh -c 'git fetch origin && git r $1' -
+	
 [color]
-	ui = auto
+	ui = auto	
 [color "branch"]
 	current = bold cyan
 	local = normal dim
