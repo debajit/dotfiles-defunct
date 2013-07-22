@@ -19,7 +19,8 @@
 	cim = commit -m
 	cp = cherry-pick
 	cv = cherry -v
-	d = diff
+	d = diff --word-diff=color
+	dw = !sh -c 'git d -W'
 	dm = !sh -c 'git ls-files -m $1 | xargs git diff' -
 	dh = diff head
 	dh1 = diff head~1
