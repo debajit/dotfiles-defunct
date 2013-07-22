@@ -19,14 +19,14 @@
 	cim = commit -m
 	cp = cherry-pick
 	cv = cherry -v
-	d = diff --word-diff=color
+	d = diff --color-words
 	dw = !sh -c 'git d -W'
-	dm = !sh -c 'git ls-files -m $1 | xargs git diff' -
-	dh = diff head
-	dh1 = diff head~1
-	dh2 = diff head~2
-	dp = !sh -c 'git diff "$1~1" "$1"' -
-	ds = diff --staged
+	ds = !sh -c 'git d --staged' -
+	dh = !sh -c 'git d head' -
+	dh1 = !sh -c 'git d head~1' -
+	dh2 = !sh -c 'git d head~2' -
+	dp = !sh -c 'git d "$1~1" "$1"' -
+	dm = !sh -c 'git ls-files -m $1 | xargs git d' -
 	dt = difftool
 	dtm = !sh -c 'git ls-files -m $1 | xargs git difftool' -
 	dth = difftool head
