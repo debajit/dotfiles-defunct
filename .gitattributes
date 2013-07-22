@@ -1,8 +1,8 @@
 #---------------------------------------------
-#  .gitattributes file for a C# project
+#  .gitattributes file
 #---------------------------------------------
 #  Place this at the root of your C# project
-#  and rename this file to .gitattributes
 #---------------------------------------------
 
 *.cs diff=csharp
+*.m diff=objc
