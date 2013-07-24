@@ -35,13 +35,10 @@
 	findfile = ls-files
 	f = ls-files
 	
-	# Grep. TODO: Clean up
-	grep-code-pattern = grep --ignore-case
+	# Grep
 	g = grep --ignore-case
-	gf = !sh -c 'git g $1 -- $2' -
+	todo = grep -i -e todo -e fixme
 	gw = grep --ignore-case --word-regexp
-	gwf = !sh -c 'git gw $1 -- $2' -
-	grep-code-string = grep --ignore-case -F
 	gs = grep --ignore-case -F
 
 	# Branch
