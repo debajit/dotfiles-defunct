@@ -104,7 +104,7 @@
 	ui = auto	
 [color "branch"]
 	current = bold cyan
-	local = normal dim
+	local = normal
 	remote = bold red
 [color "diff"]
 	meta = cyan bold
