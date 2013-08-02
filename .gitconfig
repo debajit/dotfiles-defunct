@@ -13,9 +13,7 @@
 	
 	# Diff
 	d = diff --color-words
-	dw = !sh -c 'git d -W'
-	dm = !sh -c 'git ls-files -m -- "$1" | xargs git d' -
-	dwm = !sh -c 'git ls-files -m -- "$1" | xargs git diff --color-words -W' -
+	dw = diff --color-words -W
 	ds = !sh -c 'git d --staged' -
 	dh = !sh -c 'git d head' -
 	dh1 = !sh -c 'git d head~1' -
@@ -24,12 +22,11 @@
 
 	# Difftool aliases
 	dt = difftool
-	dtm = !sh -c 'git ls-files -m "$1" | xargs git difftool' -
+	dts = difftool --staged
 	dth = difftool head
 	dth1 = difftool head~1
 	dth2 = difftool head~2
 	dtp = !sh -c 'git difftool "$1~1" "$1"' -
-	dts = difftool --staged
 	
 	# Find file
 	findfile = ls-files
