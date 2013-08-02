@@ -107,7 +107,7 @@
 	local = normal
 	remote = bold red
 [color "diff"]
-	meta = cyan bold
+	meta = cyan bold reverse
 	frag = magenta bold
 	old = red bold
 	new = green bold
