@@ -98,49 +98,64 @@
 	umt = !sh -c 'git fetch origin && git r $1' -
 	
 [color]
-	ui = auto	
+	ui = auto
+	
 [color "branch"]
 	current = bold cyan
 	local = normal
 	remote = bold red
+	
 [color "diff"]
 	meta = cyan bold reverse
 	frag = magenta bold
 	old = red bold
 	new = green bold
 	whitespace = white reverse
+	
 [color "status"]
 	added = bold red
 	updated = bold green
 	changed = bold red
-	untracked = bold red
+	untracked = yellow
 	nobranch = bold red
+	
 [column]
 	branch = column
 	status = column
 	tag = column
+	
 [core]
 	excludesfile = ~/.gitignore_global
+	
 [difftool]
 	prompt = false
+	
 [difftool "Kaleidoscope"]
 	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+	
 [diff]
 	tool = Kaleidoscope
+	
 [grep]
 	lineNumber = true
+	
 [log]
 	abbrevCommit = true
 	date = relative
 	decorate = full
+	
 [mergetool "Kaleidoscope"]
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 	trustExitCode = true
+	
 [mergetool]
 	prompt = false
+	
 [merge]
 	tool = Kaleidoscope
+	
 [pager]
 	status = true
+	
 [push]
 	default = simple
