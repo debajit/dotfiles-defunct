@@ -11,6 +11,13 @@
 	alias = !sh -c 'git config "alias.$1"' -
 	al = !sh -c 'git config "alias.$1"' -
 	
+	# Grep
+	g = grep --ignore-case
+	gfunc = grep --ignore-case --function-context -e
+	gword = grep --ignore-case --word-regexp
+	gstr = grep --ignore-case -F
+	todo = grep -i -e todo -e fixme
+
 	# Diff
 	d = diff --color-words
 	dw = diff --color-words -W
@@ -32,12 +39,6 @@
 	findfile = ls-files
 	f = ls-files
 	
-	# Grep
-	g = grep --ignore-case
-	todo = grep -i -e todo -e fixme
-	gw = grep --ignore-case --word-regexp
-	gs = grep --ignore-case -F
-
 	# Branch
 	b = branch
 	ba = branch -a
