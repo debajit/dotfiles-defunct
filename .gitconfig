@@ -10,7 +10,7 @@
 	# Add
 	a = !sh -c 'git stage -u :/ && git s'
 
-	# Find Aliases
+	# Aliases
 	alias = !sh -c 'git config "alias.$1"' -
 	al = !sh -c 'git config "alias.$1"' -
 
