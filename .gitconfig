@@ -7,9 +7,16 @@
 	# Status
 	s = status
 
-	# Find alias
+	# Add
+	a = !sh -c 'git stage -u :/ && git s'
+
+	# Find Aliases
 	alias = !sh -c 'git config "alias.$1"' -
 	al = !sh -c 'git config "alias.$1"' -
+
+	# Amend (long wordy alias, to prevent unnecessary reflog resets after an erroneous amend)
+	amend = commit --amend --no-edit
+	amendf = commit --amend -F
 	
 	# Grep
 	g = grep --ignore-case
@@ -55,9 +62,7 @@
 	ci = commit
 	cif = commit -F
 	cim = commit -m
-	a = commit --amend --no-edit
-	af = commit --amend -F
-	
+
 	cp = cherry-pick
 	cv = cherry -v
 		
@@ -155,7 +160,7 @@
 	
 [merge]
 	tool = Kaleidoscope
-	
+
 [pager]
 	status = true
 	
