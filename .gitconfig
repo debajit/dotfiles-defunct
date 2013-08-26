@@ -35,6 +35,10 @@
 	dfunc = diff --color-words -W
 	dw = diff --color-words -W
 
+	# Diff context
+	dd = diff --color-words -U10
+	ddd = diff --color-words -U20
+
 	# Difftool aliases
 	dt = difftool
 	dts = difftool --staged
