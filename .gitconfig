@@ -128,7 +128,7 @@
 	added = bold red
 	updated = bold green
 	changed = bold red
-	untracked = yellow
+	untracked = bold red
 	nobranch = bold red
 	
 [column]
