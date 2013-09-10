@@ -1,3 +1,10 @@
+#
+# .gitconfig
+#
+# Place this in ~/.gitconfig or %userprofile%\.gitconfig
+#
+
+
 [user]
 	name = Debajit Adhikary
 	email = [ENTER EMAIL ADDRESS HERE]
