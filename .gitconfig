@@ -17,10 +17,6 @@
 	# Add
 	a = !sh -c 'git stage -u :/ && git s'
 
-	# Aliases
-	alias = !sh -c 'git config "alias.$1"' -
-	al = !sh -c 'git config "alias.$1"' -
-
 	# Amend (long wordy alias, to prevent unnecessary reflog resets after an erroneous amend)
 	amend = commit --amend --no-edit
 	amendf = commit --amend -F
