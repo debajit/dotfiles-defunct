@@ -1,2 +1,9 @@
+#
+# Example project-specific .gitattributes file
+#
+# This should be placed at the root of a repository.
+# For additional information, see "git help attributes"
+#
+
 *.cs diff=csharp
 *.m diff=objc
