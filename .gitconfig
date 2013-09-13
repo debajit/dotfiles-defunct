@@ -30,13 +30,12 @@
 
 	# Diff
 	d = diff --color-words
-	ds = !sh -c 'git d --staged' -
-	dh = !sh -c 'git d head' -
-	dh1 = !sh -c 'git d head~1' -
-	dh2 = !sh -c 'git d head~2' -
-	dp = !sh -c 'git d "$1~1" "$1"' -
+	ds = diff --staged --color-words
+	dh = diff head
+	dh1 = diff head~1
+	dh2 = git diff head~2
+	dprev = !sh -c 'git d "$1~1" "$1"' -
 	dfunc = diff --color-words -W
-	dw = diff --color-words -W
 
 	# Diff context
 	dd = diff --color-words -U10
