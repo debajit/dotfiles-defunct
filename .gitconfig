@@ -85,6 +85,8 @@
 	
 	# Tagging
 	t = tag
+	tt = tag -n10
+	tags = tag -n10
 	
 	# Incoming / Outgoing (Compares with upstream)
 	incoming = log ..@{u} --name-status
