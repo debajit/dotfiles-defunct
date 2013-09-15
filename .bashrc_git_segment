@@ -1,0 +1,28 @@
+#
+# .bashrc segment
+# Copy and paste the following lines to .bashrc
+#
+
+
+# Git autocomplete for OS X.
+# We need to source git-completion.bash.
+# If you've installed git using brew, a "brew info git" will show where this is installed.
+# Otherwise you should be able to find this file in your system.
+source ~/Applications/homebrew/etc/bash_completion.d/git-completion.bash
+
+
+# Git prompt.
+# We need to source git-prompt.sh.
+# If you've installed git using brew, a "brew info git" will show where this is installed.
+# Otherwise you should be able to find this file in your system.
+source ~/Applications/homebrew/etc/bash_completion.d/git-prompt.sh
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWUNTRACKEDFILES=1
+export GIT_PS1_SHOWUPSTREAM="auto"
+export GIT_PS1_SHOWCOLORHINTS=1
+
+
+# Prompt.
+# For git-prompt details see git-prompt.sh (you will find this installed locally e.g. "brew info git")
+# For prompt color information see http://www.cyberciti.biz/faq/bash-shell-change-the-color-of-my-shell-prompt-under-linux-or-unix/
+export PS1='\u@\h \e[1;36m\W\e[1;31m$(__git_ps1 " (%s)")\e[m$ '
