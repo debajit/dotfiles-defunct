@@ -96,16 +96,16 @@
 	outp = log @{u}.. -p
 	
 	# Log	
-	tip = log --name-status -1
-	l = log --graph --pretty=format:'%C(bold magenta)%h%Creset %C(bold yellow)%d%C(reset) %s %C(bold green)(%cr) %C(bold cyan)<%an>%Creset'
-	ll = log --name-status
-	author = !sh -c 'git ll -i --author=$1' -
-	authorgrep = !sh -c 'git ll -i --author=$1 --grep=$2' -
-	authorgreps = !sh -c 'git ll -i --author=$1 -F --grep=\"$2\"' -
-	grep-commit-pattern = !sh -c 'git ll -i --grep=$1' -
-	lg = !sh -c 'git ll -i --grep=$1' -
-	grep-commit-string = !sh -c 'git ll -i -F --grep=\"$1\"' -
-	lgs = !sh -c 'git ll -i -F --grep=\"$1\"' -
+    tip = log --name-status -1
+    l = log --graph --pretty=format:'%C(bold magenta)%h%Creset %C(bold yellow)%d%C(reset) %s %C(bold green)(%cr) %C(bold cyan)<%an>%Creset'
+    ll = log --name-status
+    author = !sh -c 'git ll -i --author=$1' -
+    authorgrep = !sh -c 'git ll -i --author=$1 --grep=$2' -
+    authorgreps = !sh -c 'git ll -i --author=$1 -F --grep=\"$2\"' -
+    grep-commit-pattern = !sh -c 'git ll -i --grep=$1' -
+    lg = !sh -c 'git ll -i --grep=$1' -
+    grep-commit-string = !sh -c 'git ll -i -F --grep=\"$1\"' -
+    lgs = !sh -c 'git ll -i -F --grep=\"$1\"' -
 
 	# Update branch aliases (project-specific)
 	ub = !sh -c 'git fetch origin && git b -f master origin/master && git r master'
@@ -143,6 +143,9 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	
+[credential]
+	helper = osxkeychain
+
 [difftool]
 	prompt = false
 	
