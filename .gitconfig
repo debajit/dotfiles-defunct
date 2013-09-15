@@ -6,96 +6,96 @@
 
 
 [user]
-	name = Debajit Adhikary
-	email = [ENTER EMAIL ADDRESS HERE]
-	
+    name = Debajit Adhikary
+    email = [ENTER EMAIL ADDRESS HERE]
+    
 [alias]
 
-	# Status
-	s = status
+    # Status
+    s = status
 
-	# Add
-	a = !sh -c 'git stage -u :/ && git s'
+    # Add
+    a = !sh -c 'git stage -u :/ && git s'
 
-	# Amend (long wordy alias, to prevent unnecessary reflog resets after an erroneous amend)
-	amend = commit --amend --no-edit
-	amendf = commit --amend -F
-	
-	# Grep
-	g = grep --ignore-case
-	gfunc = grep --ignore-case --function-context -e
-	gword = grep --ignore-case --word-regexp
-	gstr = grep --ignore-case -F
-	todo = grep -i -e todo -e fixme
+    # Amend (long wordy alias, to prevent unnecessary reflog resets after an erroneous amend)
+    amend = commit --amend --no-edit
+    amendf = commit --amend -F
+    
+    # Grep
+    g = grep --ignore-case
+    gfunc = grep --ignore-case --function-context -e
+    gword = grep --ignore-case --word-regexp
+    gstr = grep --ignore-case -F
+    todo = grep -i -e todo -e fixme
 
-	# Diff
-	d = diff --color-words
-	ds = diff --staged --color-words
-	dh = diff head
-	dh1 = diff head~1
-	dh2 = git diff head~2
-	dprev = !sh -c 'git d "$1~1" "$1"' -
-	dfunc = diff --color-words -W
+    # Diff
+    d = diff --color-words
+    ds = diff --staged --color-words
+    dh = diff head
+    dh1 = diff head~1
+    dh2 = git diff head~2
+    dprev = !sh -c 'git d "$1~1" "$1"' -
+    dfunc = diff --color-words -W
 
-	# Diff context
-	dd = diff --color-words -U10
-	ddd = diff --color-words -U20
+    # Diff context
+    dd = diff --color-words -U10
+    ddd = diff --color-words -U20
 
-	# Difftool aliases
-	dt = difftool
-	dts = difftool --staged
-	dth = difftool head
-	dth1 = difftool head~1
-	dth2 = difftool head~2
-	dtp = !sh -c 'git difftool "$1~1" "$1"' -
-	
-	# Find file
-	findfile = ls-files
-	f = ls-files
-	
-	# Branch
-	b = branch
-	ba = branch -a
-	bd = branch -d
-	bm = branch --move
-	bv = branch -vv
-	
-	# Checkout
-	c = checkout
-	cb = checkout -b
-	
-	# Commit
-	ci = commit
-	cif = commit -F
-	cim = commit -m
+    # Difftool aliases
+    dt = difftool
+    dts = difftool --staged
+    dth = difftool head
+    dth1 = difftool head~1
+    dth2 = difftool head~2
+    dtp = !sh -c 'git difftool "$1~1" "$1"' -
+    
+    # Find file
+    findfile = ls-files
+    f = ls-files
+    
+    # Branch
+    b = branch
+    ba = branch -a
+    bd = branch -d
+    bm = branch --move
+    bv = branch -vv
+    
+    # Checkout
+    c = checkout
+    cb = checkout -b
+    
+    # Commit
+    ci = commit
+    cif = commit -F
+    cim = commit -m
 
-	cp = cherry-pick
-	cv = cherry -v
-		
-	# Merge
-	m = merge
-	mff = merge --ff-only
-	mt = mergetool
-	mo = merge -s ours
-	
-	# Rebase
-	r = rebase
-	rc = rebase --continue
-	ri = rebase -i
-	
-	# Tagging
-	t = tag
-	tt = tag -n10
-	tags = tag -n10
-	
-	# Incoming / Outgoing (Compares with upstream)
-	incoming = log ..@{u} --name-status
-	in = log ..@{u} --name-status
-	outgoing = log @{u}.. --name-status
-	out = log @{u}.. --name-status
-	outp = log @{u}.. -p
-	
-	# Log	
+    cp = cherry-pick
+    cv = cherry -v
+        
+    # Merge
+    m = merge
+    mff = merge --ff-only
+    mt = mergetool
+    mo = merge -s ours
+    
+    # Rebase
+    r = rebase
+    rc = rebase --continue
+    ri = rebase -i
+    
+    # Tagging
+    t = tag
+    tt = tag -n10
+    tags = tag -n10
+    
+    # Incoming / Outgoing (Compares with upstream)
+    incoming = log ..@{u} --name-status
+    in = log ..@{u} --name-status
+    outgoing = log @{u}.. --name-status
+    out = log @{u}.. --name-status
+    outp = log @{u}.. -p
+    
+    # Log   
     tip = log --name-status -1
     l = log --graph --pretty=format:'%C(bold magenta)%h%Creset %C(bold yellow)%d%C(reset) %s %C(bold green)(%cr) %C(bold cyan)<%an>%Creset'
     ll = log --name-status
@@ -107,74 +107,74 @@
     grep-commit-string = !sh -c 'git ll -i -F --grep=\"$1\"' -
     lgs = !sh -c 'git ll -i -F --grep=\"$1\"' -
 
-	# Update branch aliases (project-specific)
-	ub = !sh -c 'git fetch origin && git b -f master origin/master && git r master'
-	ubt = !sh -c 'git fetch origin && git b -f master $1 && git r master' -
-	um = !sh -c 'git fetch origin && git r origin/master'
-	umt = !sh -c 'git fetch origin && git r $1' -
-	
+    # Update branch aliases (project-specific)
+    ub = !sh -c 'git fetch origin && git b -f master origin/master && git r master'
+    ubt = !sh -c 'git fetch origin && git b -f master $1 && git r master' -
+    um = !sh -c 'git fetch origin && git r origin/master'
+    umt = !sh -c 'git fetch origin && git r $1' -
+    
 [color]
-	ui = auto
-	
+    ui = auto
+    
 [color "branch"]
-	current = bold cyan
-	local = normal
-	remote = bold red
-	
+    current = bold cyan
+    local = normal
+    remote = bold red
+    
 [color "diff"]
-	meta = cyan bold reverse
-	frag = magenta bold
-	old = red bold
-	new = green bold
-	whitespace = white reverse
-	
+    meta = cyan bold reverse
+    frag = magenta bold
+    old = red bold
+    new = green bold
+    whitespace = white reverse
+    
 [color "status"]
-	added = bold red
-	updated = bold green
-	changed = bold red
-	untracked = bold red
-	nobranch = bold red
-	
+    added = bold red
+    updated = bold green
+    changed = bold red
+    untracked = bold red
+    nobranch = bold red
+    
 [column]
-	branch = column
-	status = column
-	tag = column
-	
+    branch = column
+    status = column
+    tag = column
+    
 [core]
-	excludesfile = ~/.gitignore_global
-	
+    excludesfile = ~/.gitignore_global
+    
 [credential]
-	helper = osxkeychain
+    helper = osxkeychain
 
 [difftool]
-	prompt = false
-	
+    prompt = false
+    
 [difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-	
+    cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+    
 [diff]
-	tool = Kaleidoscope
-	
+    tool = Kaleidoscope
+    
 [grep]
-	lineNumber = true
-	
+    lineNumber = true
+    
 [log]
-	abbrevCommit = true
-	date = relative
-	decorate = full
-	
+    abbrevCommit = true
+    date = relative
+    decorate = full
+    
 [mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustExitCode = true
-	
+    cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+    trustExitCode = true
+    
 [mergetool]
-	prompt = false
-	
+    prompt = false
+    
 [merge]
-	tool = Kaleidoscope
+    tool = Kaleidoscope
 
 [pager]
-	status = true
-	
+    status = true
+    
 [push]
-	default = simple
+    default = simple
