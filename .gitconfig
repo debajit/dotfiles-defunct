@@ -55,6 +55,7 @@
     
     # Branch
     b = branch
+    bb = branch -avv
     ba = branch -a
     bd = branch -d
     bm = branch --move
