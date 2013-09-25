@@ -121,6 +121,7 @@
     current = bold cyan
     local = normal
     remote = bold red
+    upstream = bold green
     
 [color "diff"]
     meta = cyan bold reverse
