@@ -55,11 +55,11 @@
     
     # Branch
     b = branch
-    bb = branch -avv
+    bb = branch -vv
+    bbb = branch -avv
     ba = branch -a
     bd = branch -d
     bm = branch --move
-    bv = branch -vv
     
     # Checkout
     c = checkout
