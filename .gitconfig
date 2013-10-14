@@ -160,6 +160,9 @@
 [grep]
     lineNumber = true
     
+[help]
+    autocorrect = 1
+
 [log]
     abbrevCommit = true
     date = relative
