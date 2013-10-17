@@ -47,7 +47,7 @@
     dth = difftool head
     dth1 = difftool head~1
     dth2 = difftool head~2
-	see = !sh -c 'git difftool -d "$1^!"' -
+    see = !sh -c 'git difftool -d "$1^!"' -
     
     # Find file
     findfile = ls-files
