@@ -104,7 +104,8 @@
     authorgrep = !sh -c 'git ll -i --author=$1 --grep=$2' -
     authorgreps = !sh -c 'git ll -i --author=$1 -F --grep=\"$2\"' -
     grep-commit-pattern = !sh -c 'git ll -i --grep=$1' -
-    lg = !sh -c 'git ll -i --grep=$1' -
+    lg = !sh -c 'git log -i --grep=$1' -
+    lgg = !sh -c 'git ll -i --grep=$1' -
     grep-commit-string = !sh -c 'git ll -i -F --grep=\"$1\"' -
     lgs = !sh -c 'git ll -i -F --grep=\"$1\"' -
 
