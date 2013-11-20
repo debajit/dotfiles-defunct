@@ -85,7 +85,7 @@
     ri = rebase -i
     
     # Tagging
-    t = tag
+    t = tag -l
     tt = tag -n10
     tags = tag -n10
     
