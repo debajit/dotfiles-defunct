@@ -85,7 +85,7 @@
     ri = rebase -i
     
     # Tagging
-    t = tag -l
+    t = tag -l # This allows usage like "git t 2*" to display tags starting with 2
     tt = tag -n10
     tags = tag -n10
     
