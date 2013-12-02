@@ -134,12 +134,6 @@
     ls = !sh -c 'git ll -i -F --grep=\"$1\"' - # Grep for string in commit log
 	
 	
-    # Update branch aliases (project-specific)
-    ub = !sh -c 'git fetch origin && git b -f master origin/master && git r master'
-    ubt = !sh -c 'git fetch origin && git b -f master $1 && git r master' -
-    um = !sh -c 'git fetch origin && git r origin/master'
-    umt = !sh -c 'git fetch origin && git r $1' -
-    
 [color]
     ui = auto
     
