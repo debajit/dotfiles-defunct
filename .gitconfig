@@ -108,30 +108,30 @@
     ## Log   
     
     # Tip of current branch
-	tip = log --name-status -1
+    tip = log --name-status -1
 	
-	# Short log: Handy one-line-per-commit log
-	l = log --graph --pretty=format:'%C(bold magenta)%h%Creset %C(bold yellow)%d%C(reset) %s %C(bold green)(%cr) %C(bold cyan)<%an>%Creset'
+    # Short log: Handy one-line-per-commit log
+    l = log --graph --pretty=format:'%C(bold magenta)%h%Creset %C(bold yellow)%d%C(reset) %s %C(bold green)(%cr) %C(bold cyan)<%an>%Creset'
 	
-	# Long log
-	ll = log --name-status
+    # Long log
+    ll = log --name-status
 	
-	# Author: Show all commits made by the given user
-	a = !sh -c 'git ll -i --author=$1' -
+    # Author: Show all commits made by the given user
+    a = !sh -c 'git ll -i --author=$1' -
 	
-	# Author grep: Show all commits by a particular user, 
-	# with the given regex in the commit log
-	ag = !sh -c 'git ll -i --author=$1 --grep=$2' -
+    # Author grep: Show all commits by a particular user, 
+    # with the given regex in the commit log
+    ag = !sh -c 'git ll -i --author=$1 --grep=$2' -
 	
-	# Author grep fixed string: Show all commits by a particular
-	# user matching the given fixed string in the commit log
-	as = !sh -c 'git ll -i --author=$1 -F --grep=\"$2\"' -
+    # Author grep fixed string: Show all commits by a particular
+    # user matching the given fixed string in the commit log
+    as = !sh -c 'git ll -i --author=$1 -F --grep=\"$2\"' -
 	
-	# Log grep: Search for regex in commit logs
-	lg = !sh -c 'git ll -i --grep=$1' -  # Grep for pattern in commit log
+    # Log grep: Search for regex in commit logs
+    lg = !sh -c 'git ll -i --grep=$1' -  # Grep for pattern in commit log
 	
-	# Log grep fixed string: Search for fixed string in commit log
-	ls = !sh -c 'git ll -i -F --grep=\"$1\"' - # Grep for string in commit log
+    # Log grep fixed string: Search for fixed string in commit log
+    ls = !sh -c 'git ll -i -F --grep=\"$1\"' - # Grep for string in commit log
 	
 	
     # Update branch aliases (project-specific)
