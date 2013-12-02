@@ -14,11 +14,18 @@
     # Status
     s = status
 
-    # Add
-    a = !sh -c 'git stage -u :/ && git s'
+    # Stage: Stage all tracked files and display status
+    st = !sh -c 'git stage -u :/ && git s'
 
-    # Amend (long wordy alias, to prevent unnecessary reflog resets after an erroneous amend)
+    # Amend (long wordy aliases, to prevent unnecessary reflog resets after an erroneous amend)
+    
+    # Amend the current commit with staged changes
+    # without editing the commit message
     amend = commit --amend --no-edit
+    
+    # Amend with file: Amend the current commit 
+    # with staged changes, taking the commit message
+    # from the given file
     amendf = commit --amend -F
     
     # Grep
@@ -97,19 +104,36 @@
     out = log @{u}.. --name-status
     outp = log @{u}.. -p
     
-    # Log   
-    tip = log --name-status -1
-    l = log --graph --pretty=format:'%C(bold magenta)%h%Creset %C(bold yellow)%d%C(reset) %s %C(bold green)(%cr) %C(bold cyan)<%an>%Creset'
-    ll = log --name-status
-    author = !sh -c 'git ll -i --author=$1' -
-    authorgrep = !sh -c 'git ll -i --author=$1 --grep=$2' -
-    authorgreps = !sh -c 'git ll -i --author=$1 -F --grep=\"$2\"' -
-    grep-commit-pattern = !sh -c 'git ll -i --grep=$1' -
-    lg = !sh -c 'git log -i --grep=$1' -
-    lgg = !sh -c 'git ll -i --grep=$1' -
-    grep-commit-string = !sh -c 'git ll -i -F --grep=\"$1\"' -
-    lgs = !sh -c 'git ll -i -F --grep=\"$1\"' -
-
+    
+    ## Log   
+    
+    # Tip of current branch
+	tip = log --name-status -1
+	
+	# Short log: Handy one-line-per-commit log
+	l = log --graph --pretty=format:'%C(bold magenta)%h%Creset %C(bold yellow)%d%C(reset) %s %C(bold green)(%cr) %C(bold cyan)<%an>%Creset'
+	
+	# Long log
+	ll = log --name-status
+	
+	# Author: Show all commits made by the given user
+	a = !sh -c 'git ll -i --author=$1' -
+	
+	# Author grep: Show all commits by a particular user, 
+	# with the given regex in the commit log
+	ag = !sh -c 'git ll -i --author=$1 --grep=$2' -
+	
+	# Author grep fixed string: Show all commits by a particular
+	# user matching the given fixed string in the commit log
+	as = !sh -c 'git ll -i --author=$1 -F --grep=\"$2\"' -
+	
+	# Log grep: Search for regex in commit logs
+	lg = !sh -c 'git ll -i --grep=$1' -  # Grep for pattern in commit log
+	
+	# Log grep fixed string: Search for fixed string in commit log
+	ls = !sh -c 'git ll -i -F --grep=\"$1\"' - # Grep for string in commit log
+	
+	
     # Update branch aliases (project-specific)
     ub = !sh -c 'git fetch origin && git b -f master origin/master && git r master'
     ubt = !sh -c 'git fetch origin && git b -f master $1 && git r master' -
