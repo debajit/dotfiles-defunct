@@ -86,6 +86,7 @@
     
     # Tagging
     t = tag
+    tl = tag -l
     tt = tag -n10
     tags = tag -n10
     
