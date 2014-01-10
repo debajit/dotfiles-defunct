@@ -34,7 +34,7 @@
     gf = grep --ignore-case --function-context -e
     gw = grep --ignore-case --word-regexp -e
     gs = grep --ignore-case -F -e
-    todo = grep -i -e todo -e fixme
+    todo = grep -e TODO -e FIXME
 
     # Diff
     d = diff --color-words
