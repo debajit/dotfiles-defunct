@@ -17,12 +17,13 @@
     # Stage: Stage all tracked files and display status
     st = !sh -c 'git stage -u :/ && git s'
 
-    # Amend (long wordy aliases, to prevent unnecessary reflog resets after an erroneous amend)
-    
+    ## Amend 
+    ## (long wordy aliases, to prevent unnecessary reflog resets after an erroneous amend)
+	
     # Amend the current commit with staged changes
     # without editing the commit message
     amend = commit --amend --no-edit
-    
+	
     # Amend with file: Amend the current commit 
     # with staged changes, taking the commit message
     # from the given file
