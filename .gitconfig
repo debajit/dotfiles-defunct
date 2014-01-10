@@ -29,11 +29,11 @@
     # from the given file
     amendf = commit --amend -F
     
-    # Grep
-    g = grep --ignore-case
-    gfunc = grep --ignore-case --function-context -e
-    gword = grep --ignore-case --word-regexp
-    gstr = grep --ignore-case -F
+    ## Grep
+    g = grep --ignore-case -e
+    gf = grep --ignore-case --function-context -e
+    gw = grep --ignore-case --word-regexp -e
+    gs = grep --ignore-case -F -e
     todo = grep -i -e todo -e fixme
 
     # Diff
