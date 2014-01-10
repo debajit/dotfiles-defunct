@@ -34,14 +34,35 @@
     amendf = commit --amend -F
 
     
-    ## Grep
-    g = grep --ignore-case -e
-    gf = grep --ignore-case --function-context -e
-    gw = grep --ignore-case --word-regexp -e
-    gs = grep --ignore-case -F -e
-    todo = grep -e TODO -e FIXME
+    ## Branch
+    b = branch
+    bb = branch -vv
+    bbb = branch -avv
+    ba = branch -a
+    bd = branch -d
+    bm = branch --move
 
-    # Diff
+    
+    ## Checkout
+    c = checkout
+    cb = checkout -b
+
+    
+    ## Commit
+    ci = commit
+    cif = commit -F
+    cim = commit -m
+
+
+    ## Cherry
+    cv = cherry -v
+
+
+    ## Cherry-Pick
+    cp = cherry-pick
+
+        
+    ## Diff
     d = diff --color-words
     ds = diff --staged --color-words
     dh = diff head
@@ -50,69 +71,33 @@
     dprev = !sh -c 'git d "$1~1" "$1"' -
     dfunc = diff --color-words -W
 
-    # Diff context
+    ## Diff context
     dd = diff --color-words -U10
     ddd = diff --color-words -U20
 
-    # Difftool aliases
+    ## Difftool aliases
     dt = difftool
     dts = difftool --staged
     dth = difftool head
     dth1 = difftool head~1
     dth2 = difftool head~2
     see = !sh -c 'git difftool -d "$1^!"' -
-    
-    # Find file
+
+
+    ## Find file
     findfile = ls-files
     f = ls-files
-    
-    # Branch
-    b = branch
-    bb = branch -vv
-    bbb = branch -avv
-    ba = branch -a
-    bd = branch -d
-    bm = branch --move
-    
-    # Checkout
-    c = checkout
-    cb = checkout -b
-    
-    # Commit
-    ci = commit
-    cif = commit -F
-    cim = commit -m
 
-    cp = cherry-pick
-    cv = cherry -v
-        
-    # Merge
-    m = merge
-    mff = merge --ff-only
-    mt = mergetool
-    mo = merge -s ours
-    
-    # Rebase
-    r = rebase
-    rc = rebase --continue
-    ri = rebase -i
-    
-    # Tagging
-    t = tag
-    tl = tag -l
-    tt = tag -n10
-    tags = tag -n10
-    
-    # Incoming / Outgoing (Compares with upstream)
-    incoming = log ..@{u} --name-status
-    in = log ..@{u} --name-status
-    outgoing = log @{u}.. --name-status
-    out = log @{u}.. --name-status
-    outp = log @{u}.. -p
-    
-    
+
+    ## Grep
+    g = grep --ignore-case -e
+    gf = grep --ignore-case --function-context -e
+    gw = grep --ignore-case --word-regexp -e
+    gs = grep --ignore-case -F -e
+    todo = grep -e TODO -e FIXME
+
+
     ## Log   
-    
 
     # Tip of current branch
     tip = log --name-status -1
@@ -128,6 +113,14 @@
 	
     # Log grep fixed string: Search for fixed string in commit log
     ls = !sh -c 'git ll -i -F --grep=\"$1\"' - # Grep for string in commit log
+
+
+    ## Log Incoming / Outgoing changes (Compares with upstream)
+    incoming = log ..@{u} --name-status
+    in = log ..@{u} --name-status
+    outgoing = log @{u}.. --name-status
+    out = log @{u}.. --name-status
+    outp = log @{u}.. -p
 
 
     ## Log by Author
@@ -146,6 +139,23 @@
     # Commits by me
     me = !git au debajit
 
+
+    ## Merge
+    m = merge
+    mff = merge --ff-only
+    mt = mergetool
+    mo = merge -s ours
+    
+    ## Rebase
+    r = rebase
+    rc = rebase --continue
+    ri = rebase -i
+    
+    ## Tag
+    t = tag
+    tl = tag -l
+    tt = tag -n10
+    tags = tag -n10
 	
 	
 	
