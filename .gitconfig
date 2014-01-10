@@ -11,11 +11,15 @@
     
 [alias]
 
-    # Status
+    ## Status
     s = status
 
-    # Stage: Stage all tracked files and display status
-    st = !sh -c 'git stage -u :/ && git s'
+
+    ## Staging
+
+    # Staging: Stage all tracked files and display status
+    a = !sh -c 'git stage -u :/ && git s'
+
 
     ## Amend 
     ## (long wordy aliases, to prevent unnecessary reflog resets after an erroneous amend)
@@ -28,6 +32,7 @@
     # with staged changes, taking the commit message
     # from the given file
     amendf = commit --amend -F
+
     
     ## Grep
     g = grep --ignore-case -e
@@ -128,18 +133,19 @@
     ## Log by Author
 
     # Author: Show all commits made by the given user
-    a = !sh -c 'git ll -i --author=$1' -
-	
+    au = !sh -c 'git ll -i --author=$1' -
+    
     # Author grep: Show all commits by a particular user, 
     # with the given regex in the commit log
-    ag = !sh -c 'git ll -i --author=$1 --grep=$2' -
-	
+    aug = !sh -c 'git ll -i --author=$1 --grep=$2' -
+    
     # Author grep fixed string: Show all commits by a particular
     # user matching the given fixed string in the commit log
-    as = !sh -c 'git ll -i --author=$1 -F --grep=\"$2\"' -
+    aus = !sh -c 'git ll -i --author=$1 -F --grep=\"$2\"' -
     
     # Commits by me
-    me = !git a debajit
+    me = !git au debajit
+
 	
 	
 	
