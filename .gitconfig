@@ -89,6 +89,10 @@
     f = ls-files
 
 
+    ## Gitk
+    k = !gitk -1
+
+
     ## Grep
     g = grep --ignore-case -e
     gf = grep --ignore-case --function-context -e
