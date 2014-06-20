@@ -129,12 +129,15 @@
 
     ## Log by Author
 
-    # Author: Show all commits made by the given user
-    author = !sh -c 'git ll -i --author=$1' -
-    
-    # Author grep: Show all commits by a particular user, 
-    # with the given regex in the commit log
-    authorgrep = !sh -c 'git ll -i --author=$1 --grep=$2' -
+    #
+    # Show all commits by this author
+    # git author <username>
+    #
+    # Show all commits by the author having the given
+    # regex in the commit message:
+    # git author <username> <regex>
+    #
+    author = !sh -c 'git ll -i --author=$1 --grep=$2' -
     
     # Author grep fixed string: Show all commits by a particular
     # user matching the given fixed string in the commit log
