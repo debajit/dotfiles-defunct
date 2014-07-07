@@ -99,6 +99,8 @@
     gw = grep --ignore-case --word-regexp -e
     gs = grep --ignore-case -F -e
     todo = grep -e TODO -e FIXME
+    # Grep log: Search for regex in commit logs
+    greplog = !sh -c 'git ll -i --grep=$1' -  # Grep for pattern in commit log
 
 
     ## Log   
@@ -111,9 +113,6 @@
 	
     # Long log
     ll = log --name-status
-	
-    # Log grep: Search for regex in commit logs
-    lg = !sh -c 'git ll -i --grep=$1' -  # Grep for pattern in commit log
 	
     # Log grep fixed string: Search for fixed string in commit log
     ls = !sh -c 'git ll -i -F --grep=\"$1\"' - # Grep for string in commit log
