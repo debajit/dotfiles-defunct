@@ -119,13 +119,14 @@
     ls = !sh -c 'git ll -i -F --grep=\"$1\"' - # Grep for string in commit log
 
 
-    ## Log Incoming / Outgoing changes (Compares with upstream)
+    ## Incoming / Outgoing changes (Compares with upstream)
     incoming = log ..@{u} --name-status
     in = log ..@{u} --name-status
     outgoing = log @{u}.. --name-status
     out = log @{u}.. --name-status
     outp = log @{u}.. -p
-
+    outdt = difftool @{u}
+    
 
     ## Log by Author
 
