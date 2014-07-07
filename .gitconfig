@@ -145,7 +145,7 @@
     authorstr = !sh -c 'git ll -i --author=$1 -F --grep=\"$2\"' -
     
     # Commits by me
-    me = !git author debajit
+    me = !sh -c 'git author debajit "$1"' -
 
 
     ## Merge
