@@ -114,8 +114,10 @@
     # Long log
     ll = log --name-status
 	
-    # Log grep fixed string: Search for fixed string in commit log
-    ls = !sh -c 'git ll -i -F --grep=\"$1\"' - # Grep for string in commit log
+    trace = log --name-status -i -S                        # git log pickaxe. See when a string was added or removed in the code or a commit message.
+    tracediff = log --name-status -i -p -S                 # git log pickaxe and show changes. To visually examine a commit use "git see commit"
+    messages = !sh -c 'git --name-status-i --grep=$1' -    # git log for pattern in commit message
+    messagestring = !sh -c 'git ll -i -F --grep=\"$1\"' -  # git log for string in commit message
 
 
     ## Incoming / Outgoing changes (Compares with upstream)
