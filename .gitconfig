@@ -122,11 +122,9 @@
 
     ## Incoming / Outgoing changes (Compares with upstream)
     incoming = log ..@{u} --name-status
-    in = log ..@{u} --name-status
-    outgoing = log @{u}.. --name-status
-    out = log @{u}.. --name-status
-    outp = log @{u}.. -p
-    outdt = difftool @{u}
+    outgoing = difftool @{u}                    # See outgoing changes using difftool. TODO: Use gitk for non-Kaleidoscope-like difftools?
+    out = log @{u}.. --name-status              # See outgoing changes using git log
+    outdiff = log @{u}.. -p
     
 
     ## Log by Author
