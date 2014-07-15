@@ -195,6 +195,7 @@
     tag = column
     
 [core]
+    attributesfile = ~/.gitattributes_global
     excludesfile = ~/.gitignore_global
     
 [credential]
