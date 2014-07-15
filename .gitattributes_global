@@ -7,3 +7,4 @@
 
 *.cs diff=csharp
 *.m diff=objc
+*.rb diff=ruby
