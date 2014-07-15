@@ -94,13 +94,16 @@
 
 
     ## Grep
-    g = grep --ignore-case -e
-    gf = grep --ignore-case --function-context -e
-    gw = grep --ignore-case --word-regexp -e
-    gs = grep --ignore-case -F -e
-    todo = grep -e TODO -e FIXME
-    # Grep log: Search for regex in commit logs
-    greplog = !sh -c 'git ll -i --grep=$1' -  # Grep for pattern in commit log
+    g = grep --ignore-case -e                           # General grep (case-insensitive)
+    gf = grep --ignore-case --function-context -e       # Grep function
+    gw = grep --ignore-case --word-regexp -e            # Grep word
+    gs = grep --ignore-case -F -e                       # Grep string
+    gl = !sh -c 'git log --name-status -i --grep=$1' -  # Grep log message
+    todo = grep -e TODO -e FIXME                        # Grep TODO and FIXME
+
+    ## Grep context
+    gg = grep --ignore-case -C6 -e                      # Grep with larger context
+    ggg = grep --ignore-case -C12 -e                    # Grep with still larger context
 
 
     ## Log   
