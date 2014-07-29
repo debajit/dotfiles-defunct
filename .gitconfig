@@ -112,7 +112,7 @@
     tip = log --name-status -1
 	
     # Short log: Handy one-line-per-commit log
-    l = log --graph --pretty=format:'%C(bold magenta)%h%Creset %C(bold yellow)%d%C(reset) %s %C(bold green)(%cr) %C(bold cyan)<%an>%Creset'
+    l = log --graph --format='format:%C(yellow)"%h"%C(reset)  "%s" %C(auto)"%d"%C(reset) %C(magenta)"%ar"%C(reset)  %C(blue)"%an"%C(reset)' --date-order
 	
     # Long log
     ll = log --name-status
