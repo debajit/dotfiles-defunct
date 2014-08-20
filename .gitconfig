@@ -141,7 +141,7 @@
     #
     # Show all commits by the author having the given
     # regex in the commit message:
-    # git author <username> <regex>
+    #   git author <username> <regex>
     #
     author = !sh -c 'git ll -i --author=$1 --grep=$2' -
     
@@ -150,6 +150,9 @@
     authorstr = !sh -c 'git ll -i --author=$1 -F --grep=\"$2\"' -
     
     # Commits by me
+    # Usage: 
+    #   git me
+    #   git me <pattern>
     me = !sh -c 'git author debajit "$1"' -
 
 
