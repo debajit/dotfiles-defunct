@@ -162,11 +162,17 @@
     mff = merge --ff-only
     mt = mergetool
     mo = merge -s ours
+
     
+    ## Pull
+    up = pull --rebase
+
+
     ## Rebase
     r = rebase
     rc = rebase --continue
     ri = rebase -i
+
     
     ## Tag
     t = tag
