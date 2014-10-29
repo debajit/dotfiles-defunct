@@ -174,7 +174,10 @@
     rc = rebase --continue
     ri = rebase -i
 
-    
+    ## Shortlog
+    contributors = shortlog -s
+    contributors-by-commits = shortlog -sn
+
     ## Tag
     t = tag
     tl = tag -l
