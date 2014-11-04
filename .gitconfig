@@ -37,8 +37,7 @@
     ## Branch
     b = branch
     bb = branch -vv
-    bbb = branch -avv
-    ba = branch -a
+    ba = branch -avv
     bd = branch -d
     bm = branch --move
 
