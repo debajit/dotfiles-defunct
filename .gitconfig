@@ -176,6 +176,9 @@
     ## Shortlog
     contributors = shortlog -s
     contributors-by-commits = shortlog -sn
+    
+    ## Age of repository
+    age = log --reverse --date=relative
 
     ## Tag
     t = tag
