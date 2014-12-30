@@ -27,3 +27,5 @@ endtry
 " Always use spaces instead of tabs
 set expandtab
 
+set ignorecase
+set smartcase
