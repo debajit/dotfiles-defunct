@@ -10,14 +10,21 @@ Installation
 ```
 git clone https://github.com/debajit/dotfiles.git
 ```
-* Install the dotfiles:
+* Install all the dotfiles:
 ```
 rake
 ```
 
-To install a specific set of files run, that particular task, for example:
+To install a specific set of files, run `rake` with a particular name e.g.
 
 ```
 rake git
 rake vim
 ```
+
+To see a list of things you can install, run
+```
+rake -T
+```
+
+Running `rake` by itself will install everything.
