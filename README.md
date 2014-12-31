@@ -1,6 +1,23 @@
-My Git Configuration and Notes
+My Dotfiles
 ==============================
 
-My git configuration files, and notes on my git workflows, for ready reference.
+My configuration files for git, vim, etc.
 
-Notes are organized by topic in the “Notes” folder.
+Installation
+------------
+
+* Clone this repository, or your own fork.
+```
+git clone https://github.com/debajit/dotfiles.git
+```
+* Install the dotfiles:
+```
+rake
+```
+
+To install a specific set of files run that particular task, for example:
+
+```
+rake git
+rake vim
+```
