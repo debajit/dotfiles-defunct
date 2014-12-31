@@ -186,6 +186,9 @@
     tt = tag -n10
     tags = tag -n10
 	
+    ## Optimization
+    optimize = gc --aggressive --prune=all
+	
     ## External tool-specific shortcuts
     
         # Rails
