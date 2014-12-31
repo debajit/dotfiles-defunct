@@ -15,6 +15,8 @@ git clone https://github.com/debajit/dotfiles.git
 rake
 ```
 
+---
+
 To install a specific set of files, run `rake` with a particular name e.g.
 
 ```
