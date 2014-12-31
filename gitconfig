@@ -187,7 +187,7 @@
     tags = tag -n10
 	
     ## Optimization
-    optimize = gc --aggressive --prune=all
+    optimize = gc --aggressive
 	
     ## External tool-specific shortcuts
     
