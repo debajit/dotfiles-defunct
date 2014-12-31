@@ -15,7 +15,7 @@ git clone https://github.com/debajit/dotfiles.git
 rake
 ```
 
-To install a specific set of files run that particular task, for example:
+To install a specific set of files run, that particular task, for example:
 
 ```
 rake git
