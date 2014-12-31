@@ -1,9 +1,11 @@
 task :default => [:git, :vim]
 
+desc 'Install Vim configuration files'
 task :vim do
   install_dotfiles 'vimrc'
 end
 
+desc 'Install Git configuration files'
 task :git do
   user_name = GitConfig.instance.user_name
   user_email = GitConfig.instance.user_email # TODO: Validate email to ensure "[ENTER...] does not work"
