@@ -32,7 +32,7 @@ Running `rake` by itself will install everything.
 Updating
 --------
 
-Pull in the latest changes and install the dotfiles:
+Pull in the latest changes and install the dotfiles. From the dotfiles repository, run
 
     git up
     rake
