@@ -12,7 +12,7 @@ Clone this repository (or your fork), and install the dotfiles:
     cd dotfiles
     rake
 
-## Selective Installation
+### Selective Installation
 
 To install a specific set of files, run `rake` with a particular name e.g.
 
