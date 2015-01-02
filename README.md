@@ -6,12 +6,10 @@ My configuration files for git, vim, etc.
 Installation
 ------------
 
-* Clone this repository, or your own fork.
+* Clone this repository (or your fork), and install the dotfiles:
 
         git clone https://github.com/debajit/dotfiles.git
-
-* Install all the dotfiles:
-
+        cd dotfiles
         rake
 
 ### Selective Installation
