@@ -27,3 +27,12 @@ To see a list of things you can install, run
 
 
 Running `rake` by itself will install everything.
+
+
+Updating
+--------
+
+Pull in the latest changes and install the dotfiles:
+
+    git up
+    rake
