@@ -6,13 +6,13 @@ My configuration files for git, vim, etc.
 Installation
 ------------
 
-* Clone this repository (or your fork), and install the dotfiles:
+Clone this repository (or your fork), and install the dotfiles:
 
-        git clone https://github.com/debajit/dotfiles.git
-        cd dotfiles
-        rake
+    git clone https://github.com/debajit/dotfiles.git
+    cd dotfiles
+    rake
 
-### Selective Installation
+## Selective Installation
 
 To install a specific set of files, run `rake` with a particular name e.g.
 
