@@ -1,9 +1,7 @@
-#--------------------------------------
 # OS-Generated Files
-#--------------------------------------
-
 .DS_Store
 .Trashes
 Thumbs.db
 
-
+# TextMate backup files
+._*
