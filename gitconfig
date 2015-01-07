@@ -17,8 +17,11 @@
 
     ## Staging
 
-    # Staging: Stage all tracked files and display status
+    # Stage all tracked files and display status
     a = !sh -c 'git stage -u :/ && git s'
+
+    # Add with patch
+    ap = add -p
 
 
     ## Amend 
