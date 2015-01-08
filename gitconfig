@@ -115,7 +115,8 @@
     # Tip of current branch
     tip = log --name-status -1
     tipdiff = show HEAD
-	
+    tipdifftool = difftool HEAD~1
+
     # Short log: Handy one-line-per-commit log
     l = log --graph --format='format:%C(yellow)"%h"%C(reset)  "%s" %C(auto)"%d"%C(reset) %C(magenta)"%ar"%C(reset)  %C(blue)"%an"%C(reset)' --date-order
     q = !sh -c 'git l -10'
