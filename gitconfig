@@ -172,7 +172,7 @@
 
     
     ## Pull
-    up = pull --rebase
+    up = pull --rebase # TODO: Remove after testing git pull
 
 
     ## Rebase
@@ -202,7 +202,9 @@
         assetconfig = grep -e config --and -e asset
         assethelpers = grep -e image_tag --or -e image_path --or -e asset_tag --or -e asset_path --or -e 'image-url' --or -e 'image-path' --or -e 'asset-url' --or -e 'asset-path'
 
-	
+[branch]
+    autosetuprebase = always
+
 [color]
     ui = auto
     
