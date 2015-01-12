@@ -120,7 +120,7 @@
     # Short log: Handy one-line-per-commit log
     q = !sh -c 'git l -10'
     l = log --graph --format='format:%C(yellow)"%h"%C(reset)  "%s" %C(auto)"%d"%C(reset) %C(magenta)"%ar"%C(reset)  %C(blue)"%an"%C(reset)' --date-order
-    long = log --name-status --date=rfc
+    ll = log --name-status --date=rfc
 
     # Log with diff
     logdiff = log -p
