@@ -197,10 +197,11 @@
     optimize = gc --aggressive
 	
     ## External tool-specific shortcuts
-    
+
         # Rails
         assetconfig = grep -e config --and -e asset
         assethelpers = grep -e image_tag --or -e image_path --or -e asset_tag --or -e asset_path --or -e 'image-url' --or -e 'image-path' --or -e 'asset-url' --or -e 'asset-path'
+        pry = grep -e byebug --or -e binding.pry
 
 [branch]
     autosetuprebase = always
