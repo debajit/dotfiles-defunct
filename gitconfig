@@ -118,14 +118,12 @@
     tipdifftool = difftool HEAD~1
 
     # Short log: Handy one-line-per-commit log
-    l = log --graph --format='format:%C(yellow)"%h"%C(reset)  "%s" %C(auto)"%d"%C(reset) %C(magenta)"%ar"%C(reset)  %C(blue)"%an"%C(reset)' --date-order
     q = !sh -c 'git l -10'
+    l = log --graph --format='format:%C(yellow)"%h"%C(reset)  "%s" %C(auto)"%d"%C(reset) %C(magenta)"%ar"%C(reset)  %C(blue)"%an"%C(reset)' --date-order
+    long = log --name-status --date=rfc
 
-    # Long log
-    ll = log --name-status
-    
     # Log with diff
-    lp = log -p
+    logdiff = log -p
 	
     ## Searching with git log
     trace = log --name-status -i -S                                      # git log pickaxe. See when a string was added or removed in the code or a commit message.
