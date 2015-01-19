@@ -29,11 +29,11 @@
 
     ## Amend 
     ## (long wordy aliases, to prevent unnecessary reflog resets after an erroneous amend)
-	
+    
     # Amend the current commit with staged changes
     # without editing the commit message
     amend = commit --amend --no-edit
-	
+    
     # Amend with file: Amend the current commit 
     # with staged changes, taking the commit message
     # from the given file
@@ -124,20 +124,20 @@
 
     # Log with diff
     logdiff = log -p
-	
+    
     ## Searching with git log
     trace = log --name-status -i -S                                      # git log pickaxe. See when a string was added or removed in the code or a commit message.
     tracediff = log -p -i -S                                             # git log pickaxe and show changes. To visually examine a commit use "git see commit"
     messages = !sh -c 'git log --name-status -i --grep=$1' -             # git log for pattern in commit message
     messagestring = !sh -c 'git log --name-status -i -F --grep=\"$1\"' - # git log for string in commit message
 
-	## Incoming / Outgoing changes (Compares with upstream)
-	outgoing = log @{u}.. --name-status     # See outgoing changes using git log
-	out = !sh -c 'git l @{u}..'             # See outgoing changes, one change per line
-	incoming = log ..@{u} --name-status     # See incoming changes using git log
-	in = !sh -c 'git l ..@{u}'              # See incoming changes, one change per line
-	outdiff = log @{u}.. -p                 # Diffs the outgoing changes with upstream
-	outdifftool = difftool @{u}             # See outgoing changes using difftool. TODO: Use gitk for non-Kaleidoscope-like difftools?
+    ## Incoming / Outgoing changes (Compares with upstream)
+    outgoing = log @{u}.. --name-status     # See outgoing changes using git log
+    out = !sh -c 'git l @{u}..'             # See outgoing changes, one change per line
+    incoming = log ..@{u} --name-status     # See incoming changes using git log
+    in = !sh -c 'git l ..@{u}'              # See incoming changes, one change per line
+    outdiff = log @{u}.. -p                 # Diffs the outgoing changes with upstream
+    outdifftool = difftool @{u}             # See outgoing changes using difftool. TODO: Use gitk for non-Kaleidoscope-like difftools?
 
     ## Log by Author
 
@@ -190,10 +190,11 @@
     tl = tag -l
     tt = tag -n10
     tags = tag -n10
-	
+    
     ## Optimization
     optimize = gc --aggressive
-	
+    
+    
     ## External tool-specific shortcuts
 
         # Rails
