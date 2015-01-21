@@ -139,6 +139,7 @@
     in = !sh -c 'git l ..@{u}'              # See incoming changes, one change per line
     outdiff = log @{u}.. -p                 # Diffs the outgoing changes with upstream
     outdifftool = difftool @{u}             # See outgoing changes using difftool. TODO: Use gitk for non-Kaleidoscope-like difftools?
+    incomingfrom = cherry -v HEAD
 
     ## Log by Author
 
