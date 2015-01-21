@@ -46,9 +46,8 @@
     ba = branch -avv
     bd = branch -d
     bm = branch --move
-    whereis = branch -avv --contains
+    which = branch -avv --contains
 
-    
     ## Checkout
     c = checkout
     cb = checkout -b
