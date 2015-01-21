@@ -47,6 +47,7 @@
     bd = branch -d
     bm = branch --move
     which = branch -avv --contains
+    where = !sh -c 'git which "$1"'
 
     ## Checkout
     c = checkout
