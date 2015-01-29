@@ -196,7 +196,9 @@
     ## Optimization
     optimize = gc --aggressive
     
-    
+    ## Just create a new revision and push. We don't care about the commit message
+    update = !sh -c 'git commit -a -m "Update" && git push && git checkout'
+
     ## External tool-specific shortcuts
 
         # Rails
