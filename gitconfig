@@ -119,7 +119,7 @@
     tipdifftool = difftool HEAD~1
 
     # Short log: Handy one-line-per-commit log
-    q = !sh -c 'git l -10'
+    q = log -10 --graph --format='format:%C(yellow)"%h"%C(reset)  "%s" %C(auto)"%d"%C(reset) %C(magenta)"%ar"%C(reset)  %C(blue)"%an"%C(reset)' --date-order
     l = log --graph --format='format:%C(yellow)"%h"%C(reset)  "%s" %C(auto)"%d"%C(reset) %C(magenta)"%ar"%C(reset)  %C(blue)"%an"%C(reset)' --date-order
     ll = log --name-status --date=rfc
 
