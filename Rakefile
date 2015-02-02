@@ -1,9 +1,4 @@
-task :default => [:git, :vim]
-
-desc 'Install Vim configuration files'
-task :vim do
-  install_dotfiles 'vimrc'
-end
+task :default => [:git, :vim, :rubocop]
 
 desc 'Install Git configuration files'
 task :git do
@@ -14,6 +9,16 @@ task :git do
 
   GitConfig.instance.user_name = user_name # TODO: ask user to input if invalid or empty. Username = gets.strip
   GitConfig.instance.user_email = user_email
+end
+
+desc 'Install Vim configuration files'
+task :vim do
+  install_dotfiles 'vimrc'
+end
+
+desc 'Install RuboCop configuration file'
+task :rubocop do
+  install_dotfiles 'rubocop.yml'
 end
 
 private
@@ -45,9 +50,7 @@ private
     def user_email=(new_user_email)
       write_git_config_attribute(USER_EMAIL, new_user_email)
     end
-    
-  private
-  
+      
     def read_git_config_attribute(attribute)
       %x[git config #{attribute}].strip
     end
