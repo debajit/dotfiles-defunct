@@ -21,6 +21,11 @@ task :rubocop do
   install_dotfiles 'rubocop.yml'
 end
 
+desc 'Install TextMate keyboard settings'
+task :textmate do
+  cp 'textmate-keybindings.dict', File.join("#{Dir.home}/Library/Application\ Support/TextMate", 'Keybindings.dict')
+end
+
 private
 
   def install_dotfiles(dotfiles)
