@@ -32,6 +32,7 @@ alias agj='ag --java'
 
 # Ruby / Rails
 alias t="ruby -I test -rminitest/pride"
+alias prod='RAILS_ENV=production SECRET_KEY_BASE=`bin/rake secret` rails s'
 
 # Diagnostics
 
