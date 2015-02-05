@@ -1,4 +1,4 @@
-task :default => [:git, :vim, :rubocop]
+task :default => [:git, :aliases, :vim, :rubocop]
 
 desc 'Install Git configuration files'
 task :git do
@@ -9,6 +9,11 @@ task :git do
 
   GitConfig.instance.user_name = user_name # TODO: ask user to input if invalid or empty. Username = gets.strip
   GitConfig.instance.user_email = user_email
+end
+
+desc 'Install Aliases'
+task :aliases do
+  install_dotfiles 'aliases'
 end
 
 desc 'Install Vim configuration files'
