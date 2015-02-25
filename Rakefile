@@ -1,4 +1,4 @@
-task :default => [:git, :aliases, :vim, :rubocop]
+task :default => [:git, :aliases, :vim, :emacs, :rubocop]
 
 desc 'Install Git configuration files'
 task :git do
@@ -19,6 +19,11 @@ end
 desc 'Install Vim configuration files'
 task :vim do
   install_dotfiles 'vimrc'
+end
+
+desc 'Install Emacs configuration files'
+task :emacs do
+  install_dotfiles 'emacs'
 end
 
 desc 'Install RuboCop configuration file'
