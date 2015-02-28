@@ -1,6 +1,13 @@
 ;; Colors
 (load-theme 'wombat t)
 
+;; Mac-specific configuration
+;; Swap Command and Option keys
+(setq mac-command-modifier 'meta)
+(setq mac-option-modifier 'super)
+;; Set font-size
+(set-default-font "Menlo 14")
+ 
 ;; My super key combos
 (global-set-key (kbd "C-w") 'backward-kill-word)
 (global-set-key (kbd "C-SPC") 'dabbrev-expand)
