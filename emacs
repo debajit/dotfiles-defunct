@@ -98,3 +98,4 @@ to the variable \"insert-time-format\"."
 (global-set-key [f8] 'unbury-buffer)
 
 (global-set-key (kbd "M-t") 'helm-projectile-find-file)
+(global-set-key (kbd "M-l") 'helm-do-grep)
