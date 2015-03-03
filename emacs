@@ -1,11 +1,14 @@
 ;; PACKAGES
 ;;
 ;; Packages to install
-;; - powerline
-;; - haml-mode
+;; - helm
 ;; - projectile
 ;; - projectile-rails
 ;; - helm-projectile
+;; - ggtags
+;; - magit
+;; - powerline
+;; - haml-mode
 
 ;; Setup Melpa
 (when (>= emacs-major-version 24)
@@ -32,7 +35,7 @@
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier 'super)
 ;; Set font-size
-(set-default-font "Menlo 14")
+;;(set-default-font "Menlo 14")
 
 ;; Helm
 (helm-projectile-off)
@@ -94,7 +97,7 @@ to the variable \"insert-time-format\"."
 ;; Keybindings
 ;; Function keys
 (global-set-key [f5] 'bs-show)
-(global-set-key [f6] 'switch-to-buffer)
+(global-set-key [f6] 'helm-buffers-list)
 (global-set-key [f7] 'bury-buffer)
 (global-set-key [f8] 'unbury-buffer)
 
