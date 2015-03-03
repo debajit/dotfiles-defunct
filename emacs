@@ -23,6 +23,9 @@
 (setq show-trailing-whitespace 't)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+;; Word wrapping
+(set-default 'truncate-lines t)
+
 ;; Mac-specific configuration
 ;; Swap Command and Option keys
 (setq mac-command-modifier 'meta)
