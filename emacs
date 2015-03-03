@@ -1,8 +1,27 @@
+;; PACKAGES
+;;
+;; Packages to install
+;; - powerline
+;; - haml-mode
+;; - projectile
+;; - projectile-rails
+
+;; Setup Melpa
+(when (>= emacs-major-version 24)
+(require 'package)
+(package-initialize)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t))
+
+;; STARTUP
+;; No startup screen. Start with scratch buffer
+(setq inhibit-startup-screen +1)
+
 ;; Colors
 (load-theme 'wombat t)
 
-(require 'ido)
-(ido-mode t)
+;; Whitespace
+(setq show-trailing-whitespace 't)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; Mac-specific configuration
 ;; Swap Command and Option keys
@@ -10,7 +29,15 @@
 (setq mac-option-modifier 'super)
 ;; Set font-size
 (set-default-font "Menlo 14")
- 
+
+;; Status bar
+(require 'powerline)
+(powerline-default-theme)
+
+;; Fuzzy matching
+(require 'ido)
+(ido-mode 1)
+
 ;; Mode settings
 (setq default-abbrev-mode t)			; Auto Correct!
 (setq scroll-step 1)				; Scroll like normal!
@@ -63,9 +90,4 @@ to the variable \"insert-time-format\"."
 (global-set-key [f7] 'bury-buffer)
 (global-set-key [f8] 'unbury-buffer)
 
-;; Packages
-;; Setup Melpa
-(when (>= emacs-major-version 24)
-(require 'package)
-(package-initialize)
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t))
+(global-set-key (kbd "M-t") 'projectile-find-file)
