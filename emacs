@@ -1,6 +1,9 @@
 ;; Colors
 (load-theme 'wombat t)
 
+(require 'ido)
+(ido-mode t)
+
 ;; Mac-specific configuration
 ;; Swap Command and Option keys
 (setq mac-command-modifier 'meta)
@@ -54,7 +57,12 @@ to the variable \"insert-time-format\"."
       (insert " ")
       (insert-time)))
 
-(global-set-key [f2] 'insert-date)
-(global-set-key [f3] 'insert-time)
-(global-set-key [f4] 'insert-time-and-date)
+;; (global-set-key [f2] 'insert-date)
+;; (global-set-key [f3] 'insert-time)
+;; (global-set-key [f4] 'insert-time-and-date)
 
+;; Keybindings
+(global-set-key [f5] 'bs-show)
+(global-set-key [f6] 'switch-to-buffer)
+(global-set-key [f7] 'bury-buffer)
+(global-set-key [f8] 'unbury-buffer)
