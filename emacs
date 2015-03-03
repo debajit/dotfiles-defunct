@@ -35,6 +35,7 @@
 (set-default-font "Menlo 14")
 
 ;; Helm
+(helm-projectile-off)
 (global-set-key (kbd "M-x") 'helm-M-x)
 
 ;; Status bar
