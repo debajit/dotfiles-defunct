@@ -33,6 +33,9 @@
 ;; Set font-size
 (set-default-font "Menlo 14")
 
+;; Helm
+(global-set-key (kbd "M-x") 'helm-M-x)
+
 ;; Status bar
 (require 'powerline)
 (powerline-default-theme)
