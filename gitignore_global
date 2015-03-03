@@ -6,6 +6,6 @@ Thumbs.db
 # TextMate backup files
 ._*
 
-# Emacs backup files
+# Emacs files
 *~
-
+\#*\#
