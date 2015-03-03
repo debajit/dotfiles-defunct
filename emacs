@@ -5,6 +5,7 @@
 ;; - haml-mode
 ;; - projectile
 ;; - projectile-rails
+;; - helm-projectile
 
 ;; Setup Melpa
 (when (>= emacs-major-version 24)
@@ -96,4 +97,4 @@ to the variable \"insert-time-format\"."
 (global-set-key [f7] 'bury-buffer)
 (global-set-key [f8] 'unbury-buffer)
 
-(global-set-key (kbd "M-t") 'projectile-find-file)
+(global-set-key (kbd "M-t") 'helm-projectile-find-file)
