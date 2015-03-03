@@ -11,11 +11,6 @@
 ;; Set font-size
 (set-default-font "Menlo 14")
  
-;; My super key combos
-(global-set-key (kbd "C-w") 'backward-kill-word)
-(global-set-key (kbd "C-SPC") 'dabbrev-expand)
-
-
 ;; Mode settings
 (setq default-abbrev-mode t)			; Auto Correct!
 (setq scroll-step 1)				; Scroll like normal!
