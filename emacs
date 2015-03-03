@@ -57,7 +57,15 @@ to the variable \"insert-time-format\"."
 ;; (global-set-key [f4] 'insert-time-and-date)
 
 ;; Keybindings
+;; Function keys
 (global-set-key [f5] 'bs-show)
 (global-set-key [f6] 'switch-to-buffer)
 (global-set-key [f7] 'bury-buffer)
 (global-set-key [f8] 'unbury-buffer)
+
+;; Packages
+;; Setup Melpa
+(when (>= emacs-major-version 24)
+(require 'package)
+(package-initialize)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t))
