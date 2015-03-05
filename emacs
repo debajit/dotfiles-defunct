@@ -39,7 +39,6 @@
 
 ;; Helm
 (helm-projectile-off)
-(global-set-key (kbd "M-x") 'helm-M-x)
 
 ;; Status bar
 (require 'powerline)
@@ -83,7 +82,7 @@
 (defun insert-time-and-date ()
     "Insert the current date according to the variable
 \"insert-date-format\", then a space, then the current time according
-to the variable \"insert-time-format\"."
+to the variable \"insert-time-format\"	.	"
     (interactive "*")
     (progn
       (insert-date)
@@ -95,12 +94,15 @@ to the variable \"insert-time-format\"."
 ;; (global-set-key [f4] 'insert-time-and-date)
 
 ;; Keybindings
+
 ;; Function keys
 (global-set-key [f5] 'bs-show)
 (global-set-key [f6] 'helm-buffers-list)
 (global-set-key [f7] 'bury-buffer)
 (global-set-key [f8] 'unbury-buffer)
 
-(global-set-key (kbd "M-t") 'helm-projectile-find-file) ; A la TextMate
-(global-set-key (kbd "M-l") 'helm-do-grep)
-(global-set-key (kbd "M-p") 'helm-find-files)
+;; Meta keys
+(global-set-key (kbd "M-t") 'helm-projectile-find-file) ; Meta + T -- Open file in Project
+(global-set-key (kbd "M-o") 'helm-find-files) ; Control + O -- Open file
+(global-set-key (kbd "M-l") 'helm-do-grep) ; Meta + L -- Search in project
+(global-set-key (kbd "M-x") 'helm-M-x)	   ; Meta + X -- Use Helm
