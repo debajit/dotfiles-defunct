@@ -106,3 +106,8 @@ to the variable \"insert-time-format\"	.	"
 (global-set-key (kbd "M-o") 'helm-find-files) ; Control + O -- Open file
 (global-set-key (kbd "M-l") 'helm-do-grep) ; Meta + L -- Search in project
 (global-set-key (kbd "M-x") 'helm-M-x)	   ; Meta + X -- Use Helm
+
+;; Spell Check
+(add-hook 'text-mode-hook 'flyspell-mode)
+(add-hook 'prog-mode-hook 'flyspell-prog-mode)
+(global-set-key (kbd "M-:") 'flyspell-check-previous-highlighted-word)
