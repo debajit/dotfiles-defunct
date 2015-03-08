@@ -1,4 +1,4 @@
-task :default => [:git, :aliases, :vim, :rubocop]
+task default: [:git, :aliases, :vim, :rubocop]
 
 desc 'Install Git configuration files'
 task :git do
@@ -29,6 +29,31 @@ end
 desc 'Install TextMate keyboard settings'
 task :textmate do
   cp 'textmate-keybindings.dict', File.join("#{Dir.home}/Library/Application\ Support/TextMate", 'Keybindings.dict')
+end
+
+desc 'Install emacs configuration files'
+task :emacs do
+  EMACS_CONFIG_DIR = File.join(Dir.home, '.emacs.d')
+
+  mkdir_p EMACS_CONFIG_DIR
+
+  # Symlink all emacs config files in emacs.d/ to ~/.emacs.d/
+  source_files = Dir.glob('emacs.d/*')
+  source_files.each do |source_file|
+    target_file = File.join(EMACS_CONFIG_DIR, File.basename(source_file))
+    source_file = File.absolute_path(source_file)
+    ln_s source_file, target_file, force: true
+  end
+
+  # Check if Cask is installed
+  unless File.exist?(File.join(Dir.home, ".cask"))
+    fail 'Cask not found. Please install Cask. See the directions at http://cask.readthedocs.org/en/latest/guide/installation.html'
+  end
+
+  # Install any emacs' packages required
+  cd EMACS_CONFIG_DIR do
+    sh 'cask install'
+  end
 end
 
 private
