@@ -103,9 +103,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("cbef37d6304f12fb789f5d80c2b75ea01465e41073c30341dc84c6c0d1eb611d" default)))
  '(package-selected-packages
    (quote
-    (helm-projectile powerline haml-mode projectile-rails helm pallet))))
+    (zenburn-theme helm-projectile powerline haml-mode projectile-rails helm pallet))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
