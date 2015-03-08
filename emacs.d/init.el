@@ -61,12 +61,15 @@
 
 ;; Buffer management
 (global-set-key (kbd "M-p") 'helm-buffers-list) ; Show buffers
+(global-set-key (kbd "S-k") 'kill-this-buffer) ; Kill this buffer (Comes with Emacs)
 
 ;; Spell Check
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 (global-set-key (kbd "M-:") 'flyspell-check-previous-highlighted-word)
 
+;; Other services
+(global-set-key (kbd "M-s") 'helm-google-suggest) ; Google search
 
 ;; PALLET (sic) CUSTOMIZATIONS
 
