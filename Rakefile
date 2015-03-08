@@ -66,31 +66,31 @@ private
 
   class GitConfig
     include Singleton
-    
+
     USER_NAME = 'user.name'
     USER_EMAIL = 'user.email'
-            
+
     def user_name
       read_git_config_attribute(USER_NAME) # TODO: DRY. Use metaprogramming to generate accessors
     end
-    
+
     def user_name=(new_user_name)
       write_git_config_attribute(USER_NAME, new_user_name)
     end
-    
+
     def user_email
       read_git_config_attribute(USER_EMAIL)
     end
-    
+
     def user_email=(new_user_email)
       write_git_config_attribute(USER_EMAIL, new_user_email)
     end
-      
+
     def read_git_config_attribute(attribute)
       %x[git config #{attribute}].strip
     end
 
     def write_git_config_attribute(attribute, value)
       %x[git config --global "#{attribute}" "#{value}"]
-    end  
+    end
   end
