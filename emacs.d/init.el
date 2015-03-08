@@ -53,7 +53,7 @@
 (global-set-key (kbd "M-:") 'flyspell-check-previous-highlighted-word)
 
 
-;; PALLET CUSTOMIZATIONS
+;; PALLET (sic) CUSTOMIZATIONS
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
