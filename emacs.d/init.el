@@ -48,7 +48,11 @@
 ;; KEYBOARD SHORTCUTS
 
 ;; Core Emacs
-(global-set-key (kbd "M-x") 'helm-M-x)	      ; Meta + X -- Use Helm
+(global-set-key (kbd "M-x") 'helm-M-x)	; Meta + X -- Use Helm
+
+;; Text scale
+(global-set-key (kbd "C-=") 'text-scale-increase) ; Increase text scale
+(global-set-key (kbd "C--") 'text-scale-decrease) ; Decrese text scale
 
 ;; File management
 (global-set-key (kbd "M-o") 'helm-find-files) ; Meta + O -- Open file
