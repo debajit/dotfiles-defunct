@@ -41,11 +41,17 @@
 
 ;; KEYBOARD SHORTCUTS
 
-;; Meta keys
+;; Core Emacs
 (global-set-key (kbd "M-x") 'helm-M-x)	      ; Meta + X -- Use Helm
+
+;; File management
 (global-set-key (kbd "M-o") 'helm-find-files) ; Meta + O -- Open file
 (global-set-key (kbd "M-t") 'helm-projectile-find-file) ; Meta + T -- Open file in Project
 (global-set-key (kbd "M-l") 'helm-do-grep) ; Meta + L -- Search in project
+
+;; Autocompletion
+(global-set-key (kbd "M-/") 'hippie-expand)  ; Standard autocomplete
+(global-set-key (kbd "M-RET") 'helm-dabbrev) ; TODO
 
 ;; Spell Check
 (add-hook 'text-mode-hook 'flyspell-mode)
