@@ -45,7 +45,15 @@
 (set-default 'truncate-lines t)
 
 
-;; PACKAGES
+;; CONFIGURE PACKAGES
+
+;; Helm
+;; http://tuhdo.github.io/helm-projectile.html
+(require 'projectile)
+(require 'helm-config)
+(projectile-global-mode)
+(setq projectile-completion-system 'helm)
+(helm-projectile-on)
 
 ;; Fuzzy matching
 (require 'ido)
@@ -97,7 +105,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (powerline haml-mode projectile-rails helm pallet))))
+    (helm-projectile powerline haml-mode projectile-rails helm pallet))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
