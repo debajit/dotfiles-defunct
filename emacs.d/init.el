@@ -25,7 +25,7 @@
 (setq inhibit-startup-screen +1)
 
 ;; Colors
-(load-theme 'wombat t)
+(load-theme 'birds-of-paradise-plus t)
 
 ;; OSX-specific settings
 (when (eq system-type 'darwin)
