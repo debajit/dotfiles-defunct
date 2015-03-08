@@ -47,6 +47,10 @@
 
 ;; PACKAGES
 
+;; Fuzzy matching
+(require 'ido)
+(ido-mode 1)
+
 ;; Status Bar
 (require 'powerline)
 (powerline-default-theme)
