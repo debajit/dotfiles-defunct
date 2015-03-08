@@ -15,6 +15,12 @@
 
 ;; VISUAL TWEAKS
 
+;; Scrolling
+;; nice scrolling
+(setq scroll-margin 0
+      scroll-conservatively 100000
+      scroll-preserve-screen-position 1)
+
 ;; No startup screen. Start with scratch buffer
 (setq inhibit-startup-screen +1)
 
