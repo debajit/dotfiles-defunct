@@ -53,6 +53,9 @@
 (global-set-key (kbd "M-/") 'hippie-expand)  ; Standard autocomplete
 (global-set-key (kbd "M-RET") 'helm-dabbrev) ; TODO
 
+;; Buffer management
+(global-set-key (kbd "M-p") 'helm-buffers-list) ; Show buffers
+
 ;; Spell Check
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
