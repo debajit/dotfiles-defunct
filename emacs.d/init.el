@@ -12,6 +12,9 @@
 (require 'pallet)
 (pallet-mode t)
 
+
+;; VISUAL TWEAKS
+
 ;; No startup screen. Start with scratch buffer
 (setq inhibit-startup-screen +1)
 
@@ -20,7 +23,13 @@
 
 ;; OSX-specific settings
 (when (eq system-type 'darwin)
+  ;; Set font face
   (set-default-font "Menlo 14")
+
+  ;; Mac-specific configuration
+  ;; Swap Command and Option keys
+  (setq mac-command-modifier 'meta)
+  (setq mac-option-modifier 'super))
 
 ;; Whitespace
 (setq show-trailing-whitespace 't)
@@ -29,13 +38,22 @@
 ;; Word wrapping
 (set-default 'truncate-lines t)
 
-;; Mac-specific configuration
-;; Swap Command and Option keys
-(setq mac-command-modifier 'meta)
-(setq mac-option-modifier 'super)
 
-;; Set font-size
-;;(set-default-font "Menlo 14")
+;; KEYBOARD SHORTCUTS
+
+;; Meta keys
+(global-set-key (kbd "M-x") 'helm-M-x)	      ; Meta + X -- Use Helm
+(global-set-key (kbd "M-o") 'helm-find-files) ; Meta + O -- Open file
+(global-set-key (kbd "M-t") 'helm-projectile-find-file) ; Meta + T -- Open file in Project
+(global-set-key (kbd "M-l") 'helm-do-grep) ; Meta + L -- Search in project
+
+;; Spell Check
+(add-hook 'text-mode-hook 'flyspell-mode)
+(add-hook 'prog-mode-hook 'flyspell-prog-mode)
+(global-set-key (kbd "M-:") 'flyspell-check-previous-highlighted-word)
+
+
+;; PALLET CUSTOMIZATIONS
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
