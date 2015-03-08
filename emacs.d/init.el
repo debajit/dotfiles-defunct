@@ -105,10 +105,10 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("c4e6fe8f5728a5d5fd0e92538f68c3b4e8b218bcfb5e07d8afff8731cc5f3df0" "cbef37d6304f12fb789f5d80c2b75ea01465e41073c30341dc84c6c0d1eb611d" default)))
+    ("0f6e58d1814b4138c5a88241f96547d35883cbb3df6cf9ec8ef44856ece04c13" "2b56bd7a702f4dd5f50db417ec2bcdd06a878a0e2834e9ab37ad3c5c93aaab74" "a99e7c91236b2aba4cd374080c73f390c55173c5a1b4ac662eeb3172b60a9814" "c4e6fe8f5728a5d5fd0e92538f68c3b4e8b218bcfb5e07d8afff8731cc5f3df0" "cbef37d6304f12fb789f5d80c2b75ea01465e41073c30341dc84c6c0d1eb611d" default)))
  '(package-selected-packages
    (quote
-    (birds-of-paradise-plus-theme zenburn-theme helm-projectile powerline haml-mode projectile-rails helm pallet))))
+    (ujelly-theme tronesque-theme subatomic256-theme hc-zenburn-theme birds-of-paradise-plus-theme zenburn-theme helm-projectile powerline haml-mode projectile-rails helm pallet))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
