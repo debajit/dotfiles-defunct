@@ -66,6 +66,7 @@
 ;; Buffer management
 (global-set-key (kbd "M-p") 'helm-buffers-list) ; Show buffers
 (global-set-key (kbd "S-k") 'kill-this-buffer) ; Kill this buffer (Comes with Emacs)
+(global-set-key (kbd "M-0") 'delete-other-windows) ; Maximize this window
 
 ;; Spell Check
 (add-hook 'text-mode-hook 'flyspell-mode)
