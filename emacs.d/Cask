@@ -2,6 +2,7 @@
 (source melpa)
 
 (depends-on "bind-key")
+(depends-on "birds-of-paradise-plus-theme")
 (depends-on "cask")
 (depends-on "dash")
 (depends-on "drag-stuff")
