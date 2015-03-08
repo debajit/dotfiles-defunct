@@ -18,6 +18,10 @@
 ;; Colors
 (load-theme 'wombat t)
 
+;; OSX-specific settings
+(when (eq system-type 'darwin)
+  (set-default-font "Menlo 14")
+
 ;; Whitespace
 (setq show-trailing-whitespace 't)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
@@ -38,7 +42,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (projectile-rails helm pallet))))
+ '(package-selected-packages (quote (haml-mode projectile-rails helm pallet))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
