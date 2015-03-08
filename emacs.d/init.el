@@ -64,7 +64,7 @@
 (global-set-key (kbd "M-RET") 'helm-dabbrev) ; TODO
 
 ;; Buffer management
-(global-set-key (kbd "M-p") 'helm-buffers-list) ; Show buffers
+(global-set-key (kbd "M-p") 'helm-multi-files) ; Show buffers, recent files etc.
 (global-set-key (kbd "S-k") 'kill-this-buffer) ; Kill this buffer (Comes with Emacs)
 (global-set-key (kbd "M-0") 'delete-other-windows) ; Maximize this window
 
