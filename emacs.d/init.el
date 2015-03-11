@@ -36,6 +36,9 @@
       scroll-preserve-screen-position 1)
 
 ;; Colors
+;; (if (display-graphic-p)
+;;     (load-theme 'birds-of-paradise-plus t)
+;;   (load-theme 'wombat t))
 (load-theme 'birds-of-paradise-plus t)
 
 ;; Side margin
