@@ -90,13 +90,15 @@
 (global-set-key (kbd "S-k") 'kill-this-buffer) ; Kill this buffer (Comes with Emacs)
 (global-set-key (kbd "M-0") 'delete-other-windows) ; Maximize this window
 
+;; Search and Navigate
+(global-set-key (kbd "M-r") 'helm-semantic-or-imenu) ; Go to Symbol
+(global-set-key [f3] 'helm-occur)	; Find all in current file
+(global-set-key (kbd "M-s") 'helm-google-suggest) ; Google search
+
 ;; Spell Check
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 (global-set-key (kbd "M-:") 'flyspell-check-previous-highlighted-word)
-
-;; Other services
-(global-set-key (kbd "M-s") 'helm-google-suggest) ; Google search
 
 
 ;; PALLET (sic) CUSTOMIZATIONS
