@@ -91,8 +91,8 @@
 
 ;; Buffer management
 (global-set-key (kbd "M-p") 'helm-multi-files) ; Show buffers, recent files etc.
-(global-set-key (kbd "S-k") 'kill-this-buffer) ; Kill this buffer (Comes with Emacs)
-(global-set-key (kbd "M-0") 'delete-other-windows) ; Maximize this window
+(global-set-key (kbd "M--") 'kill-this-buffer) ; Kill buffer
+(global-set-key (kbd "M-=") 'delete-other-windows) ; Maximize this window
 
 ;; Search and Navigate
 (global-set-key (kbd "M-r") 'helm-semantic-or-imenu) ; Go to Symbol
