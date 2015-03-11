@@ -17,7 +17,14 @@
 
 ;; No startup screen. Start with scratch buffer
 (setq inhibit-startup-screen +1)
+
+;; Word wrapping
+(set-default 'truncate-lines t)
 (auto-fill-mode -1)
+
+;; Whitespace
+(setq show-trailing-whitespace 't)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 
 ;; VISUAL TWEAKS
@@ -31,6 +38,14 @@
 ;; Colors
 (load-theme 'birds-of-paradise-plus t)
 
+;; Side margin
+(setq-default left-fringe-width 0)
+(setq-default right-fringe-width 0)
+
+;; Enable line number mode
+(setq linum-format " %d  ")
+(global-linum-mode t)
+
 ;; Hide some GUI widgets
 (tool-bar-mode -1)
 
@@ -43,13 +58,6 @@
   ;; Swap Command and Option keys
   (setq mac-command-modifier 'meta)
   (setq mac-option-modifier 'super))
-
-;; Whitespace
-(setq show-trailing-whitespace 't)
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
-
-;; Word wrapping
-(set-default 'truncate-lines t)
 
 
 ;; CONFIGURE PACKAGES
