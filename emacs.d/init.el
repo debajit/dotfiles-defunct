@@ -13,6 +13,13 @@
 (pallet-mode t)
 
 
+;; STARTUP CUSTOMIZATIONS
+
+;; No startup screen. Start with scratch buffer
+(setq inhibit-startup-screen +1)
+(auto-fill-mode -1)
+
+
 ;; VISUAL TWEAKS
 
 ;; Scrolling
@@ -20,9 +27,6 @@
 (setq scroll-margin 0
       scroll-conservatively 100000
       scroll-preserve-screen-position 1)
-
-;; No startup screen. Start with scratch buffer
-(setq inhibit-startup-screen +1)
 
 ;; Colors
 (load-theme 'birds-of-paradise-plus t)
