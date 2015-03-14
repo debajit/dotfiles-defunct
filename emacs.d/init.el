@@ -97,7 +97,6 @@
 
 ;; Autocompletion
 (global-set-key (kbd "M-/") 'hippie-expand)  ; Standard autocomplete
-(global-set-key (kbd "M-RET") 'helm-dabbrev) ; TODO
 
 ;; Buffer management
 (global-set-key (kbd "M-p") 'helm-multi-files) ; Show buffers, recent files etc.
