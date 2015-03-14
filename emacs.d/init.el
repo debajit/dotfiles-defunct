@@ -116,6 +116,9 @@
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 (global-set-key (kbd "M-:") 'flyspell-check-previous-highlighted-word)
 
+;; Git
+(global-set-key [f5] 'vc-diff)		; Git diff
+
 
 ;; PALLET (sic) CUSTOMIZATIONS
 
