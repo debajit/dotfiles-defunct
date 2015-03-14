@@ -97,13 +97,13 @@
 
 ;; Buffer management
 (global-set-key (kbd "M-p") 'helm-multi-files) ; Show buffers, recent files etc.
-(global-set-key [f6] 'helm-multi-files)	       ; Show buffers, recent files etc.
+(global-set-key [f6] 'helm-multi-files)        ; Show buffers, recent files etc.
 (global-set-key (kbd "C-<tab>") 'other-window) ; Switch to other buffer
 (global-set-key (kbd "M--") 'kill-this-buffer) ; Kill buffer
 (global-set-key (kbd "M-=") 'delete-other-windows) ; Maximize this window
 
 ;; Core Emacs
-(global-set-key (kbd "M-x") 'helm-M-x)	; Meta + X -- Use Helm
+(global-set-key (kbd "M-x") 'helm-M-x)  ; Meta + X -- Use Helm
 
 ;; File management
 (global-set-key (kbd "M-o") 'helm-find-files) ; Meta + O -- Open file
@@ -111,11 +111,13 @@
 (global-set-key (kbd "M-l") 'helm-do-grep) ; Meta + L -- Search in project
 
 ;; Git
-(global-set-key [f5] 'vc-diff)		; Git diff
+(global-set-key [f5] 'vc-diff)          ; Git diff
+(global-set-key [f7] 'magit-blame-mode) ; Git blame
+(global-set-key [f8] 'magit-status)     ; Git status
 
 ;; Navigate and Search
 (global-set-key (kbd "M-r") 'helm-semantic-or-imenu) ; Go to Symbol
-(global-set-key [f3] 'helm-occur)	; Find all in current file
+(global-set-key [f3] 'helm-occur)       ; Find all in current file
 (global-set-key (kbd "M-s") 'helm-google-suggest) ; Google search
 
 ;; Spell Check
