@@ -36,6 +36,9 @@
       scroll-conservatively 100000
       scroll-preserve-screen-position 1)
 
+;; Highlight current line
+(global-hl-line-mode 1)
+
 ;; Colors
 ;; (if (display-graphic-p)
 ;;     (load-theme 'birds-of-paradise-plus t)
