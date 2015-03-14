@@ -82,19 +82,14 @@
 (powerline-default-theme)
 
 
+;;----------------------------------------------------------------------
+;; Custom functions
+;;-----------------------------------------------------------------------
+
+
+;;----------------------------------------------------------------------
 ;; KEYBOARD SHORTCUTS
-
-;; Core Emacs
-(global-set-key (kbd "M-x") 'helm-M-x)	; Meta + X -- Use Helm
-
-;; Text scale
-(global-set-key (kbd "C-=") 'text-scale-increase) ; Increase text scale
-(global-set-key (kbd "C--") 'text-scale-decrease) ; Decrese text scale
-
-;; File management
-(global-set-key (kbd "M-o") 'helm-find-files) ; Meta + O -- Open file
-(global-set-key (kbd "M-t") 'helm-projectile-find-file) ; Meta + T -- Open file in Project
-(global-set-key (kbd "M-l") 'helm-do-grep) ; Meta + L -- Search in project
+;;----------------------------------------------------------------------
 
 ;; Autocompletion
 (global-set-key (kbd "M-/") 'hippie-expand)  ; Standard autocomplete
@@ -107,7 +102,18 @@
 (global-set-key (kbd "M--") 'kill-this-buffer) ; Kill buffer
 (global-set-key (kbd "M-=") 'delete-other-windows) ; Maximize this window
 
-;; Search and Navigate
+;; Core Emacs
+(global-set-key (kbd "M-x") 'helm-M-x)	; Meta + X -- Use Helm
+
+;; File management
+(global-set-key (kbd "M-o") 'helm-find-files) ; Meta + O -- Open file
+(global-set-key (kbd "M-t") 'helm-projectile-find-file) ; Meta + T -- Open file in Project
+(global-set-key (kbd "M-l") 'helm-do-grep) ; Meta + L -- Search in project
+
+;; Git
+(global-set-key [f5] 'vc-diff)		; Git diff
+
+;; Navigate and Search
 (global-set-key (kbd "M-r") 'helm-semantic-or-imenu) ; Go to Symbol
 (global-set-key [f3] 'helm-occur)	; Find all in current file
 (global-set-key (kbd "M-s") 'helm-google-suggest) ; Google search
@@ -117,8 +123,9 @@
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 (global-set-key (kbd "M-:") 'flyspell-check-previous-highlighted-word)
 
-;; Git
-(global-set-key [f5] 'vc-diff)		; Git diff
+;; Zoom text
+(global-set-key (kbd "C-=") 'text-scale-increase) ; Increase text scale
+(global-set-key (kbd "C--") 'text-scale-decrease) ; Decrese text scale
 
 
 ;; PALLET (sic) CUSTOMIZATIONS
