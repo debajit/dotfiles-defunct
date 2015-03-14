@@ -23,8 +23,9 @@
 (auto-fill-mode -1)
 
 ;; Whitespace
-(setq show-trailing-whitespace 't)
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
+(setq show-trailing-whitespace 't)      ; Show trailing whitespace
+(add-hook 'before-save-hook 'delete-trailing-whitespace) ; Delete trailing whitespace on save
+(setq-default indent-tabs-mode nil)                      ; Use spaces for indentation
 
 
 ;; VISUAL TWEAKS
