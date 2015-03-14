@@ -102,6 +102,7 @@
 
 ;; Buffer management
 (global-set-key (kbd "M-p") 'helm-multi-files) ; Show buffers, recent files etc.
+(global-set-key [f6] 'helm-multi-files)	       ; Show buffers, recent files etc.
 (global-set-key (kbd "C-<tab>") 'other-window) ; Switch to other buffer
 (global-set-key (kbd "M--") 'kill-this-buffer) ; Kill buffer
 (global-set-key (kbd "M-=") 'delete-other-windows) ; Maximize this window
