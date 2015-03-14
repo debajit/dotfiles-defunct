@@ -78,6 +78,9 @@
 (require 'ido)
 (ido-mode 1)
 
+;; Smartparens
+(smartparens-global-mode t)
+
 ;; Status Bar
 (require 'powerline)
 (powerline-default-theme)
