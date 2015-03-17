@@ -27,6 +27,9 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace) ; Delete trailing whitespace on save
 (setq-default indent-tabs-mode nil)                      ; Use spaces for indentation
 
+;; Auto-refresh buffers
+(global-auto-revert-mode t)
+
 
 ;; VISUAL TWEAKS
 
