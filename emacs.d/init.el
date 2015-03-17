@@ -85,6 +85,7 @@
 (ido-mode 1)
 
 ;; Smartparens
+(require 'smartparens-config)
 (smartparens-global-mode t)
 
 ;; Status Bar
