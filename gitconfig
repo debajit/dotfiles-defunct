@@ -257,6 +257,9 @@
 [help]
     autocorrect = 1
 
+[include]
+    path = ~/.gitconfig_local
+
 [log]
     abbrevCommit = true
     date = relative
@@ -278,5 +281,5 @@
 [push]
     default = simple
 
-[include]
-    path = ~/.gitconfig_local
+[rebase]
+    autosquash = true
