@@ -260,11 +260,8 @@
 [difftool]
     prompt = false
 
-[difftool "Kaleidoscope"]
-    cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-
 [diff]
-    tool = Kaleidoscope
+    tool = p4merge
 
 [grep]
     lineNumber = true
@@ -281,14 +278,10 @@
     decorate = full
 
 [merge]
-    tool = Kaleidoscope
+    tool = p4merge
 
 [mergetool]
     prompt = false
-
-[mergetool "Kaleidoscope"]
-    cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-    trustExitCode = true
 
 [pager]
     status = true
