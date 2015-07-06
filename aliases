@@ -1,4 +1,23 @@
-# Command Aliases - ls
+# Ag
+alias ag='ag --pager less'
+alias agr='ag --ruby'
+alias agy='ag --yaml'
+alias agh='ag --html'
+alias agj='ag --java'
+
+# Disk Usage
+alias du="du -khs"
+alias df="df -kh"
+
+# Directory settings
+alias d='dirs -v'
+for index ({1..9}) alias "$index"="cd +${index}"; unset index
+
+# Editor
+alias e='emacsclient -c -a ""'
+alias ek="emacsclient -n -e '(kill-emacs)'"
+
+# ls
 alias ls='ls --color=auto'         # Lists in one column, hidden files.
 alias l='ls -1A'         # Lists in one column, hidden files.
 alias ll='ls -lh'        # Lists human readable sizes.
@@ -11,30 +30,10 @@ alias lt='ll -tr'        # Lists sorted by date, most recent last.
 alias lc='lt -c'         # Lists sorted by date, most recent last, shows change time.
 alias lu='lt -u'         # Lists sorted by date, most recent last, shows access time.
 
-# Command Aliases - Disk commands
-alias du="du -khs"
-alias df="df -kh"
-
-# Command Aliases - Directory settings
-alias d='dirs -v'
-for index ({1..9}) alias "$index"="cd +${index}"; unset index
-
-# Suffix Aliases
-# alias -s html=firefox
-# alias -s htm=firefox
-
-# Tools
-alias ag='ag --pager less'
-alias agr='ag --ruby'
-alias agy='ag --yaml'
-alias agh='ag --html'
-alias agj='ag --java'
-
 # Ruby / Rails
 alias t="ruby -I test -rminitest/pride"
 alias prod='RAILS_ENV=production SECRET_KEY_BASE=`bin/rake secret` rails s'
 
-# Diagnostics
-
-# Tested on Ubuntu + RedHat
-alias show-open-ports="sudo netstat -antlp | awk '{print $4, "\t", $7 }' | cut -d: -f2 | sort -n | less"
+# Suffix Aliases
+# alias -s html=firefox
+# alias -s htm=firefox
