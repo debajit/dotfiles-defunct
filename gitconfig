@@ -8,7 +8,7 @@
 [user]
     name = Debajit Adhikary
     email = [ENTER EMAIL ADDRESS HERE]
-    
+
 [alias]
 
     ## Status
@@ -27,19 +27,19 @@
     ai = add -i
 
 
-    ## Amend 
+    ## Amend
     ## (long wordy aliases, to prevent unnecessary reflog resets after an erroneous amend)
-    
+
     # Amend the current commit with staged changes
     # without editing the commit message
     amend = commit --amend --no-edit
-    
-    # Amend with file: Amend the current commit 
+
+    # Amend with file: Amend the current commit
     # with staged changes, taking the commit message
     # from the given file
     amendf = commit --amend -F
 
-    
+
     ## Branch
     b = branch
     bb = branch -vv
@@ -53,10 +53,10 @@
     c = checkout
     cb = checkout -b
 
-    
+
     ## Commit
     ci = commit
-    f = commit --fixup      
+    f = commit --fixup
     cif = commit -F
     cim = commit -m
 
@@ -68,7 +68,7 @@
     ## Cherry-Pick
     cp = cherry-pick
 
-        
+
     ## Diff
     d = diff --color-words
     ds = diff --staged --color-words
@@ -107,7 +107,7 @@
     ggg = grep --ignore-case -C12 -e                    # Grep with still larger context
 
 
-    ## Log   
+    ## Log
 
     # Tip of current branch
     tip = log --name-status -1
@@ -121,7 +121,7 @@
 
     # Log with diff
     logdiff = log -p
-    
+
     ## Searching with git log
     trace = log --name-status -i -S                                      # git log pickaxe. See when a string was added or removed in the code or a commit message.
     tracediff = log -p -i -S                                             # git log pickaxe and show changes. To visually examine a commit use "git see commit"
@@ -148,13 +148,13 @@
     #   git author <username> <regex>
     #
     author = !sh -c 'git ll -i --author=$1 --grep=$2' -
-    
+
     # Author grep fixed string: Show all commits by a particular
     # user matching the given fixed string in the commit log
     authorstr = !sh -c 'git ll -i --author=$1 -F --grep=\"$2\"' -
-    
+
     # Commits by me
-    # Usage: 
+    # Usage:
     #   git me
     #   git me <pattern>
     me = !sh -c 'git author debajit "$1"' -
@@ -166,7 +166,7 @@
     mt = mergetool
     mo = merge -s ours
 
-    
+
     ## Pull
     up = pull --rebase
 
@@ -186,7 +186,7 @@
     #-----------------------------------
     # UTILITY ALIASES
     #-----------------------------------
-    
+
     # Age of repository
     age = log --reverse --date=relative
 
@@ -195,14 +195,14 @@
     contributors-by-commits = shortlog -sn
 
     # Duplicates
-    git ls-tree -r HEAD | cut -c 13- | sort | uniq -D -w 40
+    dupes = git ls-tree -r HEAD | cut -c 13- | sort | uniq -D -w 40
 
     # Optimize repository
     optimize = gc --aggressive
-    
+
     # Just create a new revision and push. We don't care about the commit message
     update = !sh -c 'git commit -a -m "Update" && git push && git checkout'
-    
+
     # External tool-specific shortcuts
 
         # Rails
@@ -212,52 +212,52 @@
 
 [color]
     ui = auto
-    
+
 [color "branch"]
     current = bold cyan
     local = normal
     remote = bold red
     upstream = bold green
-    
+
 [color "diff"]
     meta = cyan bold reverse
     frag = magenta bold
     old = red bold
     new = green bold
     whitespace = white reverse
-    
+
 [color "status"]
     added = bold red
     updated = bold green
     changed = bold red
     untracked = bold red
     nobranch = bold red
-    
+
 [column]
     branch = column
     status = column
     tag = column
-    
+
 [core]
     attributesfile = ~/.gitattributes_global
     editor = mate -w
     excludesfile = ~/.gitignore_global
-    
+
 [credential]
     helper = osxkeychain
 
 [difftool]
     prompt = false
-    
+
 [difftool "Kaleidoscope"]
     cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-    
+
 [diff]
     tool = Kaleidoscope
-    
+
 [grep]
     lineNumber = true
-    
+
 [help]
     autocorrect = 1
 
@@ -268,7 +268,7 @@
     abbrevCommit = true
     date = relative
     decorate = full
-    
+
 [merge]
     tool = Kaleidoscope
 
@@ -281,7 +281,7 @@
 
 [pager]
     status = true
-    
+
 [push]
     default = simple
 
