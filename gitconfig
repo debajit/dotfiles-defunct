@@ -168,7 +168,7 @@
 
     
     ## Pull
-    up = pull --rebase # TODO: Remove after testing git pull
+    up = pull --rebase
 
 
     ## Rebase
@@ -176,26 +176,34 @@
     rc = rebase --continue
     ri = rebase -i
 
-    ## Shortlog
-    contributors = shortlog -s
-    contributors-by-commits = shortlog -sn
-    
-    ## Age of repository
-    age = log --reverse --date=relative
 
     ## Tag
     t = tag
     tl = tag -l
     tt = tag -n10
     tags = tag -n10
+
+    #-----------------------------------
+    # UTILITY ALIASES
+    #-----------------------------------
     
-    ## Optimization
+    # Age of repository
+    age = log --reverse --date=relative
+
+    # Contributors
+    contributors = shortlog -s
+    contributors-by-commits = shortlog -sn
+
+    # Duplicates
+    git ls-tree -r HEAD | cut -c 13- | sort | uniq -D -w 40
+
+    # Optimize repository
     optimize = gc --aggressive
     
-    ## Just create a new revision and push. We don't care about the commit message
+    # Just create a new revision and push. We don't care about the commit message
     update = !sh -c 'git commit -a -m "Update" && git push && git checkout'
-
-    ## External tool-specific shortcuts
+    
+    # External tool-specific shortcuts
 
         # Rails
         assetconfig = grep -e config --and -e asset
