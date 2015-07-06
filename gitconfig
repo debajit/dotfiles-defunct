@@ -251,7 +251,7 @@
 
 [core]
     attributesfile = ~/.gitattributes_global
-    editor = mate -w
+    editor = vim
     excludesfile = ~/.gitignore_global
 
 [credential]
