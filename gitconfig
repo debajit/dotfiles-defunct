@@ -195,7 +195,7 @@
     contributors-by-commits = shortlog -sn
 
     # Duplicates
-    dupes = git ls-tree -r HEAD | cut -c 13- | sort | uniq -D -w 40
+    dupes = !git ls-tree -r HEAD | cut -c 13- | sort | uniq -D -w 40
 
     # Optimize repository
     optimize = gc --aggressive
