@@ -56,7 +56,8 @@
 
     ## Commit
     ci = commit
-    f = commit --fixup
+    f = commit --fixup HEAD
+    fc = commit --fixup
     cif = commit -F
     cim = commit -m
 
