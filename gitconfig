@@ -71,17 +71,18 @@
 
 
     ## Diff
-    d = diff --color-words
-    ds = diff --staged --color-words
+    d = diff --color-words -w
+    ds = diff --staged --color-words -w
+    dw = diff -w
     dh = diff HEAD
     dh1 = diff HEAD~1
     dh2 = git diff HEAD~2
     dprev = !sh -c 'git d "$1~1" "$1"' -
-    dfunc = diff --color-words -W
+    dfunc = diff --color-words -W -w
 
     ## Diff context
-    dd = diff --color-words -U10
-    ddd = diff --color-words -U20
+    dd = diff --color-words -U10 -w
+    ddd = diff --color-words -U20 -w
 
     ## Difftool aliases
     dt = difftool
