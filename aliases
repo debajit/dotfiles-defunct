@@ -31,7 +31,10 @@ alias lc='lt -c'         # Lists sorted by date, most recent last, shows change 
 alias lu='lt -u'         # Lists sorted by date, most recent last, shows access time.
 
 # Ruby / Rails
-alias r="rspec --format doc"
+alias r="rubocop"
+alias ra="rubocop --auto-correct"
+alias ro="rubocop --format offenses"
+alias s="rspec --format doc"
 alias t="ruby -I test -rminitest/pride"
 alias prod='RAILS_ENV=production SECRET_KEY_BASE=`bin/rake secret` rails s'
 
