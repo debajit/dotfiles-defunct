@@ -6,8 +6,8 @@
 
 
 [user]
-    name = Debajit Adhikary
-    email = [ENTER EMAIL ADDRESS HERE]
+  name = Debajit Adhikary
+  email = [ENTER EMAIL ADDRESS HERE]
 
 [alias]
 
@@ -34,11 +34,6 @@
     # without editing the commit message
     amend = commit --amend --no-edit
 
-    # Amend with file: Amend the current commit
-    # with staged changes, taking the commit message
-    # from the given file
-    amendf = commit --amend -F
-
 
     ## Branch
     b = branch
@@ -58,7 +53,6 @@
     ci = commit
     f = commit --fixup HEAD
     fc = commit --fixup
-    cif = commit -F
     cim = commit -m
 
 
@@ -75,8 +69,6 @@
     ds = diff --staged --color-words -w
     dw = diff -w
     dh = diff HEAD
-    dh1 = diff HEAD~1
-    dh2 = git diff HEAD~2
     dprev = !sh -c 'git d "$1~1" "$1"' -
     dfunc = diff --color-words -W -w
 
@@ -88,8 +80,6 @@
     dt = difftool
     dts = difftool --staged
     dth = difftool HEAD
-    dth1 = difftool HEAD~1
-    dth2 = difftool HEAD~2
     see = !sh -c 'git difftool -d "$1^!"' -
 
 
@@ -207,9 +197,7 @@
 
     # External tool-specific shortcuts
 
-        # Rails
-        assetconfig = grep -e config --and -e asset
-        assethelpers = grep -e image_tag --or -e image_path --or -e asset_tag --or -e asset_path --or -e 'image-url' --or -e 'image-path' --or -e 'asset-url' --or -e 'asset-path'
+        # Ruby / Rails
         pry = grep -e byebug --or -e binding.pry
 
 [color]
