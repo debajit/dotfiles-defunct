@@ -37,12 +37,12 @@
 
     ## Branch
     b = branch
-    bb = branch -vv
-    ba = branch -avv
-    bd = branch -d
-    bm = branch --move
-    which = branch -avv --contains
-    where = !sh -c 'git which "$1"'
+    bb = branch -vv                   # Show local branches with additional info
+    ba = branch -avv                  # Show all branches
+    bd = branch -d                    # Delete a branch
+    bm = branch --move                # Rename a branch
+    which = branch -avv --contains    # Which branches contain this branch?
+    where = !sh -c 'git which "$1"'   # Alias for which
 
     ## Checkout
     c = checkout
@@ -50,10 +50,10 @@
 
 
     ## Commit
-    ci = commit
-    f = commit --fixup HEAD
-    fc = commit --fixup
-    cim = commit -m
+    ci = commit                 # Inspired by Mercurial and Subversion, which alias "commit" to "ci"
+    cim = commit -m             # Add a commit with a quick message. Prefer to use "git ci"
+    f = commit --fixup HEAD     # Add a commit to fix HEAD
+    fix = commit --fixup        # git fix <commit_reference> --- Add another commit to fix the given commit
 
 
     ## Cherry
