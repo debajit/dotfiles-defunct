@@ -31,7 +31,7 @@ alias lc='lt -c'         # Lists sorted by date, most recent last, shows change 
 alias lu='lt -u'         # Lists sorted by date, most recent last, shows access time.
 
 # Ruby / Rails
-alias r="rubocop"
+alias r="rubocop --display-style-guide --rails"
 alias ra="rubocop --auto-correct"
 alias ro="rubocop --format offenses"
 alias s="rspec --format doc"
