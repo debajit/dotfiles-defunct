@@ -32,6 +32,7 @@ alias lu='lt -u'         # Lists sorted by date, most recent last, shows access 
 
 # Ruby / Rails
 alias r="rubocop --display-style-guide --rails"
+alias rh="rubocop --display-style-guide --rails --format html -o /tmp/rubocop/index.html"
 alias ra="rubocop --auto-correct"
 alias ro="rubocop --format offenses"
 alias s="rspec --format doc"
