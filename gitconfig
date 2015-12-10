@@ -205,10 +205,10 @@
     ui = auto
 
 [color "branch"]
-    current = bold cyan
-    local = normal
-    remote = bold red
-    upstream = bold green
+  current = 120 bold reverse
+  local = white bold 240
+  remote = 215 bold reverse
+  upstream = 167 bold reverse
 
 [color "diff"]
     meta = cyan bold reverse
