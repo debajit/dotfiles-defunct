@@ -217,6 +217,11 @@
     new = green bold
     whitespace = white reverse
 
+[color "grep"]
+  linenumber = 215 bold
+  match = 120 bold reverse
+  filename = 98 bold
+
 [color "status"]
     added = bold red
     updated = bold green
