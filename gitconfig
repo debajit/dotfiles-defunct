@@ -89,7 +89,7 @@
 
     ## Grep
     todo = grep -e TODO -e FIXME                        # Grep TODO and FIXME
-    g = grep --ignore-case -e                           # General grep (case-insensitive)
+    g = grep --break --heading --ignore-case -e                           # General grep (case-insensitive)
     gf = grep --ignore-case --function-context -e       # Grep function
     gw = grep --ignore-case --word-regexp -e            # Grep word
     gs = grep --ignore-case -F -e                       # Grep string
