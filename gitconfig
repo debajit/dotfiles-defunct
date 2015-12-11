@@ -223,11 +223,11 @@
   filename = 98 bold
 
 [color "status"]
-    added = bold red
-    updated = bold green
-    changed = bold red
-    untracked = bold red
-    nobranch = bold red
+  added = bold red
+  updated = 154 bold
+  changed = 202 bold
+  untracked = 196 bold
+  nobranch = 196 bold
 
 [column]
     branch = column
