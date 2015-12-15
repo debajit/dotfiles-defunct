@@ -114,9 +114,16 @@
     # Log with diff
     logdiff = log -p
 
-    ## Searching with git log
+    ## Searching 
+
+    # Find files matching a pattern
+    files = !sh -c 'git ls-files | grep -i "$1"' -  
+    
+    # Search for a string/pattern added or deleted (in code or commit message)
     trace = log --name-status -i -S                                      # git log pickaxe. See when a string was added or removed in the code or a commit message.
     tracediff = log -p -i -S                                             # git log pickaxe and show changes. To visually examine a commit use "git see commit"
+
+    # Search for a pattern in a commit message
     messages = !sh -c 'git log --name-status -i --grep=$1' -             # git log for pattern in commit message
     messagestring = !sh -c 'git log --name-status -i -F --grep=\"$1\"' - # git log for string in commit message
 
