@@ -18,7 +18,7 @@ alias e='emacsclient -c -a ""'
 alias ek="emacsclient -n -e '(kill-emacs)'"
 
 # ls
-alias ls='ls --color=auto'         # Lists in one column, hidden files.
+alias ls='ls -G'         # Lists in one column, hidden files.
 alias l='ls -1A'         # Lists in one column, hidden files.
 alias ll='ls -lh'        # Lists human readable sizes.
 alias lr='ll -R'         # Lists human readable sizes, recursively.
