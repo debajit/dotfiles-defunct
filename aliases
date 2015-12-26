@@ -57,6 +57,8 @@ alias prod='RAILS_ENV=production SECRET_KEY_BASE=`bin/rake secret` rails s'
 #
 alias start-web-server="python -m SimpleHTTPServer"
 
+alias show-open-ports='sudo lsof -iTCP -sTCP:LISTEN -n -P'
+
 # Suffix Aliases
 # alias -s html=firefox
 # alias -s htm=firefox
