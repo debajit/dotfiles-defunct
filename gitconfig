@@ -218,11 +218,11 @@
   upstream = 167 bold reverse
 
 [color "diff"]
-    meta = cyan bold reverse
-    frag = magenta bold
-    old = red bold
-    new = green bold
-    whitespace = white reverse
+    meta = 110 bold reverse
+    frag = 141 bold
+    old = 197 bold
+    new = 154 bold
+    whitespace = 196 reverse
 
 [color "grep"]
   linenumber = 215 bold
