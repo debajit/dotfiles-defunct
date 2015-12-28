@@ -212,10 +212,10 @@
     ui = auto
 
 [color "branch"]
-  current = 120 bold reverse
-  local = white bold 240
-  remote = 215 bold reverse
-  upstream = 167 bold reverse
+  current = 82 bold reverse
+  # local = reset
+  remote = 217 bold
+  upstream = 197 bold reverse
 
 [color "decorate"]
   head = cyan bold
