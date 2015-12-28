@@ -217,12 +217,20 @@
   remote = 215 bold reverse
   upstream = 167 bold reverse
 
+[color "decorate"]
+  head = cyan bold
+  branch = 119 bold reverse
+  remoteBranch = 197 bold reverse
+  stash = magenta
+  tag = 226 bold reverse
+
 [color "diff"]
-    meta = 110 bold reverse
-    frag = 141 bold
-    old = 197 bold
-    new = 154 bold
-    whitespace = 196 reverse
+  commit = yellow # Symbols
+  meta = 110 bold reverse
+  frag = 141 bold
+  old = 197 bold
+  new = 154 bold
+  whitespace = 196 reverse
 
 [color "grep"]
   linenumber = 215 bold
