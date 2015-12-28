@@ -214,8 +214,8 @@
 [color "branch"]
   current = 82 bold reverse
   # local = reset
-  remote = 217 bold
-  upstream = 197 bold reverse
+  remote = 204 bold
+  upstream = 197 bold
 
 [color "decorate"]
   head = cyan bold
