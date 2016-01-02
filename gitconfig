@@ -228,7 +228,7 @@
   commit = yellow # Symbols
   meta = 110 bold reverse
   frag = 141 bold
-  old = 197 bold
+  old = 197 bold # Pastel red
   new = 154 bold
   whitespace = 196 reverse
 
@@ -238,11 +238,11 @@
   filename = 98 bold
 
 [color "status"]
-  added = bold red
-  updated = 154 bold
-  changed = 209 bold
-  untracked = 196 bold
-  nobranch = 196 bold
+  added = red bold
+  updated = 154 bold # Bright lime green
+  changed = 209 bold # Pastel bright red
+  untracked = 196 bold # Red
+  nobranch = 196 bold # Red
 
 [column]
     branch = column
