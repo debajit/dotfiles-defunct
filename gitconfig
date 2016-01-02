@@ -240,7 +240,7 @@
 [color "status"]
   added = bold red
   updated = 154 bold
-  changed = 202 bold
+  changed = 209 bold
   untracked = 196 bold
   nobranch = 196 bold
 
