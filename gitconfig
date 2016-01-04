@@ -117,7 +117,7 @@
     ## Searching 
 
     # Find files matching a pattern
-    files = !sh -c 'git ls-files | grep -i "$1"' -  
+    files = !sh -c 'git ls-files | grep -i --color=always "$1" | less -R' -
     
     # Search for a string/pattern added or deleted (in code or commit message)
     trace = log --name-status -i -S                                      # git log pickaxe. See when a string was added or removed in the code or a commit message.
