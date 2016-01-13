@@ -45,7 +45,7 @@ alias prod='RAILS_ENV=production SECRET_KEY_BASE=`bin/rake secret` rails s'
 # Usage
 #
 # Start HTTP server on default port 8000
-# % start-web-server 
+# % start-web-server
 #
 # Start HTTP server on port 9000
 # % start-web-server 9000
@@ -57,7 +57,7 @@ alias prod='RAILS_ENV=production SECRET_KEY_BASE=`bin/rake secret` rails s'
 #
 alias start-web-server="python -m SimpleHTTPServer"
 
-alias show-open-ports='sudo lsof -iTCP -sTCP:LISTEN -n -P'
+alias show-open-ports='sudo netstat -antlp'
 
 # Suffix Aliases
 # alias -s html=firefox
