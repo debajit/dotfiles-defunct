@@ -11,205 +11,205 @@
 
 [alias]
 
-    ## Status
-    s = status
+  ## Status
+  s = status
 
 
-    ## Staging
+  ## Staging
 
-    # Stage all tracked files and display status
-    a = !sh -c 'git stage -u :/ && git s'
+  # Stage all tracked files and display status
+  a = !sh -c 'git stage -u :/ && git s'
 
-    # Add with patch
-    ap = add -p
+  # Add with patch
+  ap = add -p
 
-    # Add interactively
-    ai = add -i
-
-
-    ## Amend
-    ## (long wordy aliases, to prevent unnecessary reflog resets after an erroneous amend)
-
-    # Amend the current commit with staged changes
-    # without editing the commit message
-    amend = commit --amend --no-edit
+  # Add interactively
+  ai = add -i
 
 
-    ## Branch
-    b = branch
-    bb = branch -vv                   # Show local branches with additional info
-    ba = branch -avv                  # Show all branches
-    bd = branch -d                    # Delete a branch
-    bm = branch --move                # Rename a branch
-    which = branch -avv --contains    # Which branches contain this branch?
-    where = !sh -c 'git which "$1"'   # Alias for which
+  ## Amend
+  ## (long wordy aliases, to prevent unnecessary reflog resets after an erroneous amend)
 
-    ## Checkout
-    c = checkout
-    cb = checkout -b
+  # Amend the current commit with staged changes
+  # without editing the commit message
+  amend = commit --amend --no-edit
 
 
-    ## Commit
-    ci = commit                 # Inspired by Mercurial and Subversion, which alias "commit" to "ci"
-    cim = commit -m             # Add a commit with a quick message. Prefer to use "git ci"
-    f = commit --fixup HEAD     # Add a commit to fix HEAD
-    fix = commit --fixup        # git fix <commit_reference> --- Add another commit to fix the given commit
+  ## Branch
+  b = branch
+  bb = branch -vv                   # Show local branches with additional info
+  ba = branch -avv                  # Show all branches
+  bd = branch -d                    # Delete a branch
+  bm = branch --move                # Rename a branch
+  which = branch -avv --contains    # Which branches contain this branch?
+  where = !sh -c 'git which "$1"'   # Alias for which
+
+  ## Checkout
+  c = checkout
+  cb = checkout -b
 
 
-    ## Cherry
-    cv = cherry -v
+  ## Commit
+  ci = commit                 # Inspired by Mercurial and Subversion, which alias "commit" to "ci"
+  cim = commit -m             # Add a commit with a quick message. Prefer to use "git ci"
+  f = commit --fixup HEAD     # Add a commit to fix HEAD
+  fix = commit --fixup        # git fix <commit_reference> --- Add another commit to fix the given commit
 
 
-    ## Cherry-Pick
-    cp = cherry-pick
+  ## Cherry
+  cv = cherry -v
 
 
-    ## Diff
-    d = diff --color-words -w
-    ds = diff --staged --color-words -w
-    dw = diff -w
-    dh = diff HEAD
-    dprev = !sh -c 'git d "$1~1" "$1"' -
-    dfunc = diff --color-words -W -w
-
-    ## Diff context
-    dd = diff --color-words -U10 -w
-    ddd = diff --color-words -U20 -w
-
-    ## Difftool aliases
-    dt = difftool
-    dts = difftool --staged
-    dth = difftool HEAD
-    see = !sh -c 'git difftool -d "$1^!"' -
+  ## Cherry-Pick
+  cp = cherry-pick
 
 
-    ## Gitk
-    k = !gitk -1
+  ## Diff
+  d = diff --color-words -w
+  ds = diff --staged --color-words -w
+  dw = diff -w
+  dh = diff HEAD
+  dprev = !sh -c 'git d "$1~1" "$1"' -
+  dfunc = diff --color-words -W -w
+
+  ## Diff context
+  dd = diff --color-words -U10 -w
+  ddd = diff --color-words -U20 -w
+
+  ## Difftool aliases
+  dt = difftool
+  dts = difftool --staged
+  dth = difftool HEAD
+  see = !sh -c 'git difftool -d "$1^!"' -
 
 
-    ## Grep
-    todo = grep -e TODO -e FIXME                        # Grep TODO and FIXME
-    g = grep --break --heading --ignore-case -e                           # General grep (case-insensitive)
-    gf = grep --ignore-case --function-context -e       # Grep function
-    gw = grep --ignore-case --word-regexp -e            # Grep word
-    gs = grep --ignore-case -F -e                       # Grep string
-
-    ## Grep context
-    gg = grep --ignore-case -C6 -e                      # Grep with larger context
-    ggg = grep --ignore-case -C12 -e                    # Grep with still larger context
+  ## Gitk
+  k = !gitk -1
 
 
-    ## Log
+  ## Grep
+  todo = grep -e TODO -e FIXME                        # Grep TODO and FIXME
+  g = grep --break --heading --ignore-case -e                           # General grep (case-insensitive)
+  gf = grep --ignore-case --function-context -e       # Grep function
+  gw = grep --ignore-case --word-regexp -e            # Grep word
+  gs = grep --ignore-case -F -e                       # Grep string
 
-    # Tip of current branch
-    tip = log --name-status -1
-    tipdiff = show HEAD
-    tipdifftool = difftool HEAD~1
-
-    # Short log: Handy one-line-per-commit log
-    q = log -10 --graph --format='format:%C(158 bold reverse)" %h "%C(reset)  "%s" %C(auto)"%d"%C(reset) %C(magenta)"%ar"%C(reset)  %C(104)"%an"%C(reset)' --date-order
-    l = log --graph --format='format:%C(yellow)"%h"%C(reset)  "%s" %C(auto)"%d"%C(reset) %C(magenta)"%ar"%C(reset)  %C(blue)"%an"%C(reset)' --date-order
-    ll = log --name-status --date=rfc
-
-    # Log with diff
-    logdiff = log -p
-
-    ## Searching 
-
-    # Find files matching a pattern
-    files = !sh -c 'git ls-files | grep -i --color=always "$1" | less -R' -
-    
-    # Search for a string/pattern added or deleted (in code or commit message)
-    trace = log --name-status -i -S                                      # git log pickaxe. See when a string was added or removed in the code or a commit message.
-    tracediff = log -p -i -S                                             # git log pickaxe and show changes. To visually examine a commit use "git see commit"
-
-    # Search for a pattern in a commit message
-    messages = !sh -c 'git log --name-status -i --grep=$1' -             # git log for pattern in commit message
-    messagestring = !sh -c 'git log --name-status -i -F --grep=\"$1\"' - # git log for string in commit message
-
-    ## Incoming / Outgoing changes (Compares with upstream)
-    outgoing = log @{u}.. --name-status     # See outgoing changes using git log
-    out = !sh -c 'git l @{u}..'             # See outgoing changes, one change per line
-    incoming = log ..@{u} --name-status     # See incoming changes using git log
-    in = !sh -c 'git l ..@{u}'              # See incoming changes, one change per line
-    outdiff = log @{u}.. -p                 # Diffs the outgoing changes with upstream
-    outdifftool = difftool @{u}             # See outgoing changes using difftool. TODO: Use gitk for non-Kaleidoscope-like difftools?
-    incomingfrom = cherry -v HEAD
-    outgoingto = !sh -c 'git cherry -v $1'
-
-    ## Log by Author
-
-    #
-    # Show all commits by this author
-    # git author <username>
-    #
-    # Show all commits by the author having the given
-    # regex in the commit message:
-    #   git author <username> <regex>
-    #
-    author = !sh -c 'git ll -i --author=$1 --grep=$2' -
-
-    # Author grep fixed string: Show all commits by a particular
-    # user matching the given fixed string in the commit log
-    authorstr = !sh -c 'git ll -i --author=$1 -F --grep=\"$2\"' -
-
-    # Commits by me
-    # Usage:
-    #   git me
-    #   git me <pattern>
-    me = !sh -c 'git author debajit "$1"' -
+  ## Grep context
+  gg = grep --ignore-case -C6 -e                      # Grep with larger context
+  ggg = grep --ignore-case -C12 -e                    # Grep with still larger context
 
 
-    ## Merge
-    m = merge
-    mff = merge --ff-only
-    mt = mergetool
-    mo = merge -s ours
+  ## Log
+
+  # Tip of current branch
+  tip = log --name-status -1
+  tipdiff = show HEAD
+  tipdifftool = difftool HEAD~1
+
+  # Short log: Handy one-line-per-commit log
+  q = log -10 --graph --format='format:%C(158 bold reverse)" %h "%C(reset)  "%s" %C(auto)"%d"%C(reset) %C(magenta)"%ar"%C(reset)  %C(104)"%an"%C(reset)' --date-order
+  l = log --graph --format='format:%C(yellow)"%h"%C(reset)  "%s" %C(auto)"%d"%C(reset) %C(magenta)"%ar"%C(reset)  %C(blue)"%an"%C(reset)' --date-order
+  ll = log --name-status --date=rfc
+
+  # Log with diff
+  logdiff = log -p
+
+  ## Searching 
+
+  # Find files matching a pattern
+  files = !sh -c 'git ls-files | grep -i --color=always "$1" | less -R' -
+  
+  # Search for a string/pattern added or deleted (in code or commit message)
+  trace = log --name-status -i -S                                      # git log pickaxe. See when a string was added or removed in the code or a commit message.
+  tracediff = log -p -i -S                                             # git log pickaxe and show changes. To visually examine a commit use "git see commit"
+
+  # Search for a pattern in a commit message
+  messages = !sh -c 'git log --name-status -i --grep=$1' -             # git log for pattern in commit message
+  messagestring = !sh -c 'git log --name-status -i -F --grep=\"$1\"' - # git log for string in commit message
+
+  ## Incoming / Outgoing changes (Compares with upstream)
+  outgoing = log @{u}.. --name-status     # See outgoing changes using git log
+  out = !sh -c 'git l @{u}..'             # See outgoing changes, one change per line
+  incoming = log ..@{u} --name-status     # See incoming changes using git log
+  in = !sh -c 'git l ..@{u}'              # See incoming changes, one change per line
+  outdiff = log @{u}.. -p                 # Diffs the outgoing changes with upstream
+  outdifftool = difftool @{u}             # See outgoing changes using difftool. TODO: Use gitk for non-Kaleidoscope-like difftools?
+  incomingfrom = cherry -v HEAD
+  outgoingto = !sh -c 'git cherry -v $1'
+
+  ## Log by Author
+
+  #
+  # Show all commits by this author
+  # git author <username>
+  #
+  # Show all commits by the author having the given
+  # regex in the commit message:
+  #   git author <username> <regex>
+  #
+  author = !sh -c 'git ll -i --author=$1 --grep=$2' -
+
+  # Author grep fixed string: Show all commits by a particular
+  # user matching the given fixed string in the commit log
+  authorstr = !sh -c 'git ll -i --author=$1 -F --grep=\"$2\"' -
+
+  # Commits by me
+  # Usage:
+  #   git me
+  #   git me <pattern>
+  me = !sh -c 'git author debajit "$1"' -
 
 
-    ## Pull
-    up = pull --rebase
+  ## Merge
+  m = merge
+  mff = merge --ff-only
+  mt = mergetool
+  mo = merge -s ours
 
 
-    ## Rebase
-    r = rebase
-    rc = rebase --continue
-    ri = rebase -i
+  ## Pull
+  up = pull --rebase
 
 
-    ## Tag
-    t = tag
-    tl = tag -l
-    tt = tag -n10
-    tags = tag -n10
+  ## Rebase
+  r = rebase
+  rc = rebase --continue
+  ri = rebase -i
 
-    #-----------------------------------
-    # UTILITY ALIASES
-    #-----------------------------------
 
-    # Age of repository
-    age = log --reverse --date=relative
+  ## Tag
+  t = tag
+  tl = tag -l
+  tt = tag -n10
+  tags = tag -n10
 
-    # Contributors
-    contributors = shortlog -s
-    contributors-by-commits = shortlog -sn
+  #-----------------------------------
+  # UTILITY ALIASES
+  #-----------------------------------
 
-    # Duplicates
-    dupes = !git ls-tree -r HEAD | cut -c 13- | sort | uniq -D -w 40
+  # Age of repository
+  age = log --reverse --date=relative
 
-    # Optimize repository
-    optimize = gc --aggressive
+  # Contributors
+  contributors = shortlog -s
+  contributors-by-commits = shortlog -sn
 
-    # Just create a new revision and push. We don't care about the commit message
-    update = !sh -c 'git commit -a -m "Update" && git push && git checkout'
+  # Duplicates
+  dupes = !git ls-tree -r HEAD | cut -c 13- | sort | uniq -D -w 40
 
-    # External tool-specific shortcuts
+  # Optimize repository
+  optimize = gc --aggressive
 
-        # Ruby / Rails
-        pry = grep -e byebug --or -e binding.pry
+  # Just create a new revision and push. We don't care about the commit message
+  update = !sh -c 'git commit -a -m "Update" && git push && git checkout'
+
+  ## External tool-specific shortcuts
+
+  # Ruby / Rails
+  pry = grep -e byebug --or -e binding.pry
 
 [color]
-    ui = auto
+  ui = auto
 
 [color "branch"]
   current = 82 bold reverse
@@ -245,56 +245,56 @@
   nobranch = 196 bold # Red
 
 [column]
-    branch = column
-    status = column
-    tag = column
+  branch = column
+  status = column
+  tag = column
 
 [core]
-    attributesfile = ~/.gitattributes_global
-    editor = mate -w
-    excludesfile = ~/.gitignore_global
+  attributesfile = ~/.gitattributes_global
+  editor = mate -w
+  excludesfile = ~/.gitignore_global
 
 [credential]
-    helper = osxkeychain
+  helper = osxkeychain
 
 [difftool]
-    prompt = false
+  prompt = false
 
 [difftool "Kaleidoscope"]
-    cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 
 [diff]
-    tool = Kaleidoscope
+  tool = Kaleidoscope
 
 [grep]
-    lineNumber = true
+  lineNumber = true
 
 [help]
-    autocorrect = 1
+  autocorrect = 1
 
 [include]
-    path = ~/.gitconfig_local
+  path = ~/.gitconfig_local
 
 [log]
-    abbrevCommit = true
-    date = relative
-    decorate = full
+  abbrevCommit = true
+  date = relative
+  decorate = full
 
 [merge]
-    tool = Kaleidoscope
+  tool = Kaleidoscope
 
 [mergetool]
-    prompt = false
+  prompt = false
 
 [mergetool "Kaleidoscope"]
-    cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-    trustExitCode = true
+  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+  trustExitCode = true
 
 [pager]
-    status = true
+  status = true
 
 [push]
-    default = simple
+  default = simple
 
 [rebase]
-    autosquash = true
+  autosquash = true
