@@ -168,7 +168,7 @@
 
 
   ## Pull
-  up = pull --rebase
+  up = !sh -c 'git pull --rebase && echo && git q'
 
 
   ## Rebase
