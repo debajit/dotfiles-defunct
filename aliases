@@ -22,7 +22,7 @@ alias show-open-ports='sudo netstat -antlp'
 
 # Compresses a folder using gzip.
 # Usage: compress_folder <FOLDERNAME>
-alias compress_folder='function _compress_folder() { tar cv "$1" | gzip --best > "${1}.tar.gz"}; _compress_folder'
+alias compress-folder='function _compress_folder() { tar cv "$1" | gzip --best > "${1}.tar.gz"}; _compress_folder'
 
 # Decompresses a tar.gz file. Faster to type than "tar xzvf <FILENAME>".
 # Usage: decompress <FILE.tar.gz>
