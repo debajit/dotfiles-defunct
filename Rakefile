@@ -1,96 +1,111 @@
-task default: [:git, :aliases, :vim, :rubocop]
+#
+# Installs dotfiles.
+#
+# For .gitconfig, the existing author name and email are preserved.
+#
+# USAGE:
+#           rake - Install all dotfiles
+#        rake -T - Show individual dotfiles that will be installed
+#   rake clobber - Delete installed dotfiles
+#
 
-desc 'Install Git configuration files'
-task :git do
-  user_name = GitConfig.instance.user_name
-  user_email = GitConfig.instance.user_email # TODO: Validate email to ensure "[ENTER...] does not work"
+require 'rake/clean' # See http://devblog.avdi.org/2014/04/28/rake-part-6-clean-and-clobber/
 
-  install_dotfiles %w[gitconfig gitignore_global gitattributes_global] # TODO: Add test
+# Sources
+GITCONFIG_SOURCE = 'gitconfig'
+TEXTMATE_KEYS_SOURCE = 'textmate_keybindings.dict'
+SPECIAL_DOTFILES = [GITCONFIG_SOURCE, TEXTMATE_KEYS_SOURCE]
+GENERAL_DOTFILES = FileList['*'].exclude('Rakefile', 'README.*', *SPECIAL_DOTFILES)
 
-  GitConfig.instance.user_name = user_name # TODO: ask user to input if invalid or empty. Username = gets.strip
-  GitConfig.instance.user_email = user_email
-end
+# Targets
+GITCONFIG_TARGET = "#{Dir.home}/.#{GITCONFIG_SOURCE}"
+TEXTMATE_KEYS_TARGET = "#{Dir.home}/Library/Application Support/TextMate/Keybindings.dict"
+SPECIAL_TARGETS = [GITCONFIG_TARGET, TEXTMATE_KEYS_TARGET]
+GENERAL_TARGETS = GENERAL_DOTFILES.pathmap("#{Dir.home}/.%f")
+ALL_TARGETS = [*GENERAL_TARGETS, *SPECIAL_TARGETS]
 
-desc 'Install Aliases'
-task :aliases do
-  install_dotfiles 'aliases'
-end
+desc 'Install all dotfiles'
+task default: ALL_TARGETS
+CLOBBER.concat(ALL_TARGETS)
 
-desc 'Install Vim configuration files'
-task :vim do
-  install_dotfiles 'vimrc'
-end
-
-desc 'Install RuboCop configuration file'
-task :rubocop do
-  install_dotfiles 'rubocop.yml'
-end
-
-desc 'Install TextMate keyboard settings'
-task :textmate do
-  cp 'textmate-keybindings.dict', File.join("#{Dir.home}/Library/Application\ Support/TextMate", 'Keybindings.dict')
-end
-
-desc 'Install emacs configuration files'
-task :emacs do
-  EMACS_CONFIG_DIR = File.join(Dir.home, '.emacs.d')
-
-  mkdir_p EMACS_CONFIG_DIR
-
-  # Symlink all emacs config files in emacs.d/ to ~/.emacs.d/
-  source_files = Dir.glob('emacs.d/*')
-  source_files.each do |source_file|
-    target_file = File.join(EMACS_CONFIG_DIR, File.basename(source_file))
-    source_file = File.absolute_path(source_file)
-    ln_s source_file, target_file, force: true
-  end
-
-  # Check if Cask is installed
-  unless File.exist?(File.join(Dir.home, ".cask"))
-    fail 'Cask not found. Please install Cask. See the directions at http://cask.readthedocs.org/en/latest/guide/installation.html'
-  end
-
-  # Install any emacs' packages required
-  cd EMACS_CONFIG_DIR do
-    sh 'cask install'
+GENERAL_DOTFILES.each_index do |i|
+  desc "Install #{GENERAL_DOTFILES[i]}"
+  file GENERAL_TARGETS[i] => GENERAL_DOTFILES[i] do
+    cp GENERAL_DOTFILES[i], GENERAL_TARGETS[i]
   end
 end
 
-private
+desc 'Install gitconfig'
+file GITCONFIG_TARGET => GITCONFIG_SOURCE do |t|
+  username = ask_user_if_blank(GitConfigurator.username, 'Git author name')
+  email = ask_user_if_blank(GitConfigurator.email, 'Git author email')
 
-  def install_dotfiles(dotfiles)
-    Array(dotfiles).each do |dotfile|
-      cp dotfile, File.join(Dir.home, ".#{dotfile}")
-    end
+  cp GITCONFIG_SOURCE, GITCONFIG_TARGET
+
+  GitConfigurator.username = username
+  GitConfigurator.email = email
+end
+
+desc 'Install TextMate keybindings'
+file TEXTMATE_KEYS_TARGET => TEXTMATE_KEYS_SOURCE do
+  cp TEXTMATE_KEYS_SOURCE, TEXTMATE_KEYS_TARGET
+end
+
+#------------------------------------
+# Utility classes and methods
+#------------------------------------
+
+#
+# Role that provides facilities to configure git settings
+#
+module GitConfigurator
+
+  USERNAME = 'user.name'
+  EMAIL = 'user.email'
+
+module_function
+
+  def username
+    read_git_config(USERNAME)
   end
 
-  class GitConfig
-    include Singleton
-
-    USER_NAME = 'user.name'
-    USER_EMAIL = 'user.email'
-
-    def user_name
-      read_git_config_attribute(USER_NAME) # TODO: DRY. Use metaprogramming to generate accessors
-    end
-
-    def user_name=(new_user_name)
-      write_git_config_attribute(USER_NAME, new_user_name)
-    end
-
-    def user_email
-      read_git_config_attribute(USER_EMAIL)
-    end
-
-    def user_email=(new_user_email)
-      write_git_config_attribute(USER_EMAIL, new_user_email)
-    end
-
-    def read_git_config_attribute(attribute)
-      %x[git config #{attribute}].strip
-    end
-
-    def write_git_config_attribute(attribute, value)
-      %x[git config --global "#{attribute}" "#{value}"]
-    end
+  def username=(new_username)
+    write_git_config(USERNAME, new_username)
   end
+
+  def email
+    read_git_config(EMAIL)
+  end
+
+  def email=(new_email)
+    write_git_config(EMAIL, new_email)
+  end
+
+  # Private methods
+
+  def read_git_config(attribute)
+    %x[git config #{attribute}].strip
+  end
+
+  def write_git_config(attribute, new_value)
+    %x[git config --global "#{attribute}" "#{new_value}"]
+  end
+
+  private_class_method :read_git_config, :write_git_config
+end
+
+#
+# If the given string_value is blank, then
+# prompts the user to enter a value.
+#
+def ask_user_if_blank(string_value, prompt)
+  return string_value unless string_value.to_s.strip.empty?
+
+  user_value = ''
+  while user_value.strip.empty?
+    print "Enter #{prompt}: "
+    user_value = gets.chomp
+  end
+
+  user_value
+end
