@@ -1,7 +1,6 @@
 # Paths
 PATH=/usr/local/bin:$PATH
 PATH=~/Applications/homebrew/bin:$PATH
-PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
 
 
 # C++11 build support for make
