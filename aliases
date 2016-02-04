@@ -1,3 +1,37 @@
+#----------------------------
+# Utility aliases
+#----------------------------
+
+#
+# Starts a web server on the current directory (serves static files).
+#
+# Usage:
+#
+#   start-web-server        # Start HTTP server on default port 8000
+#   start-web-server 9000   # Start HTTP server on port 9000
+#
+# Note that for ports below 1024 you will need to use sudo,
+# (and this alias won't directly work)
+#
+#   sudo python -m SimpleHTTPServer 80
+#
+alias start-web-server="python -m SimpleHTTPServer"
+
+# Show open ports in the system
+alias show-open-ports='sudo lsof -iTCP -sTCP:LISTEN -n -P'
+
+# Compresses a folder using gzip.
+# Usage: compress_folder <FOLDERNAME>
+alias compress_folder='function _compress_folder() { tar cv "$1" | gzip --best > "${1}.tar.gz"}; _compress_folder'
+
+# Decompresses a tar.gz file. Faster to type than "tar xzvf <FILENAME>".
+# Usage: decompress <FILE.tar.gz>
+alias decompress="tar xzvf"
+
+#----------------------------
+# Other aliases
+#----------------------------
+
 # Ag
 alias ag='ag --pager less'
 alias agr='ag --ruby'
@@ -39,27 +73,3 @@ alias ro="rubocop --format offenses"
 alias s="rspec --format doc"
 alias t="ruby -I test -rminitest/pride"
 alias prod='RAILS_ENV=production SECRET_KEY_BASE=`bin/rake secret` rails s'
-
-## Utility
-
-#
-# Usage
-#
-# Start HTTP server on default port 8000
-# % start-web-server 
-#
-# Start HTTP server on port 9000
-# % start-web-server 9000
-#
-# Note that for ports below 1024 you will need to use sudo,
-# (and this alias won't directly work)
-#
-# % sudo python -m SimpleHTTPServer 80
-#
-alias start-web-server="python -m SimpleHTTPServer"
-
-alias show-open-ports='sudo lsof -iTCP -sTCP:LISTEN -n -P'
-
-# Suffix Aliases
-# alias -s html=firefox
-# alias -s htm=firefox
