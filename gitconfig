@@ -109,7 +109,7 @@
   # Short log: Handy one-line-per-commit log
   q = log -10 --graph --format='format:%C(158 bold reverse)" %h "%C(reset)  "%s" %C(auto)"%d"%C(reset) %C(magenta)"%ar"%C(reset)  %C(104)"%an"%C(reset)' --date-order
   l = log --graph --format='format:%C(yellow)"%h"%C(reset)  "%s" %C(auto)"%d"%C(reset) %C(magenta)"%ar"%C(reset)  %C(blue)"%an"%C(reset)' --date-order
-  ll = log --name-status --date=rfc
+  ll = log --name-status --date=rfc --no-abbrev
 
   # Log with diff
   logdiff = log -p
