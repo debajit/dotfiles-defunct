@@ -67,9 +67,7 @@
   ## Diff
   d = diff --color-words -w
   ds = diff --staged --color-words -w
-  dw = diff -w
   dh = diff HEAD
-  dprev = !sh -c 'git d "$1~1" "$1"' -
   dfunc = diff --color-words -W -w
 
   ## Diff context
@@ -82,6 +80,8 @@
   dth = difftool HEAD
   see = !sh -c 'git difftool -d "$1^!"' -
 
+  ## Inspecting commits
+  show-inline = show -w --color-words
 
   ## Gitk
   k = !gitk -1
