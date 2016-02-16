@@ -67,7 +67,6 @@
   ## Diff
   d = diff --color-words -w
   ds = diff --staged --color-words -w
-  dw = diff -w
   dh = diff HEAD
   dprev = !sh -c 'git d "$1~1" "$1"' -
   dfunc = diff --color-words -W -w
