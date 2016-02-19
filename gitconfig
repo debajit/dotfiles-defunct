@@ -88,15 +88,15 @@
 
 
   ## Grep
-  todo = grep -e TODO -e FIXME                        # Grep TODO and FIXME
-  g = grep --break --heading --ignore-case -e                           # General grep (case-insensitive)
-  gf = grep --ignore-case --function-context -e       # Grep function
-  gw = grep --ignore-case --word-regexp -e            # Grep word
-  gs = grep --ignore-case -F -e                       # Grep string
+  todo = grep -e TODO -e FIXME                                    # Grep TODO and FIXME
+  g = grep --break --heading --ignore-case -e                     # General grep (case-insensitive)
+  gf = grep --ignore-case --break --heading --function-context -e # Grep function
+  gw = grep --ignore-case --break --heading --word-regexp -e      # Grep word
+  gs = grep --ignore-case --break --heading -F -e                 # Grep string
 
   ## Grep context
-  gg = grep --ignore-case -C6 -e                      # Grep with larger context
-  ggg = grep --ignore-case -C12 -e                    # Grep with still larger context
+  gg = grep --ignore-case --break --heading -C6 -e        # Grep with larger context
+  ggg = grep --ignore-case --break --heading -C12 -e      # Grep with still larger context
 
 
   ## Log
