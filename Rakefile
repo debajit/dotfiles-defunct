@@ -14,13 +14,23 @@ require 'rake/clean' # See http://devblog.avdi.org/2014/04/28/rake-part-6-clean-
 # Sources
 GITCONFIG_SOURCE = 'gitconfig'
 TEXTMATE_KEYS_SOURCE = 'textmate_keybindings.dict'
-SPECIAL_DOTFILES = [GITCONFIG_SOURCE, TEXTMATE_KEYS_SOURCE]
+DIVVY_PREFS_SOURCE = 'divvy_preferences.plist'
+SPECIAL_DOTFILES = [
+  GITCONFIG_SOURCE, 
+  TEXTMATE_KEYS_SOURCE,
+  DIVVY_PREFS_SOURCE
+]
 GENERAL_DOTFILES = FileList['*'].exclude('Rakefile', 'README.*', *SPECIAL_DOTFILES)
 
 # Targets
 GITCONFIG_TARGET = "#{Dir.home}/.#{GITCONFIG_SOURCE}"
 TEXTMATE_KEYS_TARGET = "#{Dir.home}/Library/Application Support/TextMate/Keybindings.dict"
-SPECIAL_TARGETS = [GITCONFIG_TARGET, TEXTMATE_KEYS_TARGET]
+DIVVY_PREFS_TARGET = "#{Dir.home}/Library/Preferences/com.mizage.Divvy.plist"
+SPECIAL_TARGETS = [
+  GITCONFIG_TARGET,
+  TEXTMATE_KEYS_TARGET,
+  DIVVY_PREFS_TARGET
+]
 GENERAL_TARGETS = GENERAL_DOTFILES.pathmap("#{Dir.home}/.%f")
 ALL_TARGETS = [*GENERAL_TARGETS, *SPECIAL_TARGETS]
 
@@ -47,8 +57,13 @@ file GITCONFIG_TARGET => GITCONFIG_SOURCE do |t|
 end
 
 desc 'Install TextMate keybindings'
-file TEXTMATE_KEYS_TARGET => TEXTMATE_KEYS_SOURCE do
-  cp TEXTMATE_KEYS_SOURCE, TEXTMATE_KEYS_TARGET
+file TEXTMATE_KEYS_TARGET => TEXTMATE_KEYS_SOURCE do |task|
+  cp task.prerequisites.first, task.name
+end
+
+desc 'Install Divvy preferences'
+file DIVVY_PREFS_TARGET => DIVVY_PREFS_SOURCE do |task|
+  cp task.prerequisites.first, task.name
 end
 
 #------------------------------------
