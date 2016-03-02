@@ -200,6 +200,10 @@
   # Optimize repository
   optimize = gc --aggressive
 
+  # Cleanup
+  untracked = ls-files --others --directory # Also clean -dxn
+  clobber = clean -dxf
+
   # Just create a new revision and push. We don't care about the commit message
   update = !sh -c 'git commit -a -m "Update" && git push && git checkout'
 
