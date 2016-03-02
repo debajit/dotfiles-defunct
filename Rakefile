@@ -15,10 +15,12 @@ require 'rake/clean' # See http://devblog.avdi.org/2014/04/28/rake-part-6-clean-
 GITCONFIG_SOURCE = 'gitconfig'
 TEXTMATE_KEYS_SOURCE = 'textmate_keybindings.dict'
 DIVVY_PREFS_SOURCE = 'divvy_preferences.plist'
+DIVVY_PREFS_EL_CAPITAN_SOURCE = 'divvy_preferences_el_capitan.plist'
 SPECIAL_DOTFILES = [
   GITCONFIG_SOURCE, 
   TEXTMATE_KEYS_SOURCE,
-  DIVVY_PREFS_SOURCE
+  DIVVY_PREFS_SOURCE,
+  DIVVY_PREFS_EL_CAPITAN_SOURCE
 ]
 GENERAL_DOTFILES = FileList['*'].exclude('Rakefile', 'README.*', *SPECIAL_DOTFILES)
 
@@ -26,6 +28,7 @@ GENERAL_DOTFILES = FileList['*'].exclude('Rakefile', 'README.*', *SPECIAL_DOTFIL
 GITCONFIG_TARGET = "#{Dir.home}/.#{GITCONFIG_SOURCE}"
 TEXTMATE_KEYS_TARGET = "#{Dir.home}/Library/Application Support/TextMate/Keybindings.dict"
 DIVVY_PREFS_TARGET = "#{Dir.home}/Library/Preferences/com.mizage.Divvy.plist"
+DIVVY_PREFS_EL_CAPITAN_TARGET = "#{Dir.home}/Library/Preferences/com.mizage.direct.Divvy.plist"
 SPECIAL_TARGETS = [
   GITCONFIG_TARGET,
   TEXTMATE_KEYS_TARGET,
@@ -63,6 +66,11 @@ end
 
 desc 'Install Divvy preferences'
 file DIVVY_PREFS_TARGET => DIVVY_PREFS_SOURCE do |task|
+  cp task.prerequisites.first, task.name
+end
+
+desc 'Install Divvy preferences on El Capitan'
+file DIVVY_PREFS_EL_CAPITAN_TARGET => DIVVY_PREFS_EL_CAPITAN_SOURCE do |task|
   cp task.prerequisites.first, task.name
 end
 
