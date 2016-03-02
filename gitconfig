@@ -165,6 +165,7 @@
   mff = merge --ff-only
   mt = mergetool
   mo = merge -s ours
+  mtheirs = merge -Xtheirs
 
 
   ## Pull
