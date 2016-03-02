@@ -17,9 +17,7 @@ require 'rake/clean' # See http://devblog.avdi.org/2014/04/28/rake-part-6-clean-
 #------------------------------------------------------------
 
 DOTFILES_WITH_CUSTOM_TARGET = [
-  { 'textmate_keybindings.dict'          => "#{Dir.home}/Library/Application Support/TextMate/Keybindings.dict" },
-  { 'divvy_preferences.plist'            => "#{Dir.home}/Library/Preferences/com.mizage.Divvy.plist" },
-  { 'divvy_preferences_el_capitan.plist' => "#{Dir.home}/Library/Preferences/com.mizage.direct.Divvy.plist" }
+  # { 'textmate_keybindings.dict'          => "#{Dir.home}/Library/Application Support/TextMate/Keybindings.dict" },
 ]
 
 #------------------------------------------------------------
