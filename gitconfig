@@ -78,7 +78,7 @@
   dt = difftool
   dts = difftool --staged
   dth = difftool HEAD
-  see = !sh -c 'git difftool -d "$1^!"' -
+  see = !sh -c 'git difftool "$1^!"' -
 
   ## Inspecting commits
   show-inline = show -w --color-words
