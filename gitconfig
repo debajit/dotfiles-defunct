@@ -203,7 +203,10 @@
 
   # Cleanup
   untracked = ls-files --others --directory # Also clean -dxn
-  clobber = clean -dxf
+  clobber = clean -dxf # Remove all untracked files
+
+  # Stow: A better stash
+  stow = stash --keep-index
 
   # Just create a new revision and push. We don't care about the commit message
   sync = !sh -c 'git s && read -p \"Press Enter to Sync these changes, Control+C to cancel \" reply && git add . && git commit -a -m \"Sync files\" && git push && git checkout'
