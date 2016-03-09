@@ -78,7 +78,7 @@
   dt = difftool
   dts = difftool --staged
   dth = difftool HEAD
-  see = !sh -c 'git difftool -d "$1^!"' -
+  see = !sh -c 'git difftool "$1^!"' -
 
   ## Inspecting commits
   show-inline = show -w --color-words
@@ -203,7 +203,10 @@
 
   # Cleanup
   untracked = ls-files --others --directory # Also clean -dxn
-  clobber = clean -dxf
+  clobber = clean -dxf # Remove all untracked files
+
+  # Stow: A better stash
+  stow = stash --keep-index
 
   # Just create a new revision and push. We don't care about the commit message
   sync = !sh -c 'git s && read -p \"Press Enter to Sync these changes, Control+C to cancel \" reply && git add . && git commit -a -m \"Sync files\" && git push && git checkout'
