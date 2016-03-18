@@ -48,9 +48,17 @@ alias d='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
 # Editor
-export EDITOR=emacs
-alias e='emacsclient -c -a ""'
-alias ek="emacsclient -n -e '(kill-emacs)'"
+
+# Set TextMate as default
+export EDITOR='mate -w'
+alias e='mate'
+
+# Set Emacs as default
+# export EDITOR=emacs
+# alias e='emacsclient -c -a ""'
+# alias ek="emacsclient -n -e '(kill-emacs)'"
+
+
 
 # ls
 alias ls='ls -G'         # Lists in one column, hidden files.
