@@ -28,6 +28,18 @@ alias compress-folder='function _compress_folder() { tar cv "$1" | gzip --best >
 # Usage: decompress <FILE.tar.gz>
 alias decompress="tar xzvf"
 
+
+#----------------------------
+# Core unix commands
+#----------------------------
+
+# Disk Usage
+alias du="du -khs"
+alias df="df -kh"
+
+alias tmux="TERM=xterm-256color tmux"
+
+
 #----------------------------
 # Other aliases
 #----------------------------
@@ -39,9 +51,6 @@ alias agy='ag --yaml'
 alias agh='ag --html'
 alias agj='ag --java'
 
-# Disk Usage
-alias du="du -khs"
-alias df="df -kh"
 
 # Directory settings
 alias d='dirs -v'
