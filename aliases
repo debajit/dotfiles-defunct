@@ -53,6 +53,10 @@ for index ({1..9}) alias "$index"="cd +${index}"; unset index
 export EDITOR='mate -w'
 alias e='mate'
 
+# Set Atom as default
+export EDITOR='atom'
+alias e='atom'
+
 # Set Emacs as default
 # export EDITOR=emacs
 # alias e='emacsclient -c -a ""'
