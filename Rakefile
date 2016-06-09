@@ -12,15 +12,20 @@
 require 'rake/clean' # See http://devblog.avdi.org/2014/04/28/rake-part-6-clean-and-clobber/
 
 #------------------------------------------------------------
+# CUSTOM INSTALLATION LOCATION/TARGET
+# (Other than ~/.filename)
+#
 # Add settings files that need to be installed to a custom
 # target (which is not $HOME)
 #------------------------------------------------------------
 
 DOTFILES_WITH_CUSTOM_TARGET = [
-  # { 'textmate_keybindings.dict'          => "#{Dir.home}/Library/Application Support/TextMate/Keybindings.dict" },
+  { 'atom_keymap.cson'                   => "#{Dir.home}/.atom/keymap.cson" }
 ]
 
 #------------------------------------------------------------
+# CUSTOM INSTALLATION PROCESS
+#
 # Add settings files that need a custom installation process
 # e.g. gitconfig, which needs to read the preexisting
 # username and email and add it to the new .gitconfig file
@@ -33,6 +38,8 @@ DOTFILES_WITH_CUSTOM_INSTALL = [
 ]
 
 #------------------------------------------------------------
+# DO NOT EDIT BELOW
+#
 # You should not need to edit anything below
 # unless you are doing a custom install or
 # fixing bugs.
