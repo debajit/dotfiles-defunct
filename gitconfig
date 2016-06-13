@@ -27,14 +27,6 @@
   ai = add -i
 
 
-  ## Amend
-  ## (long wordy aliases, to prevent unnecessary reflog resets after an erroneous amend)
-
-  # Amend the current commit with staged changes
-  # without editing the commit message
-  amend = commit --amend --no-edit
-
-
   ## Branch
   b = branch
   bb = branch -vv                   # Show local branches with additional info
@@ -164,7 +156,7 @@
   m = merge
   mff = merge --ff-only
   mt = mergetool
-  mo = merge -s ours
+  mo = merge -s ours --no-edit
   mtheirs = merge -Xtheirs
 
 
@@ -187,6 +179,18 @@
   #-----------------------------------
   # UTILITY ALIASES
   #-----------------------------------
+
+  # Amend aliases
+  # (long wordy aliases, to prevent unnecessary
+  # reflog resets after an erroneous amend)
+
+    # Amend the current commit with staged changes
+    # without editing the commit message
+    amend = commit --amend --no-edit
+
+    # Amend commit with current author information
+    amend-author = git commit --amend --reset-author --no-edit
+
 
   # Age of repository
   age = log --reverse --date=relative
