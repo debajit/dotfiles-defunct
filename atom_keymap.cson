@@ -53,4 +53,4 @@
   'f10': 'pane:split-down-and-move-active-item'
 
   # Close pane
-  'f12': 'pane:close'
+  'f11': 'pane:close'
