@@ -37,11 +37,17 @@
   'ctrl-alt-cmd-d': 'tree-view:toggle'
   'cmd-o': 'fuzzy-finder:toggle-file-finder'
 
+  # Reveal in tree view
+  'cmd-y': 'tree-view:reveal-active-file'
+  'cmd-y': 'nuclide-file-tree:reveal-active-file'
+
+
 # Mac
 '.platform-darwin atom-text-editor':
 
   # Jump to symbol
   'cmd-i': 'symbols-view:toggle-file-symbols'
+
 
 # All operating systems
 'atom-text-editor':
