@@ -47,10 +47,10 @@
 'atom-text-editor':
 
   # Split side by side
-  'f9': 'pane:split-right-and-copy-active-item'
+  'f9': 'pane:split-right-and-move-active-item'
 
   # Split top and bottom
-  'f10': 'pane:split-down-and-copy-active-item'
+  'f10': 'pane:split-down-and-move-active-item'
 
   # Close pane
   'f12': 'pane:close'
