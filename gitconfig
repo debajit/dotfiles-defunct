@@ -156,7 +156,7 @@
   m = merge
   mff = merge --ff-only
   mt = mergetool
-  mo = merge -s ours
+  mo = merge -s ours --no-edit
   mtheirs = merge -Xtheirs
 
 
