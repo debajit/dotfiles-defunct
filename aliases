@@ -28,6 +28,9 @@ alias compress-folder='function _compress_folder() { tar cv "$1" | gzip --best >
 # Usage: decompress <FILE.tar.gz>
 alias decompress="tar xzvf"
 
+# Connect to tmux session
+alias tm='tmux a -d'
+
 
 #----------------------------
 # Core unix commands
