@@ -189,7 +189,7 @@
     amend = commit --amend --no-edit
 
     # Amend commit with current author information
-    amend-author = git commit --amend --reset-author --no-edit
+    amend-author = commit --amend --reset-author --no-edit
 
 
   # Age of repository
