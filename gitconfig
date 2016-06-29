@@ -192,6 +192,18 @@
     amend-author = commit --amend --reset-author --no-edit
 
 
+  #---------------------------------------------------------
+  # FILE STATUS MANAGEMENT
+  # taken from http://stackoverflow.com/a/37083903/2288585
+  #---------------------------------------------------------
+
+  hide = update-index --assume-unchanged
+  unhide = update-index --no-assume-unchanged
+  unhide-all = update-index --really-refresh
+  hidden = !git ls-files -v | grep \"^[a-z]\"
+  ignored = !git status -s --ignored | grep \"^!!\"
+
+
   # Age of repository
   age = log --reverse --date=relative
 
@@ -214,6 +226,7 @@
 
   # Just create a new revision and push. We don't care about the commit message
   sync = !sh -c 'git s && read -p \"Press Enter to Sync these changes, Control+C to cancel \" reply && git add . && git commit -a -m \"Sync files\" && git push && git checkout'
+
 
   ## External tool-specific shortcuts
 
