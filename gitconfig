@@ -203,6 +203,8 @@
   hidden = !git ls-files -v | grep \"^[a-z]\"
   ignored = !git status -s --ignored | grep \"^!!\"
 
+  # Pick and apply a change without committing it
+  apply = !sh -c 'git cherry-pick --no-commit $1 && git reset' -
 
   # Age of repository
   age = log --reverse --date=relative
@@ -276,20 +278,14 @@
 
 [core]
   attributesfile = ~/.gitattributes_global
-  editor = mate -w
+  editor = vim
   excludesfile = ~/.gitignore_global
-
-[credential]
-  helper = osxkeychain
 
 [difftool]
   prompt = false
 
-[difftool "Kaleidoscope"]
-  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-
 [diff]
-  tool = Kaleidoscope
+  tool = p4merge
 
 [grep]
   lineNumber = true
@@ -306,7 +302,7 @@
   decorate = full
 
 [merge]
-  tool = Kaleidoscope
+  tool = p4merge
 
 [mergetool]
   prompt = false
