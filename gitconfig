@@ -203,6 +203,8 @@
   hidden = !git ls-files -v | grep \"^[a-z]\"
   ignored = !git status -s --ignored | grep \"^!!\"
 
+  # Pick and apply a change without committing it
+  apply = !sh -c 'git cherry-pick --no-commit $1 && git reset' -
 
   # Age of repository
   age = log --reverse --date=relative
