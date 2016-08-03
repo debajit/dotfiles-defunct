@@ -278,14 +278,21 @@
 
 [core]
   attributesfile = ~/.gitattributes_global
-  editor = vim
+  editor = mate -w
   excludesfile = ~/.gitignore_global
+
+[credential]
+  helper = osxkeychain
 
 [difftool]
   prompt = false
 
+[difftool "Kaleidoscope"]
+  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+
 [diff]
-  tool = p4merge
+  tool = Kaleidoscope
+  # tool = p4merge
 
 [grep]
   lineNumber = true
@@ -302,7 +309,8 @@
   decorate = full
 
 [merge]
-  tool = p4merge
+  tool = Kaleidoscope
+  # tool = p4merge
 
 [mergetool]
   prompt = false
