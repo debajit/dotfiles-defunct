@@ -12,6 +12,17 @@
 require 'rake/clean' # See http://devblog.avdi.org/2014/04/28/rake-part-6-clean-and-clobber/
 
 #------------------------------------------------------------
+# DO-NOT-INSTALL FILES
+# "Dotfiles" that don't need to be installed by rake.
+# These will be installed by other means/tools.
+#------------------------------------------------------------
+
+DO_NOT_INSTALL_FILES = [
+  "Eggplant.terminal",          # Terminal.app profile
+  "intellij_settings.jar",
+]
+
+#------------------------------------------------------------
 # CUSTOM INSTALLATION LOCATION/TARGET
 # (Other than ~/.filename)
 #
@@ -60,6 +71,7 @@ GENERAL_DOTFILES = FileList['*']
                      .exclude(
                        'Rakefile',
                        'README.*',
+                       *DO_NOT_INSTALL_FILES,
                        *sources(DOTFILES_WITH_CUSTOM_TARGET),
                        *sources(DOTFILES_WITH_CUSTOM_INSTALL))
 
