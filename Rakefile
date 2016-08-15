@@ -18,7 +18,8 @@ require 'rake/clean' # See http://devblog.avdi.org/2014/04/28/rake-part-6-clean-
 #------------------------------------------------------------
 
 DO_NOT_INSTALL_FILES = [
-  "Eggplant.terminal",          # Terminal.app profile
+  "Eggplant.terminal",                 # Terminal.app profile
+  "divvy_keyboard_shortcuts_data.txt", # Divvy keyboard shortcuts data
   "intellij_settings.jar",
 ]
 
@@ -33,8 +34,6 @@ DO_NOT_INSTALL_FILES = [
 DOTFILES_WITH_CUSTOM_TARGET = [
   { 'atom_keymap.cson'                   => "#{Dir.home}/.atom/keymap.cson" },
   { 'textmate_keybindings.dict'          => "#{Dir.home}/Library/Application Support/TextMate/Keybindings.dict" },
-  { 'divvy_preferences.plist'            => "#{Dir.home}/Library/Preferences/com.mizage.Divvy.plist" },
-  { 'divvy_preferences_el_capitan.plist' => "#{Dir.home}/Library/Preferences/com.mizage.direct.Divvy.plist" }
 ]
 
 #------------------------------------------------------------
