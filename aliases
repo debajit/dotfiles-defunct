@@ -3,6 +3,12 @@
 #----------------------------
 
 #
+# ds = "Disk space"
+# Shows free space on local disks
+#
+alias ds='noglob df -PHl | awk '\''{ print $6, $4 }'\'' | column -t'
+
+#
 # Starts a web server on the current directory (serves static files).
 #
 # Usage:
