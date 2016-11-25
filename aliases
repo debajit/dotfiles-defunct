@@ -38,15 +38,23 @@ alias decompress="tar xzvf"
 alias tm='tmux a -d'
 
 
-#----------------------------
-# Core unix commands
-#----------------------------
+#-------------------------------
+# Redefine core unix commands
+#-------------------------------
 
 # Disk Usage
 alias du="du -khs"
 alias df="df -kh"
 
 alias tmux="TERM=xterm-256color tmux"
+
+
+#-------------------------------
+# Redefine other unix commands
+#-------------------------------
+
+# Make tree paged by default
+alias tree="tree -C | less -R"
 
 
 #----------------------------
