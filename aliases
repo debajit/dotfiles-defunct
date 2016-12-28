@@ -58,6 +58,13 @@ alias tree="tree -C | less -R"
 
 
 #----------------------------
+# Redefine third-party tools
+#---------------------------
+
+alias tree="tree -C"
+
+
+#----------------------------
 # Other aliases
 #----------------------------
 
