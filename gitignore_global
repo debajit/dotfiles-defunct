@@ -11,3 +11,7 @@ Thumbs.db
 \#*\#
 .\#*
 *.orig
+
+# VIM artifacts
+# See https://github.com/github/gitignore/blob/master/Global/Vim.gitignore
+.netrwhist
