@@ -62,6 +62,7 @@ alias tree="tree -C | less -R"
 #---------------------------
 
 alias tree="tree -C"
+alias vi="vim"                  # Especially for older Unix machines
 
 
 #----------------------------
