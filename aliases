@@ -70,6 +70,7 @@ alias vi="vim"                  # Especially for older Unix machines
 #---------------------------
 
 alias tree="tree -C"
+alias vi="vim"                  # Especially for older Unix machines
 
 
 #----------------------------
