@@ -58,14 +58,6 @@ alias vi="vim"                  # Especially for older Unix machines
 
 
 #----------------------------
-# Redefine third-party tools
-#---------------------------
-
-alias tree="tree -C"
-alias vi="vim"                  # Especially for older Unix machines
-
-
-#----------------------------
 # Other aliases
 #----------------------------
 
