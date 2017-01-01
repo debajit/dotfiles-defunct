@@ -1,7 +1,7 @@
 My Dotfiles
 ==============================
 
-My configuration files for git, vim, etc.
+My configuration files for git, shell aliases etc.
 
 Installation
 ------------
