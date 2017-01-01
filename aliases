@@ -73,22 +73,20 @@ alias agj='ag --java'
 alias d='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
-# Editor
+# Editor Configuration
 
-# Set TextMate as default
-export EDITOR='mate -w'
-alias e='mate'
-
-# Set Atom as default
-export EDITOR='atom'
-alias e='atom'
-
-# Set Emacs as default
+# Use Emacs
 # export EDITOR=emacs
-# alias e='emacsclient -c -a ""'
-# alias ek="emacsclient -n -e '(kill-emacs)'"
+alias e='open -a Emacs'
+alias ek="emacsclient -n -e '(kill-emacs)'"
 
+# # Use TextMate
+export EDITOR='mate -w'
+# alias e='mate'
 
+# # Use Atom
+# export EDITOR='atom'
+# alias e='atom'
 
 # ls
 alias ls='ls -G'         # Lists in one column, hidden files.
