@@ -26,6 +26,9 @@ alias start-web-server="python -m SimpleHTTPServer"
 # Show open ports in the system
 alias show-open-ports='sudo lsof -iTCP -sTCP:LISTEN -n -P'
 
+# Compile C++11 code. Generates a.out
+alias ccc="clang++ -std=c++11 -stdlib=libc++"
+
 # Compresses a folder using gzip.
 # Usage: compress_folder <FOLDERNAME>
 alias compress-folder='function _compress_folder() { tar cv "$1" | gzip --best > "${1}.tar.gz"}; _compress_folder'
