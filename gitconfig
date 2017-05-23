@@ -220,7 +220,7 @@
   optimize = gc --aggressive
 
   # Cleanup
-  untracked = ls-files --others --directory # Also clean -dxn
+  untracked = ls-files --others --exclude-standard --directory # Also clean -dxn
   clobber = clean -dxf # Remove all untracked files
 
   # Stow: A better stash
