@@ -3,7 +3,7 @@
 import IO.ANSI, only: [color: 3]
 
 # Colors
-light_blue = color(1, 2, 4)
+light_blue = color(2, 3, 5)
 bright_pink = color(5, 0, 1)
 pale_orange = color(5, 3, 2)
 
