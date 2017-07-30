@@ -1,0 +1,2 @@
+# Allow invoking Elixir Mix escripts by name
+export PATH="$HOME/.mix/escripts:$PATH"
