@@ -8,6 +8,9 @@
 #
 alias ds='noglob df -PHl | awk '\''{ print $6, $4 }'\'' | column -t'
 
+# Use exa as an ls replacement
+alias l="exa"
+
 #
 # Starts a web server on the current directory (serves static files).
 #
@@ -22,6 +25,9 @@ alias ds='noglob df -PHl | awk '\''{ print $6, $4 }'\'' | column -t'
 #   sudo python -m SimpleHTTPServer 80
 #
 alias start-web-server="python -m SimpleHTTPServer"
+
+# Tree view for file listing
+alias t="exa -T --color=always | less -R"
 
 # Show open ports in the system
 alias show-open-ports='sudo lsof -iTCP -sTCP:LISTEN -n -P'
@@ -39,6 +45,7 @@ alias decompress="tar xzvf"
 
 # Connect to tmux session
 alias tm='tmux a -d'
+
 
 
 #-------------------------------
@@ -93,7 +100,6 @@ export EDITOR='mate -w'
 
 # ls
 alias ls='ls -G'         # Lists in one column, hidden files.
-alias l='ls -1A'         # Lists in one column, hidden files.
 alias ll='ls -lh'        # Lists human readable sizes.
 alias lr='ll -R'         # Lists human readable sizes, recursively.
 alias la='ll -A'         # Lists human readable sizes, hidden files.
@@ -103,12 +109,3 @@ alias lk='ll -Sr'        # Lists sorted by size, largest last.
 alias lt='ll -tr'        # Lists sorted by date, most recent last.
 alias lc='lt -c'         # Lists sorted by date, most recent last, shows change time.
 alias lu='lt -u'         # Lists sorted by date, most recent last, shows access time.
-
-# Ruby / Rails
-alias r="rubocop --display-style-guide --rails"
-alias rh="rubocop --display-style-guide --rails --format html -o /tmp/rubocop/index.html"
-alias ra="rubocop --auto-correct"
-alias ro="rubocop --format offenses"
-alias s="rspec --format doc"
-alias t="ruby -I test -rminitest/pride"
-alias prod='RAILS_ENV=production SECRET_KEY_BASE=`bin/rake secret` rails s'
