@@ -58,9 +58,8 @@
 
   ## Diff
   d = diff --color-words -w
-  ds = diff --staged --color-words -w
-  dh = diff HEAD
-  dfunc = diff --color-words -W -w
+  ds = diff --staged
+  df = diff --color-words -W -w
 
   ## Diff context
   dd = diff --color-words -U10 -w
@@ -69,7 +68,6 @@
   ## Difftool aliases
   dt = difftool
   dts = difftool --staged
-  dth = difftool HEAD
   see = !sh -c 'git difftool "$1^!"' -
 
   ## Inspecting commits
@@ -266,10 +264,12 @@
 
 [color "status"]
   added = red bold
-  updated = 154 bold # Bright lime green
-  changed = 209 bold # Pastel bright red
-  untracked = 196 bold # Red
+  changed = 209 bold
   nobranch = 196 bold # Red
+  untracked = 196 bold # Red
+  updated = 154 bold # Bright lime green
+  localBranch = 121 bold reverse # see https://github.com/rrrene/bunt
+  remoteBranch = 210 bold reverse
 
 [column]
   branch = column
