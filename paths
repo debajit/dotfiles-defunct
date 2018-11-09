@@ -1,2 +1,5 @@
 # Allow invoking Elixir Mix escripts by name
 export PATH="$HOME/.mix/escripts:$PATH"
+
+# Nix
+export PATH="${HOME}/.nix-profile/bin:${PATH}"
