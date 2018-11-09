@@ -3,5 +3,9 @@ export PATH="$HOME/.mix/escripts:$PATH"
 
 # Allow invoking Python3 packages by name
 export PATH="$HOME/Library/Python/3.6/bin:$PATH"
+
+# RipGrep
+export RIPGREP_CONFIG_PATH="${HOME}/.ripgreprc"
+
 # Nix
 export PATH="${HOME}/.nix-profile/bin:${PATH}"
