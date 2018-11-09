@@ -8,6 +8,9 @@
 #
 alias ds='noglob df -PHl | awk '\''{ print $6, $4 }'\'' | column -t'
 
+# Use exa as an ls replacement
+alias l="exa --git-ignore --group-directories-first"
+
 #
 # Starts a web server on the current directory (serves static files).
 #
@@ -22,6 +25,9 @@ alias ds='noglob df -PHl | awk '\''{ print $6, $4 }'\'' | column -t'
 #   sudo python -m SimpleHTTPServer 80
 #
 alias start-web-server="python -m SimpleHTTPServer"
+
+# Tree view for file listing
+alias t="exa -T --color=always"
 
 # Show open ports in the system
 alias show-open-ports='sudo netstat -antlp'
