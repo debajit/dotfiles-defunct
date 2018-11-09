@@ -10,6 +10,7 @@ alias ds='noglob df -PHl | awk '\''{ print $6, $4 }'\'' | column -t'
 
 # Use exa as an ls replacement
 alias l="exa --git-ignore --group-directories-first"
+alias ll="exa -l"
 
 #
 # Starts a web server on the current directory (serves static files).
@@ -38,6 +39,8 @@ alias ccc="clang++ -std=c++11 -stdlib=libc++"
 # Compresses a folder using gzip.
 # Usage: compress_folder <FOLDERNAME>
 alias compress-folder='function _compress_folder() { tar cv "$1" | gzip --best > "${1}.tar.gz"}; _compress_folder'
+
+alias zipdir='function _zipdir() { zip -r "${1}.zip" "${1}" }; _zipdir'
 
 # Decompresses a tar.gz file. Faster to type than "tar xzvf <FILENAME>".
 # Usage: decompress <FILE.tar.gz>
@@ -99,13 +102,14 @@ export EDITOR='mate -w'
 # alias e='atom'
 
 # ls
-alias ls='ls -G'         # Lists in one column, hidden files.
-alias ll='ls -lh'        # Lists human readable sizes.
-alias lr='ll -R'         # Lists human readable sizes, recursively.
-alias la='ll -A'         # Lists human readable sizes, hidden files.
-alias lm='la | "$PAGER"' # Lists human readable sizes, hidden files through pager.
-alias lx='ll -XB'        # Lists sorted by extension (GNU only).
-alias lk='ll -Sr'        # Lists sorted by size, largest last.
-alias lt='ll -tr'        # Lists sorted by date, most recent last.
-alias lc='lt -c'         # Lists sorted by date, most recent last, shows change time.
-alias lu='lt -u'         # Lists sorted by date, most recent last, shows access time.
+# alias ls='ls -G'         # Lists in one column, hidden files.
+# alias ll='ls -lh'        # Lists human readable sizes.
+# alias lr='ll -R'         # Lists human readable sizes, recursively.
+# alias la='ll -A'         # Lists human readable sizes, hidden files.
+# alias lm='la | "$PAGER"' # Lists human readable sizes, hidden files through pager.
+# alias lx='ll -XB'        # Lists sorted by extension (GNU only).
+# alias lk='ll -Sr'        # Lists sorted by size, largest last.
+# alias lt='ll -tr'        # Lists sorted by date, most recent last.
+alias lt='exa -l --sort newest'        # Lists sorted by date, most recent last.
+# alias lc='lt -c'         # Lists sorted by date, most recent last, shows change time.
+# alias lu='lt -u'         # Lists sorted by date, most recent last, shows access time.
