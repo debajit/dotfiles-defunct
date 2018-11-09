@@ -3,3 +3,5 @@ export PATH="$HOME/.mix/escripts:$PATH"
 
 # Allow invoking Python3 packages by name
 export PATH="$HOME/Library/Python/3.6/bin:$PATH"
+# Nix
+export PATH="${HOME}/.nix-profile/bin:${PATH}"
