@@ -1,0 +1,11 @@
+--pretty
+--smart-case
+--color=ansi
+--colors=match:none
+--colors=match:bg:118
+--colors=match:fg:black
+--colors=match:style:nointense
+--colors=path:fg:67
+--colors=path:style:bold
+--colors=line:fg:167
+--colors=line:style:intense
