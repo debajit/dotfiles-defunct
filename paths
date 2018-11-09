@@ -1,5 +1,8 @@
 # Allow invoking Elixir Mix escripts by name
 export PATH="$HOME/.mix/escripts:$PATH"
 
+# RipGrep
+export RIPGREP_CONFIG_PATH="${HOME}/.ripgreprc"
+
 # Nix
 export PATH="${HOME}/.nix-profile/bin:${PATH}"
