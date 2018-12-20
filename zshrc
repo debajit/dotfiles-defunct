@@ -5,37 +5,31 @@
 #   Debajit Adhikary <debajit@debajit.com>
 #
 
-# Sources the given dotfile from the home directory, if the dotfile
-# exists.
+# Sources the given file, if it exists.
 function source_file() {
-    filename="$HOME/${1}"
-    [[ -f ${filename} ]] && source ${filename}
+    filename="${1}"
+    [[ -f ${filename} ]] && source "${filename}"
 }
 
-source_file ".zshrc.local"      # Local config (e.g. workplace-specific)
+# Sources the given dotfile from the home directory, if the dotfile exists.
+function source_dotfile() {
+    filename="$HOME/${1}"
+    source_file "${filename}"
+}
 
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
+source_dotfile ".zshrc.local"      # Local config (e.g. workplace-specific)
+source_file "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" # Source Prezto
 
-# Prompt
 # prompt debajit
 prompt twofirewatch
 
-# Set aliases last so that we can override them correctly
-source_file ".aliases"          # Global aliases
-source_file ".aliases.local"    # Local aliases
-source_file ".paths"            # Global path settings
-source_file ".paths.local"      # Global path settings
-source_file ".env_vars"         # Environment variables
-source_file ".env_vars.local"   # Environment variables
-source_file ".env_vars.secret"  # Secret environment variables
+source_dotfile ".aliases"          # Global aliases, overridable locally
+source_dotfile ".aliases.local"    # Local aliases
+source_dotfile ".paths"            # Global path settings
+source_dotfile ".paths.local"      # Global path settings
+source_dotfile ".env_vars"         # Environment variables
+source_dotfile ".env_vars.local"   # Environment variables
+source_dotfile ".env_vars.secret"  # Secret environment variables
 
-source_file ".fzf.zsh"                          # Setup fzf
-source_file ".nix-profile/etc/profile.d/nix.sh" # Setup nix
-
-# # Added by Nix installer
-# if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
-#   . ~/.nix-profile/etc/profile.d/nix.sh
-# fi
+source_dotfile ".fzf.zsh"                          # Setup fzf
+source_dotfile ".nix-profile/etc/profile.d/nix.sh" # Setup nix
