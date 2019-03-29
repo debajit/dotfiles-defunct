@@ -38,6 +38,13 @@ alias show-open-ports='sudo netstat -antlp'
 alias compress-folder='function _compress_folder() { tar cv "$1" | gzip --best > "${1}.tar.gz"}; _compress_folder'
 
 alias zipdir='function _zipdir() { zip -r "${1}.zip" "${1}" }; _zipdir'
+alias zipdir-with-password='function _zipdir-with-password() { zip -er "${1}.zip" "${1}" }; _zipdir-with-password'
+
+# find latest - fl
+alias fl='function _fl() { ls -1 -rt | grep -i "$1" | tail -1 }; _fl'
+
+# tail latest - tl
+alias tl='function _tl() { tail -f `fl "${1}"` }; _tl'
 
 # Decompresses a tar.gz file. Faster to type than "tar xzvf <FILENAME>".
 # Usage: decompress <FILE.tar.gz>
