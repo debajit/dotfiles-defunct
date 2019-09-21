@@ -1,0 +1,11 @@
+!
+! "Caps Lock" sends Control
+! See https://wiki.archlinux.org/index.php/Xmodmap
+!
+! Add the following line to your ~/.xinitrc:
+! xmodmap ~/.Xmodmap
+!
+clear lock
+clear control
+keycode 66 = Control_L
+add control = Control_L Control_R

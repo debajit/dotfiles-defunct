@@ -33,7 +33,7 @@ source_dotfile ".env_vars.secret"  # Secret environment variables
 
 
 #------------------------------------------------------------------------
-# Initialize third-party software
+# Initialize other software
 #------------------------------------------------------------------------
 
 # fzf. See https://wiki.archlinux.org/index.php/Fzf
