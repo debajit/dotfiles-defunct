@@ -30,7 +30,7 @@ DO_NOT_INSTALL_FILES = [
 #------------------------------------------------------------
 
 DOTFILES_WITH_CUSTOM_TARGET = [
-  { 'atom_keymap.cson'                   => "#{Dir.home}/.atom/keymap.cson" }
+  # { 'atom_keymap.cson'                   => "#{Dir.home}/.atom/keymap.cson" }
 ]
 
 #------------------------------------------------------------

@@ -31,5 +31,11 @@ source_dotfile ".env_vars"         # Environment variables
 source_dotfile ".env_vars.local"   # Environment variables
 source_dotfile ".env_vars.secret"  # Secret environment variables
 
-source_dotfile ".fzf.zsh"                          # Setup fzf
-source_dotfile ".nix-profile/etc/profile.d/nix.sh" # Setup nix
+
+#------------------------------------------------------------------------
+# Initialize third-party software
+#------------------------------------------------------------------------
+
+# fzf. See https://wiki.archlinux.org/index.php/Fzf
+source_file "/usr/share/fzf/key-bindings.zsh"
+source_file "/usr/share/fzf/completion.zsh"
