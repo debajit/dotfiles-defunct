@@ -1,16 +1,43 @@
-#----------------------------
-# Utility aliases
-#----------------------------
+#----------------------------------------------------------------------
+# Redefine UNIX commands to use sane defaults
+#----------------------------------------------------------------------
 
-#
-# ds = "Disk space"
-# Shows free space on local disks
-#
+# Core Unix commands
+alias cp="cp -iv"
+alias df="df -kh"               # Free disk space
+alias du="du -khs"              # Disk usage
+alias less="less -R"
+alias mkdir="mkdir -p"
+
+# Third party unix commands
+alias feh="feh -Zr"             # Fast image viewer
+alias tmux="TERM=xterm-256color tmux"
+alias tree="tree -C"
+alias vi="vim"
+
+#----------------------------------------------------------------------
+# Frequently used commands
+#----------------------------------------------------------------------
+
+# One-letter aliases
+alias e='open -a Emacs'
+alias i="feh"                   # Image viewer
+alias l="exa --git-ignore --group-directories-first"
+alias t="tree | less"
+alias u="cd .. && pwd && ls"
+
+alias ir="i -z"                 # Images, in random order
+alias ll="exa -l"
+alias lt='exa -l --sort newest' # Lists sorted by date, most recent last.
+alias tt="tree -L 2 | less"
+alias ttt="tree -L 3 | less"
+
+# ds = "Disk space". Shows free space on local disks
 alias ds='noglob df -PHl | awk '\''{ print $6, $4 }'\'' | column -t'
 
-# Use exa as an ls replacement
-alias l="exa --git-ignore --group-directories-first"
-alias ll="exa -l"
+#----------------------------------------------------------------------
+# Utility aliases
+#----------------------------------------------------------------------
 
 #
 # Starts a web server on the current directory (serves static files).
@@ -27,14 +54,8 @@ alias ll="exa -l"
 #
 alias start-web-server="python -m SimpleHTTPServer"
 
-# Tree view for file listing
-alias t="exa -T --color=always"
-
 # Show open ports in the system
-alias show-open-ports='sudo lsof -iTCP -sTCP:LISTEN -n -P'
-
-# Compile C++11 code. Generates a.out
-alias ccc="clang++ -std=c++11 -stdlib=libc++"
+alias show-open-ports='sudo netstat -antlp'
 
 # Compresses a folder using gzip.
 # Usage: compress_folder <FOLDERNAME>
@@ -56,67 +77,10 @@ alias decompress="tar xzvf"
 # Connect to tmux session
 alias tm='tmux a -d'
 
-
-
-#-------------------------------
-# Redefine core unix commands
-#-------------------------------
-
-# Disk Usage
-alias du="du -khs"
-alias df="df -kh"
-
-alias tmux="TERM=xterm-256color tmux"
-
-
-#----------------------------
-# Redefine third-party tools
-#---------------------------
-
-alias tree="tree -C"
-alias vi="vim"                  # Especially for older Unix machines
-
-
 #----------------------------
 # Other aliases
 #----------------------------
 
-# Ag
-alias ag='ag --pager less'
-alias agr='ag --ruby'
-alias agy='ag --yaml'
-alias agh='ag --html'
-alias agj='ag --java'
-
-
 # Directory settings
 alias d='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
-
-# Editor Configuration
-
-# Use Emacs
-# export EDITOR=emacs
-alias e='open -a Emacs'
-alias ek="emacsclient -n -e '(kill-emacs)'"
-
-# # Use TextMate
-export EDITOR='mate -w'
-# alias e='mate'
-
-# # Use Atom
-# export EDITOR='atom'
-# alias e='atom'
-
-# ls
-# alias ls='ls -G'         # Lists in one column, hidden files.
-# alias ll='ls -lh'        # Lists human readable sizes.
-# alias lr='ll -R'         # Lists human readable sizes, recursively.
-# alias la='ll -A'         # Lists human readable sizes, hidden files.
-# alias lm='la | "$PAGER"' # Lists human readable sizes, hidden files through pager.
-# alias lx='ll -XB'        # Lists sorted by extension (GNU only).
-# alias lk='ll -Sr'        # Lists sorted by size, largest last.
-# alias lt='ll -tr'        # Lists sorted by date, most recent last.
-alias lt='exa -l --sort newest'        # Lists sorted by date, most recent last.
-# alias lc='lt -c'         # Lists sorted by date, most recent last, shows change time.
-# alias lu='lt -u'         # Lists sorted by date, most recent last, shows access time.

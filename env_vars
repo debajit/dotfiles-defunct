@@ -1,3 +1,7 @@
+# Default Editor
+export EDITOR="emacs"
+# export EDITOR='mate -w'
+
 # Enable shell history in IEx
 # see https://hexdocs.pm/iex/IEx.html#module-shell-history
 export ERL_AFLAGS="-kernel shell_history enabled"
