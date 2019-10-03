@@ -34,6 +34,17 @@ alias d='dirs -v'               # List directories recently visited (numbered) t
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
 #
+# Package management commands
+#
+
+alias pq="pacman -Ss"           # Package query/search
+alias pi="pacman -S"            # Package install
+alias pr="pacman -Rs"           # Package remove/uninstall
+alias pu="pacman -u"            # Package upgrade
+alias pua="pacman -Syu"         # Package upgrade all
+alias pls="pacman -Q"           # Package list all installed packages
+
+#
 # Other aliases
 #
 
