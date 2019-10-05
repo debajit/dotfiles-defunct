@@ -19,6 +19,7 @@ alias i="feh"                   # Image viewer
 alias l="ls -h"
 alias t="tree | less"
 alias u="cd .. && pwd && ls"
+alias o="exo-open"
 
 alias ir="i -z"                 # Images, in random order
 alias ll="ls -lh"
