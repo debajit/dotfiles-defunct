@@ -28,6 +28,25 @@ alias l="ls -h"
 alias t="tree | less"
 alias u="cd .. && pwd && ls"
 alias o="exo-open"
+alias d='dirs -v'               # List directories recently visited (numbered) to jump to them quickly
+
+# Alias "1" to the last visited directory, "2" to the one visited before that, and so on
+for index ({1..9}) alias "$index"="cd +${index}"; unset index
+
+#
+# Package management commands
+#
+
+alias pq="pacman -Ss"           # Package query/search
+alias pi="pacman -S"            # Package install
+alias pr="pacman -Rs"           # Package remove/uninstall
+alias pu="pacman -u"            # Package upgrade
+alias pua="pacman -Syu"         # Package upgrade all
+alias pls="pacman -Q"           # Package list all installed packages
+
+#
+# Other aliases
+#
 
 alias ir="i -z"                 # Images, in random order
 alias ll="ls -lh"
