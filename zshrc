@@ -31,7 +31,6 @@ source_dotfile ".env_vars"         # Environment variables
 source_dotfile ".env_vars.local"   # Environment variables
 source_dotfile ".env_vars.secret"  # Secret environment variables
 
-
 #------------------------------------------------------------------------
 # Initialize other software
 #------------------------------------------------------------------------

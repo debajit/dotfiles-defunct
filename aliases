@@ -1,20 +1,28 @@
-#------------------------------------------------------------------------
+#----------------------------------------------------------------------
 # Redefine UNIX commands to use sane defaults
-#------------------------------------------------------------------------
+#----------------------------------------------------------------------
 
+# Core Unix commands
 alias cp="cp -iv"
 alias df="df -kh"               # Free disk space
 alias du="du -khs"              # Disk usage
-alias feh="feh -Zr"             # Fast image viewer
 alias less="less -R"
 alias mkdir="mkdir -p"
+
+# Third party unix commands
+alias feh="feh -Zr"             # Fast image viewer
+alias tmux="TERM=xterm-256color tmux"
+alias tree="tree -C"
 alias vi="vim"
 
 #----------------------------------------------------------------------
 # Frequently used commands
 #----------------------------------------------------------------------
 
+#
 # One-letter aliases
+#
+
 alias i="feh"                   # Image viewer
 alias l="ls -h"
 alias t="tree | less"
@@ -30,9 +38,9 @@ alias ttt="tree -L 3 | less"
 alias ds='noglob df -PHl | awk '\''{ print $6, $4 }'\'' | column -t'
 
 
-#----------------------------
-# Utility aliases
-#----------------------------
+#----------------------------------------------------------------------
+# Utility aliases (not updated in a while. Some of them may be broken)
+#----------------------------------------------------------------------
 
 #
 # Starts a web server on the current directory (serves static files).
@@ -68,26 +76,3 @@ alias tl='function _tl() { tail -f `fl "${1}"` }; _tl'
 # Decompresses a tar.gz file. Faster to type than "tar xzvf <FILENAME>".
 # Usage: decompress <FILE.tar.gz>
 alias decompress="tar xzvf"
-
-# Connect to tmux session
-alias tm='tmux a -d'
-
-
-#-------------------------------
-# Redefine core unix commands
-#-------------------------------
-
-alias tmux="TERM=xterm-256color tmux"
-
-#----------------------------
-# Other aliases
-#----------------------------
-
-# Directory settings
-alias d='dirs -v'
-for index ({1..9}) alias "$index"="cd +${index}"; unset index
-
-# Editor
-export EDITOR=emacs
-alias e='emacsclient -c -a ""'
-alias ek="emacsclient -n -e '(kill-emacs)'"
