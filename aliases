@@ -24,6 +24,7 @@ alias vi="vim"
 #
 
 alias i="feh"                   # Image viewer
+alias m="mpv"                   # Movie player
 alias l="ls -h"
 alias t="tree | less"
 alias u="cd .. && pwd && ls"
