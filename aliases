@@ -56,6 +56,9 @@ alias ttt="tree -L 3 | less"
 # ds = "Disk space". Shows free space on local disks
 alias ds='noglob df -PHl | awk '\''{ print $6, $4 }'\'' | column -t'
 
+# en = Encrypt a file
+alias en='function _en() { gzip --best "${1}" && gpg --symmetric --cipher-algo AES256 "${1}.gz" }; _en'
+
 
 #----------------------------------------------------------------------
 # Utility aliases (not updated in a while. Some of them may be broken)
