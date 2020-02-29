@@ -26,6 +26,7 @@ alias vi="vim"
 alias e='open -a Emacs'
 alias i="feh"                   # Image viewer
 alias l="exa --git-ignore --group-directories-first"
+alias m="mpv"                   # Movie player
 alias t="tree | less"
 alias u="cd .. && pwd && ls"
 alias d='dirs -v'               # List directories recently visited (numbered) to jump to them quickly
