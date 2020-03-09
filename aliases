@@ -8,6 +8,7 @@ alias df="df -kh"               # Free disk space
 alias du="du -khs"              # Disk usage
 alias less="less -R"
 alias mkdir="mkdir -p"
+alias rsync="rsync -azvvhP"
 
 # Third party unix commands
 alias feh="feh -Zr"             # Fast image viewer
